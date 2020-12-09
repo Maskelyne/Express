@@ -21,64 +21,21 @@ img {
 
 a {
   text-decoration: none;
-  color: $dark-black;
-
-  &:hover {
-    color: $dark-red;
-  }
-
-  &:active {
-    color: $dark-red;
-    font-weight: $bold;
-  }
-}
-
-h1 {
-  margin: 25px 0;
-  font-family: $proximaBold;
-  font-size: 48px;
-  line-height: 48px;
-  font-weight: $normal;
-  text-align: center;
-
-  @media (max-width: $tablet-width) {
-    font-size: 24px;
-    line-height: 24px;
-  }
-}
-
-h2 {
-  margin: 0;
-  font-family: $proximaBold;
-  font-size: 24px;
-  line-height: 24px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   color: $black;
-
-  @media (max-width: $tablet-width) {
-    font-size: 16px;
-    line-height: 24px;
-  }
-}
-
-h3 {
-  margin: 0;
-  font-size: 18px;
-  line-height: 18px;
 }
 
 body {
   min-width: 320px;
   min-height: 100vh;
-  font-family: $proximaNova;
+  font-family: $openSansRegular;
   font-size: 17px;
   line-height: 24px;
   font-weight: $normal;
-  color: $dark-black;
+  color: $white;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  background-color: $blue;
 
   @media (max-width: $tablet-width) {
     font-size: 16px;
@@ -109,5 +66,64 @@ main {
 
   @media (max-width: $tablet-width) {
     padding: $tablet-padding;
+  }
+}
+
+a {
+  color: $white;
+  position: relative;
+  transition: all 0.5s linear;
+}
+
+h2 {
+  margin: 0;
+  font-family: $openSansBold;
+  font-size: 36px;
+  line-height: 49px;
+  color: $white;
+  letter-spacing: 0.02em;
+}
+
+h3 {
+  margin: 0;
+  font-family: $openSansBold;
+  font-size: 26px;
+  line-height: 41px;
+  letter-spacing: 0.02em;
+}
+
+.effects {
+  &::after {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: all 0.5s linear;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 2px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    transition: all 0.5s linear;
+  }
+
+  &:hover {
+    color: $yellow;
+
+    &::before {
+      width: 100%;
+      background-color: $yellow;
+      transition: all 0.5s linear;
+    }
   }
 }

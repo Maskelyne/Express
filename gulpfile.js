@@ -31,7 +31,7 @@ var path = {
     jsAdd: 'source/js/default.js',
     vendorJs: 'source/js/vendor.js',
     css: 'source/sass/style.scss',
-    img: 'source/img/**/*.{png,jpg,svg,gif}',
+    img: 'source/img/**/*.{png,jpg,svg}',
     sprite: 'source/img/svg-sprite/*.svg',
     fonts: 'source/fonts/**/*.{woff,woff2}'
   },
@@ -47,10 +47,6 @@ var path = {
   pug: {
     views: 'source/pug/pages/*.pug',
   },
-  fancybox: {
-    source: 'source/css/*.css',
-    build: 'build/css'
-  }
 };
 
 var config = {
@@ -61,12 +57,6 @@ var config = {
 
 gulp.task('clean:build', function () {
   return del(path.clean);
-});
-
-gulp.task('fancybox:build', function () {
-  return gulp
-    .src(path.fancybox.source)
-    .pipe(gulp.dest(path.build.css));
 });
 
 gulp.task('html:build', function () {
@@ -88,7 +78,9 @@ gulp.task('js:build', function () {
   return gulp.src(path.source.js)
     .pipe(rigger())
     .pipe(sourcemaps.init())
-    // .pipe(uglify())
+    .pipe(gulp.dest(path.build.js))
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.js))
     .pipe(server.stream());
@@ -161,7 +153,6 @@ gulp.task('fonts:build', function () {
 gulp.task('build', gulp.series(
     'clean:build',
     'html:build',
-    'fancybox:build',
     'pug:build',
     'js:build',
     'jsAdd:build',
