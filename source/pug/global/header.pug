@@ -6,21 +6,30 @@ mixin header()
           +img('svg', 'logo', 'svg', '195', '80', 'Логотип')
       .main-header__nav
         ul
-          li
-            a(href="#").effects Услуги
+          li.main-header__wrap-menu
+            a(href="#") Услуги
             ul.main-header__wrap
-              li:a(href="#") Экспресс-доставка Москва-Минск-Москва
-              li:a(href="#") Доставка по всей России
-              li:a(href="#") Авиадоставка из Москвы
-              li:a(href="#") Доставка из IKEA
+              li: a(href="#") Экспресс-доставка Москва-Минск-Москва
+              li: a(href="#") Доставка по всей России
+              li: a(href="#") Авиадоставка из Москвы
+              li: a(href="#") Доставка из IKEA
           li
-            a(href="#").effects Отзывы
+            a(href="#") Отзывы
           li
-            a(href="#").effects Блог
+            a(href="#") Блог
           li
-            a(href="#").effects О компании
+            a(href="#") О компании
           li
-            a(href="#").effects Контакты
-      .main-header__user
-        a(href="tel:+375447585858") +375 44 758 58 58
-        a(href="#") Войти
+            a(href="#") Контакты
+      .main-header__box
+        .main-header__box-tel
+          a.main-header__link(href="tel:+375447585858")
+            +img('svg', 'icon-tel', 'svg', '40', '40', 'Телефон')
+            | +375 44 758 58 58
+          .main-header__tel
+            a(href="tel:+375447585858") +375 44 758 58 58
+            a(href="tel:+375447585858") +375 44 758 58 58
+            +social
+        a.main-header__link(href="#")
+          +img('svg', 'icon-users', 'svg', '40', '40', 'Пользователь')
+          | Войти

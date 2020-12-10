@@ -13,29 +13,26 @@
   color: inherit;
 }
 
-@mixin effect {
-  &:hover {
-    color: $bright-pink;
-  }
-
-  &:active {
-    color: $calm-pink;
-  }
-}
-
 @mixin retina {
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     @content;
   }
 }
 
-@mixin bgGradient {
-  background:
-    $colorOutlineFade
-    linear-gradient(
-        transparent 0%,
-        transparent 50%,
-        $colorOutline 50%,
-        $colorOutline 100%
-    );
+@mixin desktop-width {
+  @media (max-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin desktop-width-min {
+  @media (max-width: $desktop-width-min) {
+    @content;
+  }
+}
+
+@mixin tablet-width {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
 }
