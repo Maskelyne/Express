@@ -6,8 +6,8 @@ mixin header()
           +img('svg', 'logo', 'svg', '195', '80', 'Логотип')
       .main-header__nav
         ul
-          li.main-header__wrap-menu
-            a(href="#") Услуги
+          li.main-header__wrap-menu.active-item
+            a.main-header__link-tablet(href="#") Услуги
             ul.main-header__wrap
               li: a(href="#") Экспресс-доставка Москва-Минск-Москва
               li: a(href="#") Доставка по всей России
@@ -25,11 +25,17 @@ mixin header()
         .main-header__box-tel
           a.main-header__link(href="tel:+375447585858")
             +img('svg', 'icon-tel', 'svg', '40', '40', 'Телефон')
-            | +375 44 758 58 58
+            span +375 44 758 58 58
           .main-header__tel
-            a(href="tel:+375447585858") +375 44 758 58 58
-            a(href="tel:+375447585858") +375 44 758 58 58
-            +social
+            .main-header__wrap-tel
+              a(href="tel:+375447585858") +375 44 758 58 58
+              a(href="tel:+375447585858") +375 44 758 58 58
+              +social
         a.main-header__link(href="#")
           +img('svg', 'icon-users', 'svg', '40', '40', 'Пользователь')
-          | Войти
+          span Войти
+        button.main-header__burger(type="button")
+          span.visually-hidden Бургер меню
+          span
+          span
+          span
