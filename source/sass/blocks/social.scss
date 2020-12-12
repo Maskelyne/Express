@@ -1,0 +1,7 @@
+.social {
+  @include reset-list;
+  display: grid;
+  padding: 10px 0;
+  grid-gap: 0 10px;
+  grid-template-columns: repeat(4, 35px);
+}
