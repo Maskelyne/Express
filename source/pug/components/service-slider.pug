@@ -1,0 +1,31 @@
+mixin service-slider()
+  section.service-slider
+    .service-slider__wrapper.service-slider__swiper-container.swiper-container
+      ul.service-slider__list.swiper-wrapper
+        li.swiper-slide
+          .service-slider__text
+            strong Экспресс-доставка грузов
+              span  за 12 часов
+            h2 Минск
+              +img('svg', 'icon-path', 'svg', '60', '30', 'Маршрут')
+              | Москва
+            p У нас предусмотрены услуги доставки на все случаи жизни – от срочных небольших посылок  до тяжеловесных грузов. Благодаря новому и надежному транпорту, доставка всегда осуществляется в экспресс-режиме и приходит  точно в срок!
+            p Возможна доставка в другие города России в течение 24 часов!
+            a.service-slider__btn(href="#") Оформить доставку
+          .service-slider__image
+            +img('jpg', 'image-slide-1', 'jpg', '770', '600', 'Первый слайд')
+        li.swiper-slide
+          .service-slider__text
+            strong Экспресс-доставка грузов
+              span  за 12 часов
+            h2 Москва
+              +img('svg', 'icon-path', 'svg', '60', '30', 'Маршрут')
+              | Минск
+            p У нас предусмотрены услуги доставки на все случаи жизни – от срочных небольших посылок  до тяжеловесных грузов. Благодаря новому и надежному транпорту, доставка всегда осуществляется в экспресс-режиме и приходит  точно в срок!
+            p Возможна доставка в другие города России в течение 24 часов!
+            a.service-slider__btn(href="#") Оформить доставку
+          .service-slider__image
+            +img('jpg', 'image-slide-2', 'jpg', '770', '600', 'Первый слайд')
+      .service-slider__controls
+        .swiper-button-next
+        .swiper-button-prev

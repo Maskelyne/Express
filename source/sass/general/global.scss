@@ -65,7 +65,7 @@ main {
   margin: 0 auto;
   padding: $desktop-padding;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: $desktop-width) {
     padding: $tablet-padding;
   }
 }

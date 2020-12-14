@@ -12,7 +12,7 @@
   </head>
   <body>
     <header class="main-header">
-      <nav class="main-header__wrapper container">
+      <nav class="main-header__wrapper main-header__wrapper--none container">
         <div class="main-header__logo"><a href="#"><img src="assets/img/svg/logo.svg" width="195" height="80" alt="Логотип"/></a></div>
         <div class="main-header__nav">
           <ul>
@@ -48,7 +48,36 @@
       </nav>
     </header>
     <main>
-      <h1>Main</h1>
+      <section class="service-slider">
+        <div class="service-slider__wrapper service-slider__swiper-container swiper-container">
+          <ul class="service-slider__list swiper-wrapper">
+            <li class="swiper-slide">
+              <div class="service-slider__text"><strong>Экспресс-доставка грузов<span> за 12 часов</span></strong>
+                <h2>Минск<img src="assets/img/svg/icon-path.svg" width="60" height="30" alt="Маршрут"/>Москва
+                </h2>
+                <p>У нас предусмотрены услуги доставки на все случаи жизни – от срочных небольших посылок  до тяжеловесных грузов. Благодаря новому и надежному транпорту, доставка всегда осуществляется в экспресс-режиме и приходит  точно в срок!</p>
+                <p>Возможна доставка в другие города России в течение 24 часов!</p><a class="service-slider__btn" href="#">Оформить доставку</a>
+              </div>
+              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-1.jpg" width="770" height="600" alt="Первый слайд"/>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="service-slider__text"><strong>Экспресс-доставка грузов<span> за 12 часов</span></strong>
+                <h2>Москва<img src="assets/img/svg/icon-path.svg" width="60" height="30" alt="Маршрут"/>Минск
+                </h2>
+                <p>У нас предусмотрены услуги доставки на все случаи жизни – от срочных небольших посылок  до тяжеловесных грузов. Благодаря новому и надежному транпорту, доставка всегда осуществляется в экспресс-режиме и приходит  точно в срок!</p>
+                <p>Возможна доставка в другие города России в течение 24 часов!</p><a class="service-slider__btn" href="#">Оформить доставку</a>
+              </div>
+              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-2.jpg" width="770" height="600" alt="Первый слайд"/>
+              </div>
+            </li>
+          </ul>
+          <div class="service-slider__controls">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </section>
     </main>
     <h1>Footer</h1>
     <script src="assets/js/vendor.min.js"></script>
