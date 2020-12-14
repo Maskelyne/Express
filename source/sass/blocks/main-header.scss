@@ -446,16 +446,26 @@
     justify-content: center;
   }
 
+  @media (min-width: $desktop-width-min) {
+    .main-header__tel {
+      max-width: 215px;
+      width: 100%;
+      padding: 10px 0;
+      position: absolute;
+      content: "";
+      top: 95px;
+      left: 0;
+      background-color: rgba(28, 40, 69, 0.95);
+      display: none;
+    }
+  }
+
   .main-header__tel {
-    max-width: 215px;
-    width: 100%;
     padding: 10px 0;
-    position: absolute;
-    content: "";
-    top: 95px;
-    left: 0;
-    background-color: rgba(28, 40, 69, 0.95);
-    display: none;
+
+    a {
+      text-align: center;
+    }
 
     @include desktop-width-min {
       width: 270px;
@@ -469,15 +479,12 @@
       transition: all 0.5s linear;
     }
 
-    a {
-      text-align: center;
-    }
-
     &--active {
       right: 0;
       transition: all 0.5s linear;
     }
   }
+
 
   @media (min-width: $desktop-width-min) {
     .main-header__box-tel:hover .main-header__tel {
