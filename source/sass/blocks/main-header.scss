@@ -262,12 +262,14 @@
 
   @include desktop-width-min {
     position: fixed;
-    right: -480px;
-    transition: all 0.7s linear;
-    width: 480px;
-    height: 100%;
+    right: 0;
     top: 72px;
-    background-image: $blue-gradient;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: flex-end;
+    transition: all 0.5s linear;
+    z-index: 1;
 
     ul {
       grid-template-columns: 1fr;
@@ -321,8 +323,8 @@
   }
 
   &--active {
-    right: 0;
-    transition: all 0.7s linear;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 10;
 
     .main-header__wrap-menu {
       &--active {
@@ -364,6 +366,28 @@
         display: none;
       }
     }
+
+    .main-header__nav-box {
+      right: 0;
+      transition: all 0.7s ease;
+    }
+  }
+}
+
+.main-header__nav-box {
+  height: 100%;
+
+  @include desktop-width-min {
+    width: 480px;
+    background-image: $blue-gradient;
+    position: fixed;
+    right: -480px;
+    transition: all 0.7s ease;
+  }
+
+  @include tablet-width {
+    width: 100%;
+    right: -765px;
   }
 }
 
@@ -415,20 +439,20 @@
     display: grid;
     position: relative;
 
-    @media (min-width: $desktop-width-min) {
+    @media (min-width: 1024px) {
       &::before {
         width: 8px;
         height: 2px;
         position: absolute;
         content: "";
         top: 47px;
-        right: 30px;
+        right: 27px;
         background-color: $white;
         transform: rotate(45deg);
         transition: all 0.5s linear;
 
         @include desktop-width {
-          right: 25px;
+          right: 20px;
         }
       }
 
@@ -438,13 +462,13 @@
         position: absolute;
         content: "";
         top: 47px;
-        right: 25px;
+        right: 22px;
         background-color: $white;
         transform: rotate(-45deg);
         transition: all 0.5s linear;
 
         @include desktop-width {
-          right: 20px;
+          right: 15px;
         }
       }
 
@@ -469,11 +493,10 @@
     justify-content: center;
   }
 
-  @media (min-width: $desktop-width-min) {
+  @media (min-width: 1024px) {
     .main-header__tel {
       max-width: 215px;
       width: 100%;
-      padding: 10px 0;
       position: absolute;
       content: "";
       top: 95px;
@@ -485,32 +508,51 @@
   }
 
   .main-header__tel {
-    padding: 10px 0;
-
     a {
       text-align: center;
     }
 
     @include desktop-width-min {
-      width: 270px;
+      width: 100%;
       height: 100%;
       position: fixed;
       top: 72px;
-      left: auto;
-      right: -350px;
-      background-color: transparent;
-      background-image: $blue-gradient;
-      transition: all 0.7s linear;
+      right: 0;
+      display: grid;
+      justify-content: flex-end;
+      transition: all 0.7s ease;
+      z-index: 1;
 
       @include tablet-width {
         width: 100%;
         right: -760px;
       }
+
+      .main-header__inner-tel {
+        width: 270px;
+        height: 100%;
+        padding-top: 10px;
+        position: fixed;
+        right: -270px;
+        background-image: $blue-gradient;
+        transition: all 0.7s ease;
+
+        @include tablet-width {
+          width: 100%;
+          right: -765px;
+        }
+      }
     }
 
     &--active {
-      right: 0;
-      transition: all 0.7s linear;
+      background-color: rgba(0, 0, 0, 0.25);
+      transition: all 0.7s ease;
+      z-index: 10;
+
+      .main-header__inner-tel {
+        right: 0;
+        transition: all 0.7s ease;
+      }
     }
   }
 
@@ -589,12 +631,12 @@
   }
 }
 
-////// Показ пользователья //////
+////// Показ пользователя //////
 .main-header__wrapper--none {
-  grid-template-columns: 17% 64% auto;
+  grid-template-columns: 17% 63% auto;
 
   @include desktop-width {
-    grid-template-columns: 17% 63% auto;
+    grid-template-columns: 17% 61% auto;
   }
 
   @include desktop-width-min {
@@ -618,10 +660,10 @@
   }
 
   .main-header__box-tel {
-    max-width: 215px;
+    max-width: 225px;
 
     @include desktop-width {
-      max-width: 200px;
+      max-width: 212px;
     }
 
     .main-header__link {

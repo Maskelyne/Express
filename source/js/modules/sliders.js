@@ -2,7 +2,7 @@
 
 (function () {
 
-  var serviceSlider = document.querySelector('.service-slider__swiper-container')
+  var serviceSlider = document.querySelector('.service-slider__wrapper')
 
   var servicesSliderDesk = function (el) {
     return new Swiper(el, {

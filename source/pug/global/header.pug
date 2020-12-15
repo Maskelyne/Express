@@ -1,40 +1,42 @@
 mixin header()
   header.main-header
-    nav.main-header__wrapper.main-header__wrapper--none.container
+    nav.main-header__wrapper.container
       .main-header__logo
         a(href="#")
           +img('svg', 'logo', 'svg', '195', '80', 'Логотип')
       .main-header__nav
-        ul
-          li.main-header__wrap-menu.active-item
-            a.main-header__link-tablet(href="#") Услуги
-            ul.main-header__wrap
-              li: a(href="#") Экспресс-доставка Москва-Минск-Москва
-              li: a(href="#") Доставка по всей России
-              li: a(href="#") Авиадоставка из Москвы
-              li: a(href="#") Доставка из IKEA
-          li
-            a(href="#") Отзывы
-          li
-            a(href="#") Блог
-          li
-            a(href="#") О компании
-          li
-            a(href="#") Контакты
+        .main-header__nav-box
+          ul
+            li.main-header__wrap-menu.active-item
+              a.main-header__link-tablet(href="#") Услуги
+              ul.main-header__wrap
+                li: a(href="#") Экспресс-доставка Москва-Минск-Москва
+                li: a(href="#") Доставка по всей России
+                li: a(href="#") Авиадоставка из Москвы
+                li: a(href="#") Доставка из IKEA
+            li
+              a(href="#") Отзывы
+            li
+              a(href="#") Блог
+            li
+              a(href="#") О компании
+            li
+              a(href="#") Контакты
       .main-header__box
         .main-header__box-tel
           a.main-header__link(href="tel:+375447585858")
             +img('svg', 'icon-tel', 'svg', '40', '40', 'Телефон')
             span +375 44 758 58 58
-          .main-header__tel
-            .main-header__wrap-tel
-              a(href="tel:+375447585858") +375 44 758 58 58
-              a(href="tel:+375447585858") +375 44 758 58 58
-              +social
+          .main-header__tel.main-header__tel--closed
+            .main-header__inner-tel
+              .main-header__wrap-tel
+                a(href="tel:+375447585858") +375 44 758 58 58
+                a(href="tel:+375447585858") +375 44 758 58 58
+                +social
         a.main-header__link(href="#")
           +img('svg', 'icon-users', 'svg', '40', '40', 'Пользователь')
           span Войти
-        button.main-header__burger(type="button")
+        button.main-header__burger.main-header__burger--closed(type="button")
           span.visually-hidden Бургер меню
           span
           span

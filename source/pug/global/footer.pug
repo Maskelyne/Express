@@ -1,2 +1,17 @@
 mixin footer()
-  h1 Footer
+  footer.main-footer
+    section.main-footer__wrapper.container
+      .main-footer__box
+        .main-footer__image
+          a(href="#")
+            +img('svg', 'logo', 'svg', '195', '80', 'Логотип')
+        .main-footer__address
+          a(href="#")
+            +img('svg', 'icon-pin', 'svg', '30', '30', 'Адрес')
+            | Минск, пер. Козлова 24А
+          p
+            +img('svg', 'icon-footer-clock', 'svg', '30', '30', 'Время работы')
+            | 9:00 - 20:00 без выходных
+      .main-footer__nav
+        ul
+          li: a(href="#") Экспресс-доставка Москва-Минск

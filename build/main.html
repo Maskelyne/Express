@@ -12,47 +12,52 @@
   </head>
   <body>
     <header class="main-header">
-      <nav class="main-header__wrapper main-header__wrapper--none container">
+      <nav class="main-header__wrapper container">
         <div class="main-header__logo"><a href="#"><img src="assets/img/svg/logo.svg" width="195" height="80" alt="Логотип"/></a></div>
         <div class="main-header__nav">
-          <ul>
-            <li class="main-header__wrap-menu active-item"><a class="main-header__link-tablet" href="#">Услуги</a>
-              <ul class="main-header__wrap">
-                <li><a href="#">Экспресс-доставка Москва-Минск-Москва</a></li>
-                <li><a href="#">Доставка по всей России</a></li>
-                <li><a href="#">Авиадоставка из Москвы</a></li>
-                <li><a href="#">Доставка из IKEA</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Отзывы</a></li>
-            <li><a href="#">Блог</a></li>
-            <li><a href="#">О компании</a></li>
-            <li><a href="#">Контакты</a></li>
-          </ul>
+          <div class="main-header__nav-box">
+            <ul>
+              <li class="main-header__wrap-menu active-item"><a class="main-header__link-tablet" href="#">Услуги</a>
+                <ul class="main-header__wrap">
+                  <li><a href="#">Экспресс-доставка Москва-Минск-Москва</a></li>
+                  <li><a href="#">Доставка по всей России</a></li>
+                  <li><a href="#">Авиадоставка из Москвы</a></li>
+                  <li><a href="#">Доставка из IKEA</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Отзывы</a></li>
+              <li><a href="#">Блог</a></li>
+              <li><a href="#">О компании</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </div>
         </div>
         <div class="main-header__box">
           <div class="main-header__box-tel"><a class="main-header__link" href="tel:+375447585858"><img src="assets/img/svg/icon-tel.svg" width="40" height="40" alt="Телефон"/><span>+375 44 758 58 58</span></a>
-            <div class="main-header__tel">
-              <div class="main-header__wrap-tel"><a href="tel:+375447585858">+375 44 758 58 58</a><a href="tel:+375447585858">+375 44 758 58 58</a>
-                <ul class="social">
-                  <li><a href="#"><span class="visually-hidden">Вайбер</span><img src="assets/img/svg/icon-viber.svg" width="35" height="35" alt="Вайбер"/></a></li>
-                  <li><a href="#"><span class="visually-hidden">Телеграм</span><img src="assets/img/svg/icon-telegram.svg" width="35" height="35" alt="Телеграм"/></a></li>
-                  <li><a href="#"><span class="visually-hidden">Ватсап</span><img src="assets/img/svg/icon-whatsapp.svg" width="35" height="35" alt="Ватсап"/></a></li>
-                  <li><a href="#"><span class="visually-hidden">Скайп</span><img src="assets/img/svg/icon-skype.svg" width="35" height="35" alt="Скайп"/></a></li>
-                </ul>
+            <div class="main-header__tel main-header__tel--closed">
+              <div class="main-header__inner-tel">
+                <div class="main-header__wrap-tel"><a href="tel:+375447585858">+375 44 758 58 58</a><a href="tel:+375447585858">+375 44 758 58 58</a>
+                  <ul class="social">
+                    <li><a href="#"><span class="visually-hidden">Вайбер</span><img src="assets/img/svg/icon-viber.svg" width="35" height="35" alt="Вайбер"/></a></li>
+                    <li><a href="#"><span class="visually-hidden">Телеграм</span><img src="assets/img/svg/icon-telegram.svg" width="35" height="35" alt="Телеграм"/></a></li>
+                    <li><a href="#"><span class="visually-hidden">Ватсап</span><img src="assets/img/svg/icon-whatsapp.svg" width="35" height="35" alt="Ватсап"/></a></li>
+                    <li><a href="#"><span class="visually-hidden">Скайп</span><img src="assets/img/svg/icon-skype.svg" width="35" height="35" alt="Скайп"/></a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div><a class="main-header__link" href="#"><img src="assets/img/svg/icon-users.svg" width="40" height="40" alt="Пользователь"/><span>Войти</span></a>
-          <button class="main-header__burger" type="button"><span class="visually-hidden">Бургер меню</span><span></span><span></span><span></span></button>
+          <button class="main-header__burger main-header__burger--closed" type="button"><span class="visually-hidden">Бургер меню</span><span></span><span></span><span></span></button>
         </div>
       </nav>
     </header>
     <main>
       <section class="service-slider">
-        <div class="service-slider__wrapper service-slider__swiper-container swiper-container">
+        <div class="service-slider__wrapper swiper-container">
           <ul class="service-slider__list swiper-wrapper">
             <li class="swiper-slide">
-              <div class="service-slider__text"><strong>Экспресс-доставка грузов<span> за 12 часов</span></strong>
+              <div class="service-slider__text">
+                <p>Экспресс-доставка грузов<strong> за 12 часов</strong></p>
                 <h2>Минск<img src="assets/img/svg/icon-path.svg" width="60" height="30" alt="Маршрут"/>Москва
                 </h2>
                 <p>У нас предусмотрены услуги доставки на все случаи жизни – от срочных небольших посылок  до тяжеловесных грузов. Благодаря новому и надежному транпорту, доставка всегда осуществляется в экспресс-режиме и приходит  точно в срок!</p>
@@ -62,13 +67,43 @@
               </div>
             </li>
             <li class="swiper-slide">
-              <div class="service-slider__text"><strong>Экспресс-доставка грузов<span> за 12 часов</span></strong>
-                <h2>Москва<img src="assets/img/svg/icon-path.svg" width="60" height="30" alt="Маршрут"/>Минск
-                </h2>
-                <p>У нас предусмотрены услуги доставки на все случаи жизни – от срочных небольших посылок  до тяжеловесных грузов. Благодаря новому и надежному транпорту, доставка всегда осуществляется в экспресс-режиме и приходит  точно в срок!</p>
-                <p>Возможна доставка в другие города России в течение 24 часов!</p><a class="service-slider__btn" href="#">Оформить доставку</a>
+              <div class="service-slider__text">
+                <ul>
+                  <li><img src="assets/img/svg/icon-clock.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p>Быстрая доставка<strong>за 12 часов</strong></p>
+                  </li>
+                  <li><img src="assets/img/svg/icon-shild.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p><strong>CMR-Страхование</strong>гарантирует сохранность груза</p>
+                  </li>
+                  <li><img src="assets/img/svg/icon-money.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p>За доставку<strong>ОТ 60 y.e.</strong></p>
+                  </li>
+                  <li><img src="assets/img/svg/icon-contract.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p>Заключение<strong>Договора на услуги</strong></p>
+                  </li>
+                </ul><a class="service-slider__btn" href="#">Оформить доставку</a>
               </div>
-              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-2.jpg" width="770" height="600" alt="Первый слайд"/>
+              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-2.jpg" width="770" height="600" alt="Второй слайд"/>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="service-slider__text">
+                <ul>
+                  <li><img src="assets/img/svg/icon-clock.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p>Быстрая доставка<strong>за 12 часов</strong></p>
+                  </li>
+                  <li><img src="assets/img/svg/icon-shild.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p><strong>CMR-Страхование</strong>гарантирует сохранность груза</p>
+                  </li>
+                  <li><img src="assets/img/svg/icon-money.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p>За доставку<strong>ОТ 60 y.e.</strong></p>
+                  </li>
+                  <li><img src="assets/img/svg/icon-contract.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p>Заключение<strong>Договора на услуги</strong></p>
+                  </li>
+                </ul><a class="service-slider__btn" href="#">Оформить доставку</a>
+              </div>
+              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-3.jpg" width="770" height="600" alt="Третий слайд"/>
               </div>
             </li>
           </ul>
@@ -79,7 +114,22 @@
         </div>
       </section>
     </main>
-    <h1>Footer</h1>
+    <footer class="main-footer">
+      <section class="main-footer__wrapper container">
+        <div class="main-footer__box">
+          <div class="main-footer__image"><a href="#"><img src="assets/img/svg/logo.svg" width="195" height="80" alt="Логотип"/></a></div>
+          <div class="main-footer__address"><a href="#"><img src="assets/img/svg/icon-pin.svg" width="30" height="30" alt="Адрес"/>Минск, пер. Козлова 24А</a>
+            <p><img src="assets/img/svg/icon-footer-clock.svg" width="30" height="30" alt="Время работы"/>9:00 - 20:00 без выходных
+            </p>
+          </div>
+        </div>
+        <div class="main-footer__nav">
+          <ul>
+            <li><a href="#">Экспресс-доставка Москва-Минск</a></li>
+          </ul>
+        </div>
+      </section>
+    </footer>
     <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/default.js"></script>

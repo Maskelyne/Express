@@ -1,11 +1,11 @@
 mixin service-slider()
   section.service-slider
-    .service-slider__wrapper.service-slider__swiper-container.swiper-container
+    .service-slider__wrapper.swiper-container
       ul.service-slider__list.swiper-wrapper
         li.swiper-slide
           .service-slider__text
-            strong Экспресс-доставка грузов
-              span  за 12 часов
+            p Экспресс-доставка грузов
+              strong  за 12 часов
             h2 Минск
               +img('svg', 'icon-path', 'svg', '60', '30', 'Маршрут')
               | Москва
@@ -16,16 +16,50 @@ mixin service-slider()
             +img('jpg', 'image-slide-1', 'jpg', '770', '600', 'Первый слайд')
         li.swiper-slide
           .service-slider__text
-            strong Экспресс-доставка грузов
-              span  за 12 часов
-            h2 Москва
-              +img('svg', 'icon-path', 'svg', '60', '30', 'Маршрут')
-              | Минск
-            p У нас предусмотрены услуги доставки на все случаи жизни – от срочных небольших посылок  до тяжеловесных грузов. Благодаря новому и надежному транпорту, доставка всегда осуществляется в экспресс-режиме и приходит  точно в срок!
-            p Возможна доставка в другие города России в течение 24 часов!
+            ul
+              li
+                +img('svg', 'icon-clock', 'svg', '70', '70', 'Быстрая доставка за 12 часов')
+                p Быстрая доставка
+                  strong за 12 часов
+              li
+                +img('svg', 'icon-shild', 'svg', '70', '70', 'Быстрая доставка за 12 часов')
+                p
+                  strong CMR-Страхование
+                  | гарантирует сохранность груза
+              li
+                +img('svg', 'icon-money', 'svg', '70', '70', 'Быстрая доставка за 12 часов')
+                p За доставку
+                  strong ОТ 60 y.e.
+              li
+                +img('svg', 'icon-contract', 'svg', '70', '70', 'Быстрая доставка за 12 часов')
+                p Заключение
+                  strong Договора на услуги
             a.service-slider__btn(href="#") Оформить доставку
           .service-slider__image
-            +img('jpg', 'image-slide-2', 'jpg', '770', '600', 'Первый слайд')
+            +img('jpg', 'image-slide-2', 'jpg', '770', '600', 'Второй слайд')
+        li.swiper-slide
+          .service-slider__text
+            ul
+              li
+                +img('svg', 'icon-clock', 'svg', '70', '70', 'Быстрая доставка за 12 часов')
+                p Быстрая доставка
+                  strong за 12 часов
+              li
+                +img('svg', 'icon-shild', 'svg', '70', '70', 'Быстрая доставка за 12 часов')
+                p
+                  strong CMR-Страхование
+                  | гарантирует сохранность груза
+              li
+                +img('svg', 'icon-money', 'svg', '70', '70', 'Быстрая доставка за 12 часов')
+                p За доставку
+                  strong ОТ 60 y.e.
+              li
+                +img('svg', 'icon-contract', 'svg', '70', '70', 'Быстрая доставка за 12 часов')
+                p Заключение
+                  strong Договора на услуги
+            a.service-slider__btn(href="#") Оформить доставку
+          .service-slider__image
+            +img('jpg', 'image-slide-3', 'jpg', '770', '600', 'Третий слайд')
       .service-slider__controls
         .swiper-button-next
         .swiper-button-prev
