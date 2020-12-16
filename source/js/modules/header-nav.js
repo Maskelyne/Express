@@ -20,10 +20,12 @@
         headerMenu.classList.add('main-header__nav--active');
         headerSocial.classList.remove('main-header__tel--active');
         headerSocial.classList.add('main-header__tel--closed');
+        document.body.style.overflow = 'hidden';
       } else {
         burgerBtn.classList.add('main-header__burger--closed');
         burgerBtn.classList.remove('main-header__burger--active');
         headerMenu.classList.remove('main-header__nav--active');
+        document.body.style.overflow = '';
       }
 
     };
@@ -37,9 +39,11 @@
         burgerBtn.classList.remove('main-header__burger--active');
         burgerBtn.classList.add('main-header__burger--closed');
         headerMenu.classList.remove('main-header__nav--active');
+        document.body.style.overflow = 'hidden';
       } else {
         headerSocial.classList.add('main-header__tel--closed');
         headerSocial.classList.remove('main-header__tel--active');
+        document.body.style.overflow = '';
       }
 
     };

@@ -1,9 +1,8 @@
-.social {
+.socials {
   @include reset-list;
   display: grid;
-  padding: 10px 0;
+  grid-template-columns: repeat(6, 33px);
   grid-gap: 0 10px;
-  grid-template-columns: repeat(4, 35px);
 
   img {
     transition: all 0.5s ease;

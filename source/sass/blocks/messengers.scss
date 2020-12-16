@@ -1,0 +1,17 @@
+.messengers {
+  @include reset-list;
+  display: grid;
+  padding: 10px 0;
+  grid-gap: 0 10px;
+  grid-template-columns: repeat(4, 35px);
+
+  img {
+    transition: all 0.5s ease;
+
+    &:hover {
+      transform: scale(0.9);
+      opacity: 0.75;
+      transition: all 0.5s ease;
+    }
+  }
+}

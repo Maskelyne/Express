@@ -1,0 +1,48 @@
+mixin services()
+
+  -
+    var services = [
+      {
+        path: 'svg',
+        image: 'icon-route',
+        format: 'svg',
+        width: '150',
+        height: '145',
+        text: 'Экспресс доставка Москва - Минск - Москва'
+      },
+      {
+        path: 'svg',
+        image: 'icon-route',
+        format: 'svg',
+        width: '150',
+        height: '145',
+        text: 'Доставка по всей России'
+      },
+      {
+        path: 'svg',
+        image: 'icon-route',
+        format: 'svg',
+        width: '150',
+        height: '145',
+        text: 'Доставка из аэропортов Москвы'
+      },
+      {
+        path: 'svg',
+        image: 'icon-route',
+        format: 'svg',
+        width: '150',
+        height: '145',
+        text: 'Доставка из IKEA'
+      },
+    ];
+
+  service.services
+    .services__wrapper.container
+      h2 Услуги
+      ul
+        each item in services
+          li
+            a(href="#")
+              article
+                +img(item.path, item.image, item.format, item.width, item.height, item.text)
+                p= item.text
