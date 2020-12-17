@@ -1,7 +1,7 @@
-mixin social()
+mixin messengers()
 
   -
-    var social = [
+    var messengers = [
       {
         path: 'svg',
         image: 'icon-viber',
@@ -36,8 +36,8 @@ mixin social()
       },
     ];
 
-  ul.social
-    each item in social
+  ul.messengers
+    each item in messengers
       li
         a(href="#")
           span.visually-hidden= item.text

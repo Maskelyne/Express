@@ -19,6 +19,12 @@
   }
 }
 
+@mixin desktop-width-middle {
+  @media (max-width: $desktop-width-middle) {
+    @content;
+  }
+}
+
 @mixin desktop-width {
   @media (max-width: $desktop-width) {
     @content;
@@ -33,6 +39,12 @@
 
 @mixin tablet-width {
   @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin mobile-width {
+  @media (max-width: $mobile-width) {
     @content;
   }
 }

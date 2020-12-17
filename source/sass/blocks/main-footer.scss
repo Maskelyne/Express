@@ -1,0 +1,144 @@
+.main-footer {
+  position: relative;
+  margin-top: 60px;
+  z-index: 1;
+  background-image: linear-gradient(283.81deg, #172340 -4.47%, #27324F 96.77%);
+}
+
+.main-footer__wrapper {
+  margin: 20px auto;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 30% auto;
+  font-size: 16px;
+  line-height: 22px;
+
+  @include desktop-width-min {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include tablet-width {
+    font-size: 14px;
+    line-height: 20px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.main-footer__box {
+  display: grid;
+  grid-gap: 20px 0;
+
+  .socials {
+    margin-left: 3px;
+  }
+}
+
+.main-footer__image {
+  max-width: 195px;
+}
+
+.main-footer__address {
+  a {
+    display: grid;
+    padding-bottom: 10px;
+    grid-gap: 0 15px;
+    align-items: center;
+    grid-template-columns: 30px auto;
+
+    &:first-child {
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+    display: grid;
+    grid-gap: 0 15px;
+    align-items: center;
+    grid-template-columns: 30px auto;
+  }
+}
+
+.main-footer__nav {
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: 45% auto auto;
+
+  @include desktop-width-min {
+    grid-template-columns: 1fr;
+  }
+
+  @include tablet-width {
+    padding-top: 20px;
+  }
+
+  .main-footer__list-1,
+  .main-footer__list-2{
+    @include reset-list;
+
+    @include desktop-width-min {
+      display: none;
+    }
+
+    li {
+      margin-bottom: 20px;
+    }
+
+    a {
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+
+  .main-footer__list-2 {
+    li {
+      font-family: $openSansBold;
+    }
+  }
+}
+
+.main-footer__contacts {
+  display: grid;
+  justify-content: flex-end;
+  grid-gap: 15px 0;
+
+  @include tablet-width {
+    justify-content: flex-start;
+  }
+
+  .messengers {
+    display: grid;
+    padding: 10px 0 0 0;
+    margin-left: 4px;
+
+    li {
+      margin-bottom: 0;
+    }
+
+    a {
+      margin: 0;
+      grid-template-columns: 35px auto;
+    }
+  }
+
+  a {
+    display: grid;
+    align-items: center;
+    grid-gap: 0 10px;
+    grid-template-columns: 30px auto;
+
+    &:nth-child(3) {
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+}
+
+.main-footer__contacts-box {
+  display: grid;
+  grid-gap: 10px 0;
+}

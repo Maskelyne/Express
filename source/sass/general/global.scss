@@ -29,8 +29,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: $openSansRegular;
-  font-size: 17px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 28px;
   font-weight: $normal;
   color: $white;
   display: flex;
@@ -44,6 +44,8 @@ body {
 }
 
 main {
+  position: relative;
+  z-index: 1;
   flex-grow: 1;
 }
 
@@ -65,7 +67,7 @@ main {
   margin: 0 auto;
   padding: $desktop-padding;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: $desktop-width) {
     padding: $tablet-padding;
   }
 }
@@ -78,11 +80,17 @@ a {
 
 h2 {
   margin: 0;
+  padding-bottom: 15px;
   font-family: $openSansBold;
   font-size: 36px;
   line-height: 49px;
   color: $white;
   letter-spacing: 0.02em;
+
+  @include tablet-width {
+    font-size: 26px;
+    line-height: 36px;
+  }
 }
 
 h3 {

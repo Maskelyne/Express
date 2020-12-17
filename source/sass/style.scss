@@ -2,9 +2,9 @@
 @import "general/normalize.scss";
 @import "general/swiper-bundle.min.scss";
 @import "general/variables.scss";
-@import "general/global.scss";
 @import "general/fonts.scss";
 @import "general/mixins.scss";
+@import "general/global.scss";
 
 //header
 @import "blocks/main-header.scss";
@@ -13,10 +13,18 @@
 @import "blocks/main-footer.scss";
 
 //main
-@import "blocks/social.scss";
+@import "blocks/messengers.scss";
+@import "blocks/socials.scss";
+@import "blocks/service-slider.scss";
+@import "blocks/services.scss";
+@import "blocks/activity.scss";
+@import "blocks/developers.scss";
 
 //buttons
 @import "blocks/buttons.scss";
+
+//forms
+@import "blocks/form-order.scss";
 
 //keyframes
 @import "blocks/keyframes.scss";

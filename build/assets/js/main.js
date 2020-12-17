@@ -43,14 +43,39 @@
     var headerWrapActive = document.querySelector('.main-header__wrap')
 
     var activeMenu = function () {
-      burgerBtn.classList.toggle('main-header__burger--active');
-      headerMenu.classList.toggle('main-header__nav--active');
+
+      if (burgerBtn.classList.contains('main-header__burger--closed')) {
+        burgerBtn.classList.remove('main-header__burger--closed');
+        burgerBtn.classList.add('main-header__burger--active');
+        headerMenu.classList.add('main-header__nav--active');
+        headerSocial.classList.remove('main-header__tel--active');
+        headerSocial.classList.add('main-header__tel--closed');
+        document.body.style.overflow = 'hidden';
+      } else {
+        burgerBtn.classList.add('main-header__burger--closed');
+        burgerBtn.classList.remove('main-header__burger--active');
+        headerMenu.classList.remove('main-header__nav--active');
+        document.body.style.overflow = '';
+      }
+
     };
 
     var activeSocial = function (evt) {
       evt.preventDefault();
 
-      headerSocial.classList.toggle('main-header__tel--active');
+      if (headerSocial.classList.contains('main-header__tel--closed')) {
+        headerSocial.classList.remove('main-header__tel--closed');
+        headerSocial.classList.add('main-header__tel--active');
+        burgerBtn.classList.remove('main-header__burger--active');
+        burgerBtn.classList.add('main-header__burger--closed');
+        headerMenu.classList.remove('main-header__nav--active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        headerSocial.classList.add('main-header__tel--closed');
+        headerSocial.classList.remove('main-header__tel--active');
+        document.body.style.overflow = '';
+      }
+
     };
 
     var activeWrapMenu = function (evt) {
@@ -65,5 +90,75 @@
     headerWrapMenu.addEventListener('click', activeWrapMenu);
 
   }
+
+})();
+'use strict';
+
+(function () {
+
+  var serviceSlider = document.querySelector('.service-slider__wrapper')
+
+  var servicesSliderDesk = function (el) {
+    return new Swiper(el, {
+      loop: true,
+      speed: 1000,
+      effect: 'fade',
+      slidesPerView: 1,
+      allowTouchMove: false,
+      autoplay: {
+        delay: 5000,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+  };
+
+  if (serviceSlider) {
+    servicesSliderDesk(serviceSlider);
+  }
+
+})();
+"use strict";
+
+(function () {
+
+  var btnRevers = document.querySelector('.button-revers');
+
+  var formRevers = function (evt) {
+    evt.preventDefault();
+
+    btnRevers.classList.toggle('button-revers--active');
+  };
+
+  btnRevers.addEventListener('click', formRevers);
+
+})();
+"use strict";
+
+(function () {
+
+  jQuery(function ($) {
+    $("#user_phone").mask("+375 (99) 999-99-99",{autoclear: false});
+  });
+
+  $("#user_name").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $('form').validate({
+    messages: {
+      name: 'Введите ваше имя',
+      phone: 'Введите ваш номер телефона',
+      position: 'Введите вашу должность',
+      company: 'Введите название компании'
+    },
+    errorElement: 'span',
+  });
 
 })();
