@@ -1,0 +1,27 @@
+mixin form-order()
+  section.form-order
+    .form-order__wrapper.container
+      .form-order__inner-box
+        h3 Рассчитать и заказать доставку
+        form.form-order__box
+          .form-order__data-box
+            .form-order__points
+              .form-order__point-1
+                input(id="point-1" type="text")
+                label(for="point-1") Откуда
+              button.button-revers(type="button")
+                span.visually-hidden Изменить маршрут
+              .form-order__point-2
+                input(id="point-2" type="text")
+                label(for="point-2") Куда
+            .form-order__point-3
+              input(id="point-3" type="text")
+              label(for="point-3") Доставка
+          .form-order__data-box-2
+            .form-order__weight
+              input(id="weight" type="text")
+              label(for="weight") Вес, кг
+            .form-order__volume
+              input(id="volume" type="text")
+              label(for="volume") Объем, м
+                sup 3

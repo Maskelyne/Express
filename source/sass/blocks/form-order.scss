@@ -1,0 +1,104 @@
+.form-order__wrapper {
+  margin: 60px auto;
+}
+
+.form-order__inner-box {
+  padding: 40px 0;
+  display: grid;
+  justify-content: center;
+  background-image: linear-gradient(251.81deg, rgba(86, 100, 130, 0.81) -7.52%, rgba(28, 40, 69, 0.7) 85.97%, #172340 93.78%);
+
+  h3 {
+    padding-bottom: 40px;
+    text-align: center;
+  }
+}
+
+.form-order__box {
+  display: grid;
+
+  label {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    cursor: text;
+    transition: all 0.3s linear;
+  }
+
+  input {
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-bottom: solid 1px $white;
+    outline: none;
+    background-color: transparent;
+
+    &:required {
+      ~ label {
+        &::after {
+          position: absolute;
+          content: "*";
+          top: 0;
+          right: -8px;
+        }
+      }
+    }
+
+    &:focus,
+    &.not-empty {
+      ~ label {
+        color: $white;
+        font-size: 15px;
+        transform: translateY(-15px);
+        transition: all 0.3s linear;
+      }
+    }
+  }
+}
+
+.form-order__point-1,
+.form-order__point-2,
+.form-order__point-3,
+.form-order__weight,
+.form-order__volume {
+  position: relative;
+}
+
+.form-order__data-box {
+  display: grid;
+  grid-gap: 0 60px;
+  grid-template-columns: 50% 20%;
+}
+
+.form-order__points {
+  display: grid;
+  grid-gap: 0 10px;
+  grid-template-columns: 1fr 50px 1fr;
+
+  .button-revers {
+    width: 35px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    justify-self: center;
+    background-color: transparent;
+    background-image: url("../img/svg/icon-revert.svg");
+    background-repeat: no-repeat;
+    transition: all 0.5s ease;
+  }
+
+  .button-revers--active {
+    transform: rotate(180deg);
+    transition: all 0.5s ease;
+  }
+}
+
+.form-order__data-box-2 {
+  display: grid;
+  grid-gap: 0 60px;
+  grid-template-columns: repeat(2, 20%);
+}

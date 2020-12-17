@@ -44,6 +44,8 @@ body {
 }
 
 main {
+  position: relative;
+  z-index: 1;
   flex-grow: 1;
 }
 
@@ -84,6 +86,11 @@ h2 {
   line-height: 49px;
   color: $white;
   letter-spacing: 0.02em;
+
+  @include tablet-width {
+    font-size: 26px;
+    line-height: 36px;
+  }
 }
 
 h3 {

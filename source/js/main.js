@@ -8,4 +8,6 @@
 //= modules/link-hidden.js
 //= modules/header-nav.js
 //= modules/sliders.js
+//= modules/forms.js
+//= modules/vendors.js
 

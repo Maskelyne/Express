@@ -18,6 +18,18 @@
     grid-template-columns: repeat(4, 23%);
     border-top: solid 2px;
     border-image: linear-gradient(90deg, #565F75 74.54%, rgba(86, 95, 117, 0) 101.51%) 2;
+
+    @include desktop-width-min {
+      padding: 30px 55px 0 55px;
+      grid-template-columns: repeat(auto-fit, minmax(0, 48.4%));
+      grid-gap: 20px 20px;
+    }
+
+    @include tablet-width {
+      padding: 20px 0 0 0 ;
+      grid-template-columns: 1fr;
+      grid-gap: 20px 0;
+    }
   }
 
   article {
@@ -51,7 +63,7 @@
   }
 
   img {
-    max-width: 150px;
+    max-width: 230px;
     position: absolute;
     top: 0;
     left: 0;
@@ -98,6 +110,10 @@
       article {
         margin-top: -5px;
         transition: all 0.3s linear;
+
+        @include desktop-width-min {
+          margin-top: 0;
+        }
 
         &::before {
           transition: all 0.3s linear;

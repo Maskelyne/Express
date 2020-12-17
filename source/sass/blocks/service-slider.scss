@@ -1,5 +1,7 @@
 .service-slider__wrapper {
   margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: solid 2px #45516E;
 
   @include tablet-width {
     position: static;
@@ -10,7 +12,7 @@
   width: 150px;
   height: 30px;
   position: absolute;
-  top: 93%;
+  top: 89%;
   left: 32%;
 
   @include desktop-width-middle {
@@ -22,7 +24,7 @@
   }
 
   @include tablet-width {
-    top: 53%;
+    top: 25%;
     left: 50%;
     transform: translateX(-50%);
   }
