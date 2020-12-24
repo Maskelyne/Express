@@ -2,26 +2,42 @@ mixin form-order()
   section.form-order
     .form-order__wrapper.container
       .form-order__inner-box
-        h3 Рассчитать и заказать доставку
-        form.form-order__box
-          .form-order__data-box
-            .form-order__points
-              .form-order__point-1
-                input(id="point-1" type="text")
-                label(for="point-1") Откуда
-              button.button-revers(type="button")
-                span.visually-hidden Изменить маршрут
-              .form-order__point-2
-                input(id="point-2" type="text")
-                label(for="point-2") Куда
-            .form-order__point-3
-              input(id="point-3" type="text")
-              label(for="point-3") Доставка
-          .form-order__data-box-2
-            .form-order__weight
-              input(id="weight" type="text")
-              label(for="weight") Вес, кг
-            .form-order__volume
-              input(id="volume" type="text")
-              label(for="volume") Объем, м
-                sup 3
+        .form-order__wrap-box
+          h3 Рассчитать и заказать доставку
+          form.form-order__box
+            .form-order__data-box
+              .form-order__points
+                .form-order__point-1
+                  input(id="point-1" type="text")
+                  label(for="point-1") Откуда
+                button.button-revers(type="button")
+                  span.visually-hidden Изменить маршрут
+                .form-order__point-2
+                  input(id="point-2" type="text")
+                  label(for="point-2") Куда
+              .form-order__point-3
+                input(id="point-3" type="text")
+                label(for="point-3") Доставка
+            .form-order__data-box-2
+              .form-order__weight
+                input(id="weight" type="text")
+                label(for="weight") Вес, кг
+              .form-order__volume
+                input(id="volume" type="text")
+                label(for="volume") Объем, м
+            .form-order__data-box-3
+              ul
+                li
+                  input.visually-hidden(id="check-1" type="checkbox" checked)
+                  label(for="check-1") Груз упакован
+                li
+                  input.visually-hidden(id="check-2" type="checkbox")
+                  label(for="check-2") Груз не упакован
+                li
+                  input.visually-hidden(id="check-3" type="checkbox")
+                  label(for="check-3") Можно кантовать
+                li
+                  input.visually-hidden(id="check-4" type="checkbox")
+                  label(for="check-4") Хрупкий груз
+            a.button.button--form-order(href="#")
+              span Рассчитать
