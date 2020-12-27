@@ -117,55 +117,61 @@
         <div class="form-order__wrapper container">
           <div class="form-order__inner-box">
             <div class="form-order__wrap-box">
-              <h3>Рассчитать и заказать доставку</h3>
               <form class="form-order__box">
-                <div class="form-order__data-box">
-                  <div class="form-order__points">
-                    <div class="form-order__point-1">
-                      <input id="point-1" type="text"/>
-                      <label for="point-1">Откуда</label>
+                <div class="form-order__box-1">
+                  <h3>Рассчитать и заказать доставку</h3>
+                  <div class="form-order__data-box">
+                    <div class="form-order__points">
+                      <div class="form-order__point-1">
+                        <input id="point-1" type="text"/>
+                        <label for="point-1">Откуда</label>
+                      </div>
+                      <button class="button-revers" type="button"><span class="visually-hidden">Изменить маршрут</span></button>
+                      <div class="form-order__point-2">
+                        <input id="point-2" type="text"/>
+                        <label for="point-2">Куда</label>
+                      </div>
                     </div>
-                    <button class="button-revers" type="button"><span class="visually-hidden">Изменить маршрут</span></button>
-                    <div class="form-order__point-2">
-                      <input id="point-2" type="text"/>
-                      <label for="point-2">Куда</label>
+                    <div class="form-order__point-3">
+                      <input class="datepicker-here" id="point-3" type="text"/>
+                      <label for="point-3">Доставка</label>
                     </div>
                   </div>
-                  <div class="form-order__point-3">
-                    <input id="point-3" type="text"/>
-                    <label for="point-3">Доставка</label>
+                  <div class="form-order__data-box-2">
+                    <div class="form-order__weight">
+                      <input id="weight" type="text"/>
+                      <label for="weight">Вес, кг</label>
+                    </div>
+                    <div class="form-order__volume">
+                      <input id="volume" type="text"/>
+                      <label for="volume">Объем, м</label>
+                    </div>
                   </div>
+                  <div class="form-order__data-box-3">
+                    <ul>
+                      <li>
+                        <input class="visually-hidden" id="check-1" type="checkbox" checked="checked"/>
+                        <label for="check-1">Груз упакован</label>
+                      </li>
+                      <li>
+                        <input class="visually-hidden" id="check-2" type="checkbox"/>
+                        <label for="check-2">Груз не упакован</label>
+                      </li>
+                      <li>
+                        <input class="visually-hidden" id="check-3" type="checkbox" checked="checked"/>
+                        <label for="check-3">Можно кантовать</label>
+                      </li>
+                      <li>
+                        <input class="visually-hidden" id="check-4" type="checkbox"/>
+                        <label for="check-4">Хрупкий груз</label>
+                      </li>
+                    </ul>
+                  </div><a class="button button--form-order" href="#"><span>Рассчитать</span></a>
                 </div>
-                <div class="form-order__data-box-2">
-                  <div class="form-order__weight">
-                    <input id="weight" type="text"/>
-                    <label for="weight">Вес, кг</label>
-                  </div>
-                  <div class="form-order__volume">
-                    <input id="volume" type="text"/>
-                    <label for="volume">Объем, м</label>
-                  </div>
+                <div class="form-order__box-2">
+                  <h3>Cтоимость вашей доставки будет составлять<span> 60$</span></h3>
+                  <p>Оставьте свои контактные данные для оформления заявки</p>
                 </div>
-                <div class="form-order__data-box-3">
-                  <ul>
-                    <li>
-                      <input class="visually-hidden" id="check-1" type="checkbox" checked="checked"/>
-                      <label for="check-1">Груз упакован</label>
-                    </li>
-                    <li>
-                      <input class="visually-hidden" id="check-2" type="checkbox"/>
-                      <label for="check-2">Груз не упакован</label>
-                    </li>
-                    <li>
-                      <input class="visually-hidden" id="check-3" type="checkbox"/>
-                      <label for="check-3">Можно кантовать</label>
-                    </li>
-                    <li>
-                      <input class="visually-hidden" id="check-4" type="checkbox"/>
-                      <label for="check-4">Хрупкий груз</label>
-                    </li>
-                  </ul>
-                </div><a class="button button--form-order" href="#"><span>Рассчитать</span></a>
               </form>
             </div>
           </div>
@@ -195,13 +201,102 @@
         </div>
       </section>
       <section class="activity">
-        <section class="activity__wrapper">
-          <div class="activity__box">
+        <div class="activity__wrapper">
+          <section class="activity__box">
             <div class="activity__box-text">
-              <p><strong>Наша компания занимается экспресс-доставкой грузов из Минскав Москву и из Москвы в Минск. Возможна доставка от адреса к адресу.</strong></p>
+              <p><strong>Наша компания занимается экспресс-доставкой грузов из Минска в Москву и из Москвы в Минск. Возможна доставка от адреса к адресу.</strong></p>
               <p>Мы перевозим ваши посылки на новых быстрых и надежных микроавтобусах, поэтому доставка  приходит всегда точно в указанный срок.  В течение 12 часов посылка гарантированно прибудет в указанное место.  Услуга закрепляется заключением официального договора</p>
               <p><strong>Возможна доставка в другие города России! Время доставки от 24 часов.</strong></p>
             </div>
+          </section>
+          <section class="questions">
+            <div class="questions__wrapper container">
+              <h2>Часто задаваемые вопросы</h2>
+              <div class="questions__box">
+                <div class="questions__box-left">
+                  <ul>
+                    <li class="questions__item-active">
+                      <p>Как правильно упаковать посылку?</p>
+                    </li>
+                    <li>
+                      <p>Запросить бухгалтерские документы</p>
+                    </li>
+                    <li>
+                      <p>Заключить договор</p>
+                    </li>
+                    <li>
+                      <p>Как оплатить услугу доставки?</p>
+                    </li>
+                    <li>
+                      <p>Образцы документов</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="questions__box-right">
+                  <article class="questions__text-active">
+                    <p>Мы не занимаемся упаковкой отправлений. Вы должны самостоятельно упаковать свою посылку.  Упаковка должна быть:</p>
+                    <ul>
+                      <li>
+                        <p>- без повреждений и загрязнений;</p>
+                      </li>
+                      <li>
+                        <p>- сухой и не протекает;</p>
+                      </li>
+                      <li>
+                        <p>- соответствующей весу отправления;</p>
+                      </li>
+                      <li>
+                        <p>- без старых этикеток от предыдущих отправлений;</p>
+                      </li>
+                      <li>
+                        <p>- тщательно запечатанной;</p>
+                      </li>
+                      <li>
+                        <p>- с правильной маркировкой.</p>
+                      </li>
+                    </ul>
+                    <p>Если это международное отправление, то посылка должна быть упакована на глазах у курьера.</p>
+                  </article>
+                  <article>
+                    <p><strong>ИП и Юридическим лицам</strong>После осуществления перевозки будет предоставлен акт выполненных работ, протокол согласования тарифов на услуги и при необходимости счет. Документы будут оправлены по почте.</p>
+                    <p><strong>Частным лицам</strong>Обычно акты выполненных работ нужны только ИП и Юридическим лицам, поэтому мы не выдаем их частным лицам.</p>
+                    <p>Если вам нужен акт выполненных работ, запросите его у своего менеджера  Мы вышлем нужный акт по почте на ваш адрес.</p>
+                  </article>
+                  <article>
+                    <p>Подписание договора не является обязательным для заказа грузоперевозок. Действие договоров оканчивается 31 декабря, после чего можно заключить договор на следующий год. Для заключения договора свяжитесь с нашим менеджером.</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section class="feedback">
+        <section class="feedback__wrapper container">
+          <h2>Отзывы клиентов</h2>
+          <div class="feedback__swiper-container swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <article>
+                  <div class="feedback__box"><img src="assets/img/svg/icon-author.svg" width="90" height="90" alt="Автор"/>
+                    <div class="feedback__text"><strong>Дривень Сергей Сергеевич</strong>
+                      <p>Индивидуальный предприниматель</p>
+                    </div>
+                  </div>
+                  <p>Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.</p>
+                </article>
+              </li>
+              <li class="swiper-slide">
+                <article>
+                  <div class="feedback__box"><img src="assets/img/svg/icon-author.svg" width="90" height="90" alt="Автор"/>
+                    <div class="feedback__text"><strong>Дривень Сергей Сергеевич</strong>
+                      <p>Индивидуальный предприниматель</p>
+                    </div>
+                  </div>
+                  <p>Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.</p>
+                </article>
+              </li>
+            </ul>
           </div>
         </section>
       </section>

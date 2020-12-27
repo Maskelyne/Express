@@ -4,34 +4,42 @@
   margin: 0 auto;
   padding: 10px 0;
   border: solid 2px $yellow;
+  background-color: $yellow;
   font-size: 20px;
   line-height: 31px;
   text-align: center;
   position: relative;
   transition: all 0.5s linear;
   overflow: hidden;
+  display: block;
 
   span {
     color: $blue;
     position: relative;
     z-index: 1;
-    transition: all 0.5s linear;
+    transition: all 0.5s ease;
   }
 
   &::after {
     content: "";
     position: absolute;
-    background: none repeat scroll 0 0 $yellow;
-    height: 0%;
+    background-color: #33405d;
+    height: 0;
     left: 50%;
     top: 50%;
     width: 100%;
-    transition: all .3s ease 0s;
+    transition: all 0.5s ease 0s;
     transform: translateX(-50%) translateY(-50%) rotate(-45deg);
   }
 
-  &:hover::after {
-    height: 420%;
+  &:hover {
+    &::after {
+      height: 260%;
+    }
+
+    span {
+      color: $white;
+    }
   }
 
 

@@ -39,6 +39,26 @@
   margin: 0 auto;
 }
 
+.form-order__box-2 {
+  display: none;
+
+  h3 {
+    padding-bottom: 5px;
+
+    span {
+      color: $yellow;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: $yellow;
+  }
+}
+
 .form-order__data-box {
   display: grid;
   grid-gap: 0 60px;

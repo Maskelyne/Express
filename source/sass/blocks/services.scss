@@ -9,15 +9,12 @@
 
   ul {
     @include reset-list;
-    padding-top: 40px;
     font-size: 22px;
     line-height: 28px;
     display: grid;
     grid-gap: 30px 0;
     justify-content: space-between;
     grid-template-columns: repeat(4, 23%);
-    border-top: solid 2px;
-    border-image: linear-gradient(90deg, #565F75 74.54%, rgba(86, 95, 117, 0) 101.51%) 2;
 
     @include desktop-width-min {
       padding: 30px 55px 0 55px;

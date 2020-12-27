@@ -79,13 +79,15 @@ a {
 }
 
 h2 {
-  margin: 0;
+  margin: 0 0 40px 0;
   padding-bottom: 15px;
   font-family: $openSansBold;
   font-size: 36px;
   line-height: 49px;
   color: $white;
   letter-spacing: 0.02em;
+  border-bottom: solid 2px;
+  border-image: linear-gradient(90deg, #565F75 74.54%, rgba(86, 95, 117, 0) 101.51%) 2;
 
   @include tablet-width {
     font-size: 26px;
