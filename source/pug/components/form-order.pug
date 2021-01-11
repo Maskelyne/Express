@@ -8,26 +8,27 @@ mixin form-order()
             .form-order__box-1
               h3 Рассчитать и заказать доставку
               .form-order__data-box
-                .form-order__points
-                  .form-order__point-1
-                    input(id="point-1" type="text")
-                    label(for="point-1") Откуда
-                  button.button-revers(type="button")
-                    span.visually-hidden Изменить маршрут
-                  .form-order__point-2
-                    input(id="point-2" type="text")
-                    label(for="point-2") Куда
+                .form-order__points-box
+                  .form-order__points
+                    .form-order__point-1
+                      input(id="point-1" type="text")
+                      label(for="point-1") Откуда
+                    button.button-revers(type="button")
+                      span.visually-hidden Изменить маршрут
+                    .form-order__point-2
+                      input(id="point-2" type="text")
+                      label(for="point-2") Куда
+                  .form-order__points-2
+                    .form-order__weight
+                      input(id="weight" type="text")
+                      label(for="weight") Вес, кг
+                    .form-order__volume
+                      input(id="volume" type="text")
+                      label(for="volume") Объем, м
                 .form-order__point-3
                   input.datepicker-here(id="point-3" type="text")
                   label(for="point-3") Доставка
               .form-order__data-box-2
-                .form-order__weight
-                  input(id="weight" type="text")
-                  label(for="weight") Вес, кг
-                .form-order__volume
-                  input(id="volume" type="text")
-                  label(for="volume") Объем, м
-              .form-order__data-box-3
                 ul
                   li
                     input.visually-hidden(id="check-1" type="checkbox" checked)
@@ -44,6 +45,6 @@ mixin form-order()
               a.button.button--form-order(href="#")
                 span Рассчитать
             .form-order__box-2
-              h3 Cтоимость вашей доставки будет составлять
+              h3 Стоимость вашей доставки будет составлять
                 span  60$
               p Оставьте свои контактные данные для оформления заявки

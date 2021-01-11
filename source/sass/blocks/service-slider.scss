@@ -43,13 +43,13 @@
       background-image: url("../img/svg/icon-arrow-right.svg");
       background-repeat: no-repeat;
       background-size: 90% 100%;
-      transition: all 0.3s linear;
+      transition: all 0.2s linear;
     }
 
     &:hover {
       &::after {
         background-size: 100% 100%;
-        transition: all 0.3s linear;
+        transition: all 0.2s linear;
       }
     }
   }
@@ -69,13 +69,13 @@
       background-size: 90% 100%;
       background-position: right;
       font-size: 0;
-      transition: all 0.3s linear;
+      transition: all 0.2s linear;
     }
 
     &:hover {
       &::after {
         background-size: 100% 100%;
-        transition: all 0.3s linear;
+        transition: all 0.2s linear;
       }
     }
   }
@@ -267,6 +267,7 @@
     font-size: 44px;
     line-height: 44px;
     text-transform: uppercase;
+    border-bottom: none;
 
     @include tablet-width {
       font-size: 22px;

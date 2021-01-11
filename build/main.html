@@ -121,15 +121,27 @@
                 <div class="form-order__box-1">
                   <h3>Рассчитать и заказать доставку</h3>
                   <div class="form-order__data-box">
-                    <div class="form-order__points">
-                      <div class="form-order__point-1">
-                        <input id="point-1" type="text"/>
-                        <label for="point-1">Откуда</label>
+                    <div class="form-order__points-box">
+                      <div class="form-order__points">
+                        <div class="form-order__point-1">
+                          <input id="point-1" type="text"/>
+                          <label for="point-1">Откуда</label>
+                        </div>
+                        <button class="button-revers" type="button"><span class="visually-hidden">Изменить маршрут</span></button>
+                        <div class="form-order__point-2">
+                          <input id="point-2" type="text"/>
+                          <label for="point-2">Куда</label>
+                        </div>
                       </div>
-                      <button class="button-revers" type="button"><span class="visually-hidden">Изменить маршрут</span></button>
-                      <div class="form-order__point-2">
-                        <input id="point-2" type="text"/>
-                        <label for="point-2">Куда</label>
+                      <div class="form-order__points-2">
+                        <div class="form-order__weight">
+                          <input id="weight" type="text"/>
+                          <label for="weight">Вес, кг</label>
+                        </div>
+                        <div class="form-order__volume">
+                          <input id="volume" type="text"/>
+                          <label for="volume">Объем, м</label>
+                        </div>
                       </div>
                     </div>
                     <div class="form-order__point-3">
@@ -138,16 +150,6 @@
                     </div>
                   </div>
                   <div class="form-order__data-box-2">
-                    <div class="form-order__weight">
-                      <input id="weight" type="text"/>
-                      <label for="weight">Вес, кг</label>
-                    </div>
-                    <div class="form-order__volume">
-                      <input id="volume" type="text"/>
-                      <label for="volume">Объем, м</label>
-                    </div>
-                  </div>
-                  <div class="form-order__data-box-3">
                     <ul>
                       <li>
                         <input class="visually-hidden" id="check-1" type="checkbox" checked="checked"/>
@@ -169,7 +171,7 @@
                   </div><a class="button button--form-order" href="#"><span>Рассчитать</span></a>
                 </div>
                 <div class="form-order__box-2">
-                  <h3>Cтоимость вашей доставки будет составлять<span> 60$</span></h3>
+                  <h3>Стоимость вашей доставки будет составлять<span> 60$</span></h3>
                   <p>Оставьте свои контактные данные для оформления заявки</p>
                 </div>
               </form>
@@ -271,35 +273,27 @@
           </section>
         </div>
       </section>
-      <section class="feedback">
-        <section class="feedback__wrapper container">
-          <h2>Отзывы клиентов</h2>
-          <div class="feedback__swiper-container swiper-container">
-            <ul class="swiper-wrapper">
-              <li class="swiper-slide">
-                <article>
-                  <div class="feedback__box"><img src="assets/img/svg/icon-author.svg" width="90" height="90" alt="Автор"/>
-                    <div class="feedback__text"><strong>Дривень Сергей Сергеевич</strong>
-                      <p>Индивидуальный предприниматель</p>
-                    </div>
-                  </div>
-                  <p>Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.</p>
-                </article>
-              </li>
-              <li class="swiper-slide">
-                <article>
-                  <div class="feedback__box"><img src="assets/img/svg/icon-author.svg" width="90" height="90" alt="Автор"/>
-                    <div class="feedback__text"><strong>Дривень Сергей Сергеевич</strong>
-                      <p>Индивидуальный предприниматель</p>
-                    </div>
-                  </div>
-                  <p>Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.</p>
-                </article>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </section>
+      <!--section.feedback-->
+      <!--  section.feedback__wrapper.container-->
+      <!--    h2 Отзывы клиентов-->
+      <!--    .feedback__swiper-container.swiper-container-->
+      <!--      ul.swiper-wrapper-->
+      <!--        li.swiper-slide-->
+      <!--          article-->
+      <!--            .feedback__box-->
+      <!--              +img('svg', 'icon-author', 'svg', '90', '90', 'Автор')-->
+      <!--              .feedback__text-->
+      <!--                strong Дривень Сергей Сергеевич-->
+      <!--                p Индивидуальный предприниматель-->
+      <!--            p Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.-->
+      <!--        li.swiper-slide-->
+      <!--          article-->
+      <!--            .feedback__box-->
+      <!--              +img('svg', 'icon-author', 'svg', '90', '90', 'Автор')-->
+      <!--              .feedback__text-->
+      <!--                strong Дривень Сергей Сергеевич-->
+      <!--                p Индивидуальный предприниматель-->
+      <!--            p Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.-->
     </main>
     <footer class="main-footer">
       <section class="main-footer__wrapper container">
