@@ -2,13 +2,47 @@ extends ../layout/page-layout
 
 block variables
   - var title = "Главная"
+  - var activePage = 0
+
+  -
+    var breadcrumbsList = [
+      {
+        link: '#',
+        text: 'Главная'
+      },
+      {
+        link: '#',
+        text: 'Отзывы'
+      },
+    ];
 
 block header
   +header
 
 block main
   main
-    +content
+    +main-content
+    //section.feedback
+    //  section.feedback__wrapper.container
+    //    h2 Отзывы клиентов
+    //    .feedback__swiper-container.swiper-container
+    //      ul.swiper-wrapper
+    //        li.swiper-slide
+    //          article
+    //            .feedback__box
+    //              +img('svg', 'icon-author', 'svg', '90', '90', 'Автор')
+    //              .feedback__text
+    //                strong Дривень Сергей Сергеевич
+    //                p Индивидуальный предприниматель
+    //            p Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.
+    //        li.swiper-slide
+    //          article
+    //            .feedback__box
+    //              +img('svg', 'icon-author', 'svg', '90', '90', 'Автор')
+    //              .feedback__text
+    //                strong Дривень Сергей Сергеевич
+    //                p Индивидуальный предприниматель
+    //            p Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.
 
 block footer
   +footer

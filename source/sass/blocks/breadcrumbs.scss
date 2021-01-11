@@ -1,0 +1,46 @@
+.breadcrumbs__wrapper {
+  margin: 25px auto;
+
+  ul {
+    @include reset-list;
+    display: flex;
+  }
+
+  a {
+    margin-right: 25px;
+    font-size: 16px;
+    line-height: 21px;
+    color: $yellow;
+    position: relative;
+
+    &::before {
+      width: 6px;
+      height: 2px;
+      position: absolute;
+      content: "";
+      top: 9px;
+      right: -15px;
+      background-color: $yellow;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      width: 6px;
+      height: 2px;
+      position: absolute;
+      content: "";
+      top: 13px;
+      right: -15px;
+      background-color: $yellow;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.breadcrumbs__item-active {
+  span {
+    font-size: 16px;
+    line-height: 21px;
+    color: $white;
+  }
+}

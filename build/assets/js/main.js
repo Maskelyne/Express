@@ -97,6 +97,7 @@
 (function () {
 
   var serviceSlider = document.querySelector('.service-slider__wrapper')
+  var feedbackSlider = document.querySelector('.feedback__swiper-container');
 
   var servicesSliderDesk = function (el) {
     return new Swiper(el, {
@@ -106,7 +107,7 @@
       slidesPerView: 1,
       allowTouchMove: false,
       autoplay: {
-        delay: 5000,
+        delay: 7000,
       },
       navigation: {
         nextEl: '.swiper-button-next',
@@ -119,46 +120,135 @@
     servicesSliderDesk(serviceSlider);
   }
 
-})();
-"use strict";
-
-(function () {
-
-  var btnRevers = document.querySelector('.button-revers');
-
-  var formRevers = function (evt) {
-    evt.preventDefault();
-
-    btnRevers.classList.toggle('button-revers--active');
+  var feedbackSliderDesk = function (el) {
+    return new Swiper(el, {
+      loop: true,
+      speed: 1000,
+      slidesPerView: 2,
+      spaceBetween: 30,
+      // autoplay: {
+      //   delay: 5000,
+      // },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
   };
 
-  btnRevers.addEventListener('click', formRevers);
+  if (feedbackSlider) {
+    feedbackSliderDesk(feedbackSlider);
+  }
 
 })();
 "use strict";
 
 (function () {
 
-  jQuery(function ($) {
-    $("#user_phone").mask("+375 (99) 999-99-99",{autoclear: false});
-  });
+  var formOrder = document.querySelector('.form-order__box');
 
-  $("#user_name").keyup(function () {
-    if ($(this).val()) {
-      $(this).addClass("not-empty");
-    } else {
-      $(this).removeClass("not-empty");
+  if (formOrder) {
+
+    var btnRevers = formOrder.querySelector('.button-revers');
+    var number = 0;
+
+    var formReverse = function () {
+      number = number + 180;
+      btnRevers.style.transform = 'rotate(' + number + 'deg)';
+    };
+
+    btnRevers.addEventListener('click', formReverse);
+
+    $("#point-1").keyup(function () {
+      if ($(this).val()) {
+        $(this).addClass("not-empty");
+      } else {
+        $(this).removeClass("not-empty");
+      }
+    });
+
+    $("#point-2").keyup(function () {
+      if ($(this).val()) {
+        $(this).addClass("not-empty");
+      } else {
+        $(this).removeClass("not-empty");
+      }
+    });
+
+    $("#point-3").keyup(function () {
+      if ($(this).val()) {
+        $(this).addClass("not-empty");
+      } else {
+        $(this).removeClass("not-empty");
+      }
+    });
+
+    $("#weight").keyup(function () {
+      if ($(this).val()) {
+        $(this).addClass("not-empty");
+      } else {
+        $(this).removeClass("not-empty");
+      }
+    });
+
+    $("#volume").keyup(function () {
+      if ($(this).val()) {
+        $(this).addClass("not-empty");
+      } else {
+        $(this).removeClass("not-empty");
+      }
+    });
+
+    var inputmask_options;
+
+    inputmask_options = {
+      mask: "99/99/9999",
+      alias: "date",
+      showMaskOnHover: false,
+      showMaskOnFocus: true,
+    };
+
+    $("#point-3").inputmask("99/99/9999", inputmask_options);
+    $("#point-3").datepicker();
+
+  }
+
+})();
+'use strict';
+
+(function () {
+
+  var questions = document.querySelector('.questions');
+
+  if (questions) {
+
+    var questionsText = questions.querySelectorAll('.questions__box-left li');
+    var questionsBox = document.querySelectorAll('.questions__box-right article');
+
+    var removeActive = function (array, activeClass) {
+      array.forEach(function (item) {
+        item.classList.remove(activeClass);
+      });
+      return;
+    };
+
+    if (questionsText) {
+      questionsText.forEach(function (item, i) {
+        item.addEventListener('click', function (evt) {
+          evt.preventDefault();
+
+          removeActive(questionsText, 'questions__item-active');
+          removeActive(questionsBox, 'questions__text-active');
+          questionsText[i].classList.add('questions__item-active');
+          questionsBox[i].classList.add('questions__text-active');
+        });
+      });
     }
-  });
+  }
 
-  $('form').validate({
-    messages: {
-      name: 'Введите ваше имя',
-      phone: 'Введите ваш номер телефона',
-      position: 'Введите вашу должность',
-      company: 'Введите название компании'
-    },
-    errorElement: 'span',
-  });
+})();
+"use strict";
+
+(function () {
 
 })();
