@@ -1,0 +1,16 @@
+.socials {
+  @include reset-list;
+  display: grid;
+  grid-template-columns: repeat(6, 33px);
+  grid-gap: 0 10px;
+
+  img {
+    transition: all 0.5s ease;
+
+    &:hover {
+      transform: scale(0.9);
+      opacity: 0.75;
+      transition: all 0.5s ease;
+    }
+  }
+}

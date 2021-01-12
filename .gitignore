@@ -9,11 +9,6 @@
 Thumbs.db
 
 node_modules/
-source/
-.babelrc
-.editorconfig
-.eslintrc
-.gitattributes
 
 stuff/
 todo.*

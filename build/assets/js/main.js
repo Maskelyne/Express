@@ -124,7 +124,7 @@
     return new Swiper(el, {
       loop: true,
       speed: 1000,
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 30,
       // autoplay: {
       //   delay: 5000,
