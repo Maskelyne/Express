@@ -48,3 +48,38 @@ mixin form-order()
               h3 Стоимость вашей доставки будет составлять
                 span  60$
               p Оставьте свои контактные данные для оформления заявки
+              .form-order__data-box.form-order__data-box--calc
+                .form-group__box
+                  .form-order__point-4
+                    input(id="phone" type="text")
+                    label(for="phone") Телефон
+                  .form-order__point-5
+                    input(id="email" type="text")
+                    label(for="email") E-mail
+                  p Выберите удобный способ связи
+                  .form-order__data-box-2
+                    ul
+                      li
+                        input.visually-hidden(id="viber" type="checkbox" checked)
+                        label(for="viber")
+                          +img('svg', 'icon-viber', 'svg', '30', '30', 'Viber')
+                          | Viber
+                      li
+                        input.visually-hidden(id="telegram" type="checkbox")
+                        label(for="telegram")
+                          +img('svg', 'icon-telegram', 'svg', '30', '30', 'Viber')
+                          | Telegram
+                      li
+                        input.visually-hidden(id="whatsapp" type="checkbox" checked)
+                        label(for="whatsapp")
+                          +img('svg', 'icon-whatsapp', 'svg', '30', '30', 'Viber')
+                          | Whatsapp
+                      li
+                        input.visually-hidden(id="skype" type="checkbox")
+                        label(for="skype")
+                          +img('svg', 'icon-skype', 'svg', '30', '30', 'Viber')
+                          | Skype
+                .form-group__box
+                  .form-order__point-6
+                    input(id="company" type="text")
+                    label(for="company") Имя/ компания*

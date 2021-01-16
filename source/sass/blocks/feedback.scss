@@ -11,6 +11,11 @@
     max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
+
+    @include desktop-width {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 
   ul {
@@ -27,7 +32,6 @@
   article {
     padding: 30px;
     background-color: rgba(39, 50, 79, 0.5);
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 2px;
     position: relative;
 
@@ -40,6 +44,7 @@
       right: 15px;
       background-image: url("../img/svg/icon-quote.svg");
       background-repeat: no-repeat;
+      z-index: 0;
     }
 
     p {
@@ -62,6 +67,8 @@
   display: grid;
   grid-template-columns: 90px auto;
   grid-gap: 0 20px;
+  position: relative;
+  z-index: 1;
 
   img {
     border-radius: 50%;
@@ -74,8 +81,7 @@
 }
 
 .feedback__swiper-container {
-  padding: 0 0 20px 20px;
-  margin-left: 15%;
+  padding: 0 20px 20px 20px;
   position: static;
 
   ul {
@@ -83,8 +89,13 @@
     gap: 0;
   }
 
-  .swiper-slide-duplicate-prev {
+  .swiper-slide {
     opacity: 0.5;
+  }
+
+  .swiper-slide-next {
+    opacity: 1;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
   }
 
   .feedback-slider__controls {
@@ -93,6 +104,10 @@
     position: absolute;
     top: 4%;
     right: 16%;
+
+    @include desktop-width {
+      right: 2%;
+    }
 
     .swiper-button-next {
       width: 65px;

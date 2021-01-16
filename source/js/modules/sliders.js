@@ -32,12 +32,20 @@
       speed: 1000,
       slidesPerView: 3,
       spaceBetween: 30,
-      // autoplay: {
-      //   delay: 5000,
-      // },
+      autoplay: {
+        delay: 5000,
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        1440: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 2,
+        }
       }
     });
   };

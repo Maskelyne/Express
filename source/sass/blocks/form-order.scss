@@ -65,7 +65,7 @@
   }
 }
 
-.form-order__box {
+.form-order__box-1 {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -80,7 +80,10 @@
 }
 
 .form-order__box-2 {
-  display: none;
+  //display: none;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
 
   h3 {
     padding-bottom: 5px;
@@ -90,12 +93,29 @@
     }
   }
 
-  p {
+  p:nth-child(2) {
     margin: 0;
     font-size: 16px;
     line-height: 25px;
     text-align: center;
     color: $yellow;
+  }
+}
+
+.form-group__box {
+  p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .form-order__point-4,
+  .form-order__point-5,
+  .form-order__point-6 {
+    input {
+      max-width: 360px;
+    }
   }
 }
 
@@ -108,11 +128,53 @@
     grid-template-columns: 1fr;
   }
 
+  &--calc {
+    margin-top: 40px;
+    grid-gap: 0 140px;
+    grid-template-columns: 42% auto;
+
+    .form-order__data-box-2 {
+      ul {
+        margin-top: 20px;
+        justify-content: left;
+        grid-gap: 20px 30px;
+        grid-template-columns: repeat(2, auto);
+      }
+
+      label {
+        display: grid;
+        align-items: center;
+        grid-gap: 0 10px;
+        grid-template-columns: 25px auto;
+
+        &::before {
+          top: 0;
+        }
+      }
+
+      input {
+        &:checked + {
+          label {
+            &::after {
+              top: 1px;
+              left: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-order__points-box,
+.form-order__point-3,
+.form-order__point-4,
+.form-order__point-5,
+.form-order__point-6 {
   label {
     position: absolute;
     top: 0;
     left: 10px;
-    cursor: text;
     transition: all 0.3s linear;
     color: rgba(255, 255, 255, 0.7);
     font-size: 16px;
@@ -171,6 +233,9 @@
 .form-order__point-1,
 .form-order__point-2,
 .form-order__point-3,
+.form-order__point-4,
+.form-order__point-5,
+.form-order__point-6,
 .form-order__weight,
 .form-order__volume {
   position: relative;
@@ -271,6 +336,7 @@
     line-height: 25px;
     color: rgba(255, 255, 255, 0.7);
     position: relative;
+    cursor: pointer;
 
     &:before {
       width: 25px;
