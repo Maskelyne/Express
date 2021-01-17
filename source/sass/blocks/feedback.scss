@@ -1,6 +1,20 @@
 .feedback {
-  @include desktop-width-min {
-    display: none;
+  .button {
+    margin: 40px auto 40px auto;
+
+    &:hover {
+      &::before,
+      &::after {
+        width: calc(100% + 26px);
+        height: calc(100% + 26px);
+      }
+    }
+  }
+
+  &--main {
+    @include desktop-width-min {
+      display: none;
+    }
   }
 }
 
@@ -16,6 +30,10 @@
       padding-left: 15px;
       padding-right: 15px;
     }
+
+    @include tablet-width {
+      padding: 0 0 15px 0;
+    }
   }
 
   ul {
@@ -23,17 +41,35 @@
     display: flex;
     gap: 30px  2.4%;
     flex-wrap: wrap;
+
+    @include desktop-width-min {
+      padding: 0 40px;
+    }
+
+    @include tablet-width {
+      padding: 0;
+      gap: 20px 0;
+    }
   }
 
   li {
     width: 48.8%;
+
+    @include desktop-width-min {
+      width: 100%;
+    }
   }
 
   article {
     padding: 30px;
     background-color: rgba(39, 50, 79, 0.5);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     border-radius: 2px;
     position: relative;
+
+    @include tablet-width {
+      padding: 30px 10px;
+    }
 
     &::after {
       width: 60px;
@@ -45,6 +81,11 @@
       background-image: url("../img/svg/icon-quote.svg");
       background-repeat: no-repeat;
       z-index: 0;
+
+      @include tablet-width {
+        top: -5px;
+        right: -3px;
+      }
     }
 
     p {
@@ -52,6 +93,11 @@
       font-size: 16px;
       line-height: 22px;
       color: rgba(255, 255, 255, 0.8);
+
+      @include tablet-width {
+        font-size: 14px;
+        line-height: 19px;
+      }
     }
   }
 
@@ -70,6 +116,11 @@
   position: relative;
   z-index: 1;
 
+  @include tablet-width {
+    grid-template-columns: 60px auto;
+    grid-gap: 0 8px;
+  }
+
   img {
     border-radius: 50%;
     border: solid 1px $white;
@@ -77,6 +128,22 @@
 
   strong {
     font-family: $openSansBold;
+
+    @include tablet-width {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  time {
+    font-size: 14px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.8);
+
+    @include tablet-width {
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
 }
 
@@ -91,6 +158,10 @@
 
   .swiper-slide {
     opacity: 0.5;
+
+    article {
+      box-shadow: none;
+    }
   }
 
   .swiper-slide-next {

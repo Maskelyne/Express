@@ -167,6 +167,14 @@
 
     btnRevers.addEventListener('click', formReverse);
 
+    $(document).ready(function(){
+      $("#user-phone").inputmask("+375 (99) 999-99-99",
+        {
+          showMaskOnHover: false,
+          showMaskOnFocus: true,
+        });
+    });
+
     $("#point-1").keyup(function () {
       if ($(this).val()) {
         $(this).addClass("not-empty");
@@ -207,17 +215,59 @@
       }
     });
 
+    $("#user-phone").keyup(function () {
+      if ($(this).val()) {
+        $(this).addClass("not-empty");
+      } else {
+        $(this).removeClass("not-empty");
+      }
+    });
+
+    $("#user-email").keyup(function () {
+      if ($(this).val()) {
+        $(this).addClass("not-empty");
+      } else {
+        $(this).removeClass("not-empty");
+      }
+    });
+
+    $("#user-company").keyup(function () {
+      if ($(this).val()) {
+        $(this).addClass("not-empty");
+      } else {
+        $(this).removeClass("not-empty");
+      }
+    });
+
+    $("#user-text").keyup(function () {
+      if ($(this).val()) {
+        $(this).addClass("not-empty");
+      } else {
+        $(this).removeClass("not-empty");
+      }
+    });
+
     var inputmask_options;
 
     inputmask_options = {
-      mask: "99/99/9999",
+      mask: "99-99-9999",
       alias: "date",
       showMaskOnHover: false,
       showMaskOnFocus: true,
     };
 
-    $("#point-3").inputmask("99/99/9999", inputmask_options);
-    $("#point-3").datepicker();
+    $("#point-3").inputmask(inputmask_options);
+
+    var $btn = $('#calendar'),
+      $input = $('#point-3'),
+      dp = $input.datepicker({
+        showEvent: 'focus',
+      }).data('datepicker');
+
+    $btn.on('click', function(){
+      dp.show();
+      $input.focus();
+    });
 
   }
 

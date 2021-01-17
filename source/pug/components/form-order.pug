@@ -25,9 +25,12 @@ mixin form-order()
                     .form-order__volume
                       input(id="volume" type="text")
                       label(for="volume") Объем, м
+                        sup 3
                 .form-order__point-3
                   input.datepicker-here(id="point-3" type="text")
                   label(for="point-3") Доставка
+                  button(type="button" id="calendar")
+                    span.visually-hidden Дата доставки
               .form-order__data-box-2
                 ul
                   li
@@ -51,11 +54,11 @@ mixin form-order()
               .form-order__data-box.form-order__data-box--calc
                 .form-group__box
                   .form-order__point-4
-                    input(id="phone" type="text")
-                    label(for="phone") Телефон
+                    input(id="user-phone" type="text")
+                    label(for="user-phone") Телефон*
                   .form-order__point-5
-                    input(id="email" type="text")
-                    label(for="email") E-mail
+                    input(id="user-email" type="text")
+                    label(for="user-email") E-mail
                   p Выберите удобный способ связи
                   .form-order__data-box-2
                     ul
@@ -81,5 +84,20 @@ mixin form-order()
                           | Skype
                 .form-group__box
                   .form-order__point-6
-                    input(id="company" type="text")
-                    label(for="company") Имя/ компания*
+                    input(id="user-company" type="text")
+                    label(for="user-company") Имя/ компания*
+                  .form-order__point-box
+                    .form-order__point-7
+                      input.visually-hidden(id="radio-1" type="radio" name="user-1" checked)
+                      label(for="radio-1") Физ. лицо
+                    .form-order__point-8
+                      input.visually-hidden(id="radio-2" type="radio" name="user-1")
+                      label(for="radio-2") Юр. лицо
+                    .form-order__point-9
+                      input.visually-hidden(id="radio-3" type="radio" name="user-1")
+                      label(for="radio-3") ИП
+                  .form-order__textarea
+                    textarea(id="user-text")
+                    label(for="user-text") Для юр. лиц и ИП введите реквизиты
+              a.button.button--effect-1(href="#")
+                span Заказать

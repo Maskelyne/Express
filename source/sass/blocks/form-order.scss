@@ -6,7 +6,7 @@
   }
 
   @include desktop-width-min {
-    margin: 50px auto 30px auto;
+    margin: 20px auto 30px auto;
   }
 
   @include tablet-width {
@@ -66,6 +66,7 @@
 }
 
 .form-order__box-1 {
+  //display: none;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -80,7 +81,7 @@
 }
 
 .form-order__box-2 {
-  //display: none;
+  display: none;
   width: 100%;
   max-width: 860px;
   margin: 0 auto;
@@ -99,6 +100,11 @@
     line-height: 25px;
     text-align: center;
     color: $yellow;
+
+    @include tablet-width {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 }
 
@@ -108,6 +114,11 @@
     font-size: 16px;
     line-height: 24px;
     color: rgba(255, 255, 255, 0.7);
+
+    @include tablet-width {
+      font-size: 14px;
+      line-height: 19px;
+    }
   }
 
   .form-order__point-4,
@@ -115,6 +126,64 @@
   .form-order__point-6 {
     input {
       max-width: 360px;
+    }
+  }
+}
+
+.form-order__point-box {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+
+  label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include tablet-width {
+      padding-left: 22px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &::before {
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      content: "";
+      top: 2px;
+      left: 0;
+      border: solid 1px #696F82;
+      border-radius: 50%;
+      background-color: rgba(23, 35, 64, 0.1);
+
+      @include tablet-width {
+        top: 0;
+      }
+    }
+  }
+
+  input:checked {
+    + label {
+      &::before {
+        border: 1px solid rgba(255, 199, 56, 0.35);
+      }
+
+      &::after {
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        content: "";
+        top: 7px;
+        left: 5px;
+        background-image: linear-gradient(114.87deg, #FF9B00 19.51%, #FFC738 75.38%);
+        border-radius: 50%;
+
+        @include tablet-width {
+          top: 5px;
+        }
+      }
     }
   }
 }
@@ -133,12 +202,23 @@
     grid-gap: 0 140px;
     grid-template-columns: 42% auto;
 
+    @include desktop-width-min {
+      max-width: 360px;
+      margin: 40px auto 0 auto;
+      grid-template-columns: 1fr;
+      grid-gap: 30px 0;
+    }
+
     .form-order__data-box-2 {
       ul {
         margin-top: 20px;
         justify-content: left;
         grid-gap: 20px 30px;
         grid-template-columns: repeat(2, auto);
+
+        @include tablet-width {
+          grid-template-columns: 1fr;
+        }
       }
 
       label {
@@ -146,6 +226,11 @@
         align-items: center;
         grid-gap: 0 10px;
         grid-template-columns: 25px auto;
+
+        @include tablet-width {
+          font-size: 14px;
+          line-height: 16px;
+        }
 
         &::before {
           top: 0;
@@ -157,7 +242,6 @@
           label {
             &::after {
               top: 1px;
-              left: 2px;
             }
           }
         }
@@ -179,6 +263,7 @@
     color: rgba(255, 255, 255, 0.7);
     font-size: 16px;
     line-height: 25px;
+    cursor: text;
 
     @include tablet-width {
       font-size: 14px;
@@ -218,6 +303,10 @@
       }
     }
 
+    &:focus {
+      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1375) 105.92%);
+    }
+
     &:focus,
     &.not-empty {
       ~ label {
@@ -230,6 +319,82 @@
   }
 }
 
+.form-order__textarea {
+  margin-top: 35px;
+
+  @include tablet-width {
+    margin-top: 45px;
+  }
+
+  textarea {
+    padding: 10px 20px;
+    width: 100%;
+    min-height: 120px;
+    background-color: transparent;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.025) 105.92%);
+    resize: none;
+    outline: none;
+    color: $white;
+    border: solid 1px;
+    border-image: linear-gradient(45deg, rgba(255, 255, 255, 0.5) 23%, rgba(28, 40, 69, 0.5) 110%);
+    border-image-slice: 1;
+
+    &:focus {
+      border-image: linear-gradient(45deg, #FFB520 23%, rgba(28, 40, 69, 0.5) 110%);
+      border-image-slice: 1;
+    }
+
+    @include tablet-width {
+      padding: 10px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    transition: all 0.3s linear;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 21px;
+    cursor: text;
+
+    @include tablet-width {
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+
+  textarea {
+    &:required {
+      ~ label {
+        &::after {
+          position: absolute;
+          content: "*";
+          top: 0;
+          right: -8px;
+        }
+      }
+    }
+
+    &:focus,
+    &.not-empty {
+      ~ label {
+        font-size: 13px;
+        transform: translateY(-40px);
+        transition: all 0.3s linear;
+        color: rgba(255, 193, 48, 0.5);
+
+        @include tablet-width {
+          transform: translateY(-55px);
+        }
+      }
+    }
+  }
+}
+
 .form-order__point-1,
 .form-order__point-2,
 .form-order__point-3,
@@ -237,14 +402,18 @@
 .form-order__point-5,
 .form-order__point-6,
 .form-order__weight,
-.form-order__volume {
+.form-order__volume,
+.form-order__textarea {
   position: relative;
 }
 
 .form-order__point-3 {
-  &::before {
-    width: 35px;
-    height: 35px;
+  button {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
     position: absolute;
     content: "";
     top: -5px;
@@ -252,6 +421,8 @@
     background-image: url("../img/svg/icon-calendar.svg");
     background-repeat: no-repeat;
     background-size: 25px 25px;
+    outline: none;
+    cursor: pointer;
   }
 
   @include desktop-width-min {
@@ -338,6 +509,11 @@
     position: relative;
     cursor: pointer;
 
+    @include tablet-width {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
     &:before {
       width: 25px;
       height: 25px;
@@ -363,7 +539,7 @@
           position: absolute;
           content: "";
           top: -1px;
-          left: 1px;
+          left: 2px;
           background-image: url("../img/svg/icon-check.svg");
           background-repeat: no-repeat;
         }

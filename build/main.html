@@ -62,7 +62,7 @@
                 <h2>Минск<img src="assets/img/svg/icon-path.svg" width="60" height="30" alt="Маршрут"/>Москва
                 </h2>
                 <p>У нас предусмотрены услуги доставки на все случаи жизни – от срочных небольших посылок  до тяжеловесных грузов. Благодаря новому и надежному транпорту, доставка всегда осуществляется в экспресс-режиме и приходит  точно в срок!</p>
-                <p>Возможна доставка в другие города России в течение 24 часов!</p><a class="service-slider__btn" href="#">Оформить доставку</a>
+                <p>Возможна доставка в другие города России в течение 24 часов!</p><a class="button button--effect-2" href="#">Оформить доставку</a>
               </div>
               <div class="service-slider__image"><img src="assets/img/jpg/image-slide-1.jpg" width="770" height="600" alt="Первый слайд"/>
               </div>
@@ -82,7 +82,7 @@
                   <li><img src="assets/img/svg/icon-contract.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
                     <p>Заключение<strong>Договора на услуги</strong></p>
                   </li>
-                </ul><a class="service-slider__btn" href="#">Оформить доставку</a>
+                </ul><a class="button button--effect-2" href="#">Оформить доставку</a>
               </div>
               <div class="service-slider__image"><img src="assets/img/jpg/image-slide-2.jpg" width="770" height="600" alt="Второй слайд"/>
               </div>
@@ -102,7 +102,7 @@
                   <li><img src="assets/img/svg/icon-contract.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
                     <p>Заключение<strong>Договора на услуги</strong></p>
                   </li>
-                </ul><a class="service-slider__btn" href="#">Оформить доставку</a>
+                </ul><a class="button button--effect-2" href="#">Оформить доставку</a>
               </div>
               <div class="service-slider__image"><img src="assets/img/jpg/image-slide-3.jpg" width="770" height="600" alt="Третий слайд"/>
               </div>
@@ -141,13 +141,14 @@
                         </div>
                         <div class="form-order__volume">
                           <input id="volume" type="text"/>
-                          <label for="volume">Объем, м</label>
+                          <label for="volume">Объем, м<sup>3</sup></label>
                         </div>
                       </div>
                     </div>
                     <div class="form-order__point-3">
                       <input class="datepicker-here" id="point-3" type="text"/>
                       <label for="point-3">Доставка</label>
+                      <button type="button" id="calendar"><span class="visually-hidden">Дата доставки</span></button>
                     </div>
                   </div>
                   <div class="form-order__data-box-2">
@@ -177,12 +178,12 @@
                   <div class="form-order__data-box form-order__data-box--calc">
                     <div class="form-group__box">
                       <div class="form-order__point-4">
-                        <input id="phone" type="text"/>
-                        <label for="phone">Телефон</label>
+                        <input id="user-phone" type="text"/>
+                        <label for="user-phone">Телефон*</label>
                       </div>
                       <div class="form-order__point-5">
-                        <input id="email" type="text"/>
-                        <label for="email">E-mail</label>
+                        <input id="user-email" type="text"/>
+                        <label for="user-email">E-mail</label>
                       </div>
                       <p>Выберите удобный способ связи</p>
                       <div class="form-order__data-box-2">
@@ -212,11 +213,29 @@
                     </div>
                     <div class="form-group__box">
                       <div class="form-order__point-6">
-                        <input id="company" type="text"/>
-                        <label for="company">Имя/ компания*</label>
+                        <input id="user-company" type="text"/>
+                        <label for="user-company">Имя/ компания*</label>
+                      </div>
+                      <div class="form-order__point-box">
+                        <div class="form-order__point-7">
+                          <input class="visually-hidden" id="radio-1" type="radio" name="user-1" checked="checked"/>
+                          <label for="radio-1">Физ. лицо</label>
+                        </div>
+                        <div class="form-order__point-8">
+                          <input class="visually-hidden" id="radio-2" type="radio" name="user-1"/>
+                          <label for="radio-2">Юр. лицо</label>
+                        </div>
+                        <div class="form-order__point-9">
+                          <input class="visually-hidden" id="radio-3" type="radio" name="user-1"/>
+                          <label for="radio-3">ИП</label>
+                        </div>
+                      </div>
+                      <div class="form-order__textarea">
+                        <textarea id="user-text"></textarea>
+                        <label for="user-text">Для юр. лиц и ИП введите реквизиты</label>
                       </div>
                     </div>
-                  </div>
+                  </div><a class="button button--effect-1" href="#"><span>Заказать</span></a>
                 </div>
               </form>
             </div>
@@ -317,7 +336,7 @@
           </section>
         </div>
       </section>
-      <section class="feedback">
+      <section class="feedback feedback--main">
         <section class="feedback__wrapper">
           <h2>Отзывы клиентов</h2>
           <div class="feedback__inner-box">

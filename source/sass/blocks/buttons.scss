@@ -12,6 +12,7 @@
   transition: all 0.5s linear;
   overflow: hidden;
   display: block;
+  position: relative;
 
   &--effect-1 {
     margin-top: 30px;
@@ -53,6 +54,67 @@
       span {
         color: $white;
       }
+    }
+  }
+
+  &--effect-2 {
+    margin: 40px 0 40px 15px;
+    max-width: 245px;
+    border: 2px solid $yellow;
+    background-color: transparent;
+    padding: 10px 0;
+    font-size: 20px;
+    line-height: 31px;
+    text-align: center;
+    transition: all 0.3s linear;
+    overflow: visible;
+
+    @include tablet-width {
+      max-width: 200px;
+      font-size: 16px;
+      line-height: 16px;
+      margin: 20px 0 20px 15px;
+    }
+
+    &::before,
+    &::after {
+      position:absolute;
+      content:"";
+      width: 30px;
+      height: 30px;
+      border-style: solid;
+      border-color: $yellow;
+      transition: all 0.3s linear;
+
+      @include tablet-width {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    &::before {
+      top: -13px;
+      left: -13px;
+      border-width: 2px 0 0 2px;
+    }
+
+    &::after {
+      bottom: -13px;
+      right: -13px;
+      border-width: 0 2px 2px 0;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      width:calc(100% + 24px);
+      height:calc(100% + 24px);
+      border-color: $yellow;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+      background-color: $yellow;
     }
   }
 }
