@@ -77,6 +77,33 @@ block main
                     time(datetime="2020.10.21") 21.10.2020г
               p Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.
         a.button.button--effect-2(href="#") Показать ещё
+    section.form-order.form-order--feedback
+      .form-order__wrapper.container
+        .form-order__inner-box
+          .form-order__wrap-box
+            form.form-order__box
+              .form-order__box-1
+                h3 Оставить отзыв
+                .form-order__points-box
+                  .form-order__points
+                    .form-order__point-1
+                      +img('jpg', 'author-1', 'jpg', '90', '90', 'Автор')
+                      input(id="user-image" type="file" name="photo")
+                      label(for="user-image")
+                        +img('svg', 'icon-photo', 'svg', '40', '400', 'Прикрепить фото')
+                    .form-order__point-2
+                      input(id="point-2" type="text")
+                      label(for="point-2") Имя/ Компания*
+                  .form-group__box
+                    .form-order__point-3
+                      input(id="user-phone" type="text")
+                      label(for="user-phone") Телефон
+                    .form-order__point-4
+                      input(id="user-email" type="text")
+                      label(for="user-email") E-mail*
+                    .form-order__textarea
+                      textarea(id="user-text")
+                      label(for="user-text") Для юр. лиц и ИП введите реквизиты
 
 block footer
   +footer

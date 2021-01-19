@@ -1,6 +1,6 @@
 .feedback {
   .button {
-    margin: 40px auto 40px auto;
+    margin: 40px auto 60px auto;
 
     &:hover {
       &::before,
@@ -19,10 +19,6 @@
 }
 
 .feedback__wrapper {
-  max-width: 1920px;
-  margin: 0 auto;
-  position: relative;
-
   h2 {
     max-width: 1300px;
     margin-left: auto;
@@ -108,6 +104,12 @@
     max-width: 500px;
     display: flex;
   }
+}
+
+.feedback__inner-box {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .feedback__box {

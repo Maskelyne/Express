@@ -1,3 +1,63 @@
+.form-order--feedback {
+  .form-order__wrapper {
+    max-width: 690px;
+  }
+
+  .form-order__wrap-box {
+    h3 {
+      padding-bottom: 20px;
+    }
+  }
+
+  .form-order__inner-box {
+    &::before {
+      width: 60px;
+      height: 55px;
+      background-size: 60px 55px;
+      background-image: url("../img/svg/icon-feedback.svg");
+    }
+  }
+
+  .form-order__points {
+    grid-template-columns: 95px auto;
+    align-items: flex-end;
+
+    input {
+      max-width: 360px;
+    }
+  }
+
+  .form-group__box {
+    margin-top: 25px;
+
+    input {
+      max-width: 100%;
+    }
+  }
+
+  .form-order__point-1 {
+    label {
+      position: static;
+      cursor: pointer;
+
+      img {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        content: "";
+        bottom: 0;
+        right: 0;
+        border: none;
+      }
+    }
+
+    img {
+      border: solid 1px $white;
+      border-radius: 50%;
+    }
+  }
+}
+
 .form-order__wrapper {
   margin: 60px auto;
 
