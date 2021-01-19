@@ -2,7 +2,7 @@ mixin form-order()
 
   section.form-order
     .form-order__wrapper.container
-      .form-order__inner-box
+      .form-order__inner-box.form-order__inner-box--image-1
         .form-order__wrap-box
           form.form-order__box
             .form-order__box-1
@@ -11,13 +11,15 @@ mixin form-order()
                 .form-order__points-box
                   .form-order__points
                     .form-order__point-1
-                      input(id="point-1" type="text")
+                      input(id="point-1" type="text" name="name")
                       label(for="point-1") Откуда
+                      span(style="color: red;" id="namef")
                     button.button-revers(type="button")
                       span.visually-hidden Изменить маршрут
                     .form-order__point-2
-                      input(id="point-2" type="text")
+                      input(id="point-2" type="text" name="email")
                       label(for="point-2") Куда
+                      span(style="color: red;" id="emailf")
                   .form-order__points-2
                     .form-order__weight
                       input(id="weight" type="text")
@@ -45,7 +47,7 @@ mixin form-order()
                   li
                     input.visually-hidden(id="check-4" type="checkbox")
                     label(for="check-4") Хрупкий груз
-              a.button.button--effect-1(href="#")
+              a.button.button--effect-1.btn-calc(href="#")
                 span Рассчитать
             .form-order__box-2
               h3 Стоимость вашей доставки будет составлять
@@ -99,5 +101,5 @@ mixin form-order()
                   .form-order__textarea
                     textarea(id="user-text")
                     label(for="user-text") Для юр. лиц и ИП введите реквизиты
-              a.button.button--effect-1(href="#")
+              button(type="submit").button.button--effect-1
                 span Заказать

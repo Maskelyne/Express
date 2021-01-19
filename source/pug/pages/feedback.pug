@@ -87,8 +87,9 @@ block main
                 .form-order__points-box
                   .form-order__points
                     .form-order__point-1
-                      +img('jpg', 'author-1', 'jpg', '90', '90', 'Автор')
                       input(id="user-image" type="file" name="photo")
+                      img.user-img(src="assets/img/jpg/author-1.jpg" width="40" height="40")
+                      //+img('jpg', 'author-1', 'jpg', '90', '90', 'Автор')
                       label(for="user-image")
                         +img('svg', 'icon-photo', 'svg', '40', '400', 'Прикрепить фото')
                     .form-order__point-2
@@ -103,7 +104,23 @@ block main
                       label(for="user-email") E-mail*
                     .form-order__textarea
                       textarea(id="user-text")
-                      label(for="user-text") Для юр. лиц и ИП введите реквизиты
+                      label(for="user-text") Ваш отзыв
+                  .form-order__rating
+                    p Оцените сервис по 5-балльной шкале:
+                  button(type="submit").button.button--effect-2.btn-js Оставить отзыв
 
 block footer
   +footer
+
+  section.modal.modal--feedback
+    .modal__wrapper
+      .modal__inner
+        .modal__image
+          +img('svg', 'modal-bckg', 'svg', '590', '440', 'Спасибо за заявку')
+        .modal__box
+          h2
+            span Mexp
+            |  благодарит за отзыв!
+          p Ваше мнение очень важно для нас.
+      a.modal__btn-closed(href="#")
+        span.visually-hidden Закрыть модальное окно

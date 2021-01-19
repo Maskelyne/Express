@@ -14,6 +14,10 @@
       padding: 0 30px;
     }
   }
+
+  .button--effect-2{
+    max-width: 200px;
+  }
 }
 
 .contacts__list {
@@ -152,10 +156,14 @@
     padding: 10px 17px;
   }
 
-  .form-order__inner-box::before {
-    background-image: url(../images/svg/pen.svg);
-    width: 58px;
-    height: 58px;
+  .form-order__inner-box {
+    &--image-2 {
+      &::before {
+        background-image: url(../images/svg/pen.svg);
+        width: 58px;
+        height: 58px;
+      }
+    }
   }
 
   .contacts__forms {
@@ -369,10 +377,6 @@ textarea {
   }
 }
 
-/***************************
-	Author: Yury Nemets
-	URL: //sitehere.ru
-****************************/
 
 .ymap-container {
   background: url('../images/prew.jpg') #fff no-repeat;
@@ -1557,7 +1561,7 @@ textarea {
   }
 
 
-  .social-ch-list {
+  ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-left: 42px;
@@ -1676,10 +1680,7 @@ textarea {
   [type="radio"]:checked + label:before {
     border: 1px solid rgba(255, 199, 56, 0.35);
   }
-
-
 }
-
 
 button {
   outline: none;
@@ -1809,14 +1810,14 @@ input:focus {
     }
 
     &:after {
-      top: 1px;
-      left: 2px;
+      top: 1px !important;
+      left: 2px !important;
     }
   }
 
   img {
-    width: 27px;
-    height: 27px;
+    width: 27px !important;
+    height: 27px !important;
   }
 }
 
@@ -1921,6 +1922,8 @@ input:focus {
     background: url(../images/svg/icon-arrow-right.svg) no-repeat center;
     width: 57px;
     height: 12px;
+    transition: all 0.2s linear;
+
   }
 
   .swiper-button-prev:after {
@@ -1928,6 +1931,7 @@ input:focus {
     width: 57px;
     height: 12px;
     transform: rotate(0deg);
+    transition: all 0.2s linear;
   }
 
   .swiper-button-prev, .swiper-button-next {
@@ -1936,6 +1940,7 @@ input:focus {
     height: 12px;
     margin: 0;
     transform: translateY(-100%);
+
 
     @media(max-width: 410px){
       top: 240px;
@@ -1962,5 +1967,28 @@ input:focus {
     @media(max-width: 410px){
       right: 60%;
     }
+  }
+}
+.form-order__title-block{
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFB520;
+  margin-bottom: 20px;
+  margin-top: -30px;
+  @media(max-width: 767px){
+    margin-bottom: 10px;
+    margin-top: -20px;
+  }
+}
+
+.main-delivery{
+  .form-order__data-box-2 ul{
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, auto);
+  }
+}
+.main{
+  .form-order__data-box-2 ul{
+    grid-template-columns: repeat(4, auto);
   }
 }

@@ -2,11 +2,13 @@
   .button {
     margin: 40px auto 60px auto;
 
-    &:hover {
-      &::before,
-      &::after {
-        width: calc(100% + 26px);
-        height: calc(100% + 26px);
+    &--effect-2 {
+      &:hover {
+        &::before,
+        &::after {
+          width: calc(100% + 26px);
+          height: calc(100% + 26px);
+        }
       }
     }
   }
@@ -177,8 +179,12 @@
     width: 150px;
     height: 30px;
     position: absolute;
-    top: 4%;
+    top: -20%;
     right: 16%;
+
+    @include desktop-width-middle {
+      right: 5%;
+    }
 
     @include desktop-width {
       right: 2%;

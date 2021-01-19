@@ -79,3 +79,16 @@ block main
 
 block footer
   +footer
+
+  section.modal.modal--thanks
+    .modal__wrapper
+      .modal__inner
+        .modal__image
+          +img('svg', 'modal-bckg', 'svg', '590', '440', 'Спасибо за заявку')
+        .modal__box
+          h2
+            span Mexp
+            |  благодарит за заявку!
+          p Ваш заказ на доставку принят. Мы свяжемся с Вами в ближайшее время.
+      a.modal__btn-closed(href="#")
+        span.visually-hidden Закрыть модальное окно

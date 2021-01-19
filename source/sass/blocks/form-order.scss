@@ -1,63 +1,3 @@
-.form-order--feedback {
-  .form-order__wrapper {
-    max-width: 690px;
-  }
-
-  .form-order__wrap-box {
-    h3 {
-      padding-bottom: 20px;
-    }
-  }
-
-  .form-order__inner-box {
-    &::before {
-      width: 60px;
-      height: 55px;
-      background-size: 60px 55px;
-      background-image: url("../img/svg/icon-feedback.svg");
-    }
-  }
-
-  .form-order__points {
-    grid-template-columns: 95px auto;
-    align-items: flex-end;
-
-    input {
-      max-width: 360px;
-    }
-  }
-
-  .form-group__box {
-    margin-top: 25px;
-
-    input {
-      max-width: 100%;
-    }
-  }
-
-  .form-order__point-1 {
-    label {
-      position: static;
-      cursor: pointer;
-
-      img {
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        content: "";
-        bottom: 0;
-        right: 0;
-        border: none;
-      }
-    }
-
-    img {
-      border: solid 1px $white;
-      border-radius: 50%;
-    }
-  }
-}
-
 .form-order__wrapper {
   margin: 60px auto;
 
@@ -602,6 +542,175 @@
           left: 2px;
           background-image: url("../img/svg/icon-check.svg");
           background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}
+
+.form-order--feedback {
+  border-top: 1px solid #565F75;
+  background-image: url("../img/jpg/bckg-feedback.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include desktop-width-min {
+    background-image: none;
+  }
+
+  .form-order__wrapper {
+    margin: 60px auto;
+    max-width: 690px;
+    padding: 0 50px;
+
+    @include tablet-width {
+      padding: 0 15px;
+    }
+  }
+
+  .form-order__wrap-box {
+    h3 {
+      padding-bottom: 20px;
+    }
+  }
+
+  .form-order__inner-box {
+    &::before {
+      width: 60px;
+      height: 55px;
+      background-size: 60px 55px;
+      background-image: url("../img/svg/icon-feedback.svg");
+
+      @include tablet-width {
+        width: 50px;
+        height: 45px;
+        background-size: 50px 44px;
+      }
+    }
+  }
+
+  .form-order__points-box {
+    button {
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .button--effect-2:hover {
+      &::before,
+      &::after {
+        width: calc(100% + 26px);
+        height: calc(100% + 26px);
+      }
+    }
+  }
+
+  .form-order__rating {
+    p {
+      margin: 20px 0 30px 0;
+      font-size: 16px;
+      line-height: 24px;
+
+      @include tablet-width {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  .form-order__points {
+    grid-template-columns: 95px auto;
+    align-items: flex-end;
+    grid-gap: 0 15px;
+
+    @include tablet-width {
+      grid-template-columns: 75px auto;
+      grid-gap: 0 10px;
+    }
+
+    input {
+      max-width: 360px;
+    }
+  }
+
+  .form-group__box {
+    margin-top: 25px;
+
+    input {
+      max-width: 100%;
+    }
+
+    .form-order__point-3 {
+      max-width: 100%;
+    }
+  }
+
+  .form-order__point-1 {
+    label {
+      position: static;
+      cursor: pointer;
+
+      img {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        content: "";
+        bottom: 0;
+        right: 0;
+        border: none;
+
+        @include tablet-width {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    img {
+      border: solid 1px $white;
+      border-radius: 50%;
+      width: 95px;
+      height: 95px;
+
+      @include tablet-width {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+
+  .form-order__textarea {
+    margin-top: 15px;
+
+    textarea {
+      padding: 10px;
+    }
+
+    label {
+      left: 10px;
+
+      &:required {
+        ~ label {
+          &::after {
+            position: absolute;
+            content: "*";
+            top: 0;
+            right: -8px;
+          }
+        }
+      }
+
+      &:focus,
+      &.not-empty {
+        ~ label {
+          font-size: 13px;
+          transform: translateY(-40px);
+          transition: all 0.3s linear;
+          color: rgba(255, 193, 48, 0.5);
+
+          @include tablet-width {
+            transform: translateY(-55px);
+          }
         }
       }
     }
