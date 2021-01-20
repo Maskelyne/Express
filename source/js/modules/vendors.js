@@ -47,4 +47,10 @@
     }
   });
 
+  var content = document.querySelector('.feedback__list');
+
+  var height = content.offsetHeight;
+
+  console.log(height);
+
 })();

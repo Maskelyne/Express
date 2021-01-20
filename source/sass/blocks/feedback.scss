@@ -40,7 +40,9 @@
     @include reset-list;
     display: flex;
     gap: 30px  2.4%;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
+    align-content: space-between;
+    height: 1000px;
 
     @include desktop-width-min {
       padding: 0 40px;
