@@ -12,4 +12,6 @@
 //= modules/modals.js
 //= modules/questions-tabs.js
 //= modules/vendors.js
+//= modules/ya-maps.js
+//= modules/calculate.js
 

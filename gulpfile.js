@@ -20,6 +20,7 @@ var path = {
   build: {
     html: 'build/',
     js: 'build/assets/js/',
+    jsonAdd: 'build/assets/json/price.json',
     jsWorker: 'build',
     css: 'build/assets/css/',
     img: 'build/assets/img/',
@@ -30,6 +31,7 @@ var path = {
     js: 'source/js/main.js',
     jsAdd: 'source/js/default.js',
     vendorJs: 'source/js/vendor.js',
+    jsonAdd: 'source/json/price.json',
     css: 'source/sass/style.scss',
     img: 'source/img/**/*.{png,jpg,svg}',
     sprite: 'source/img/svg-sprite/*.svg',
@@ -39,6 +41,7 @@ var path = {
     html: 'source/**/*.html',
     pug: 'source/pug/**/*.pug',
     js: 'source/js/**/*.js',
+    jsonAdd: 'source/json/price.json',
     css: 'source/sass/**/*.scss',
     img: 'source/img/**/*.{png,jpg,svg}',
     fonts: 'source/fonts/**/*.{woff,woff2}'
@@ -89,6 +92,12 @@ gulp.task('js:build', function () {
 gulp.task('jsAdd:build', function () {
   return gulp.src(path.source.jsAdd)
     .pipe(gulp.dest(path.build.js))
+    .pipe(server.stream());
+});
+
+gulp.task('json:build', function () {
+  return gulp.src(path.source.jsonAdd)
+    .pipe(gulp.dest(path.build.jsonAdd))
     .pipe(server.stream());
 });
 
@@ -157,6 +166,7 @@ gulp.task('build', gulp.series(
     'js:build',
     'jsAdd:build',
     'vendorJs:build',
+    'json:build',
     'css:build',
     'fonts:build',
     'image:build',
@@ -176,5 +186,6 @@ gulp.task('server', function () {
   gulp.watch([path.watch.pug], gulp.series('pug:build'));
   gulp.watch([path.watch.css], gulp.series('css:build'));
   gulp.watch([path.watch.js], gulp.series('js:build'));
+  gulp.watch([path.watch.jsonAdd], gulp.series('json:build'));
   gulp.watch([path.watch.img], gulp.series('image:build', 'sprite:build'));
 });

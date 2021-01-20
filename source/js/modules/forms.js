@@ -3,7 +3,7 @@
 (function () {
 
   var formOrder = document.querySelector('.form-order__box');
-  var btnRevers = formOrder.querySelector('.button-revers');
+  var btnRevers = document.querySelector('.button-revers');
 
   if (btnRevers) {
 
@@ -132,36 +132,48 @@
         };
       }
     })
-
   });
 
-  var btnCalc = document.querySelector('.btn-calc');
+  $("input[type='file']").on("change", function () {
+    var numFiles = $(this).get(0).files.length;
+    $('.file-res').css('display', 'flex');
+    $('.file-res span').text('Выбрано файлов:' + ' ' + numFiles);
+  });
 
-  var validate = function (evt) {
-    evt.preventDefault();
-    //Считаем значения из полей name и email в переменные x и y
-    var x = document.forms[0]['name'].value;
-    var y = document.forms[0]['email'].value;
-    //Если поле name пустое выведем сообщение и предотвратим отправку формы
-    if (x.length == 0) {
-      document.getElementById('namef').innerHTML = '*данное поле обязательно для заполнения';
-      return false;
-    }
-    //Если поле email пустое выведем сообщение и предотвратим отправку формы
-    if (y.length == 0) {
-      document.getElementById('emailf').innerHTML = '*данное поле обязательно для заполнения';
-      return false;
-    }
-    //Проверим содержит ли значение введенное в поле email символы @ и .
-    var at = y.indexOf("@");
-    var dot = y.indexOf(".");
-    //Если поле не содержит эти символы знач email введен не верно
-    if (at < 1 || dot < 1) {
-      document.getElementById('emailf').innerHTML = '*email введен не верно';
-      return false;
-    }
-  }
 
-    btnCalc.addEventListener('click', validate);
+  $('.reset-file').click(function (e) {
+    e.preventDefault();
+    $('input[type="file"]').val('');
+    $('.file-res').css('display', 'none');
+  })
+
+  // var btnCalc = document.querySelector('.btn-calc');
+  //
+  // var validate = function (evt) {
+  //   evt.preventDefault();
+  //   //Считаем значения из полей name и email в переменные x и y
+  //   var x = document.forms[0]['name'].value;
+  //   var y = document.forms[0]['email'].value;
+  //   //Если поле name пустое выведем сообщение и предотвратим отправку формы
+  //   if (x.length == 0) {
+  //     document.getElementById('namef').innerHTML = '*данное поле обязательно для заполнения';
+  //     return false;
+  //   }
+  //   //Если поле email пустое выведем сообщение и предотвратим отправку формы
+  //   if (y.length == 0) {
+  //     document.getElementById('emailf').innerHTML = '*данное поле обязательно для заполнения';
+  //     return false;
+  //   }
+  //   //Проверим содержит ли значение введенное в поле email символы @ и .
+  //   var at = y.indexOf("@");
+  //   var dot = y.indexOf(".");
+  //   //Если поле не содержит эти символы знач email введен не верно
+  //   if (at < 1 || dot < 1) {
+  //     document.getElementById('emailf').innerHTML = '*email введен не верно';
+  //     return false;
+  //   }
+  // }
+  //
+  // btnCalc.addEventListener('click', validate);
 
 })();

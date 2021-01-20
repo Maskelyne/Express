@@ -22,10 +22,10 @@ mixin form-order()
                       span(style="color: red;" id="emailf")
                   .form-order__points-2
                     .form-order__weight
-                      input(id="weight" type="text")
+                      input(id="weight" type="number" min="1")
                       label(for="weight") Вес, кг
                     .form-order__volume
-                      input(id="volume" type="text")
+                      input(id="volume" type="number" min="1")
                       label(for="volume") Объем, м
                         sup 3
                 .form-order__point-3
@@ -51,7 +51,7 @@ mixin form-order()
                 span Рассчитать
             .form-order__box-2
               h3 Стоимость вашей доставки будет составлять
-                span  60$
+                span.form-order__price 0
               p Оставьте свои контактные данные для оформления заявки
               .form-order__data-box.form-order__data-box--calc
                 .form-group__box

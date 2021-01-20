@@ -4,6 +4,7 @@
 
   var serviceSlider = document.querySelector('.service-slider__wrapper')
   var feedbackSlider = document.querySelector('.feedback__swiper-container');
+  var aboutSlider = document.querySelector('.about__banners');
 
   var servicesSliderDesk = function (el) {
     return new Swiper(el, {
@@ -53,5 +54,41 @@
   if (feedbackSlider) {
     feedbackSliderDesk(feedbackSlider);
   }
+
+  var aboutSliderDesk = function (el) {
+    return new Swiper(el, {
+      slidesPerView: 5,
+      spaceBetween: 40,
+      slidesPerGroup:1,
+      loop:true,
+      loopFillGroupWithBlank:true,
+      navigation:{
+        nextEl: '.swiper-button-next',
+        prevEl:'.swiper-button-prev',
+      },
+      breakpoints: {
+        320:{
+          slidesPerView: 2,
+        },
+        480:{
+          slidesPerView: 3,
+          spaceBetween:30
+        },
+        767:{
+          slidesPerView:4,
+          spaceBetween:30
+        },
+        1200:{
+          slidesPerView:5,
+          spaceBetween: 40,
+        },
+      }
+    });
+  };
+
+  if (aboutSlider) {
+    aboutSliderDesk(aboutSlider);
+  }
+
 
 })();

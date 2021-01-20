@@ -33,8 +33,6 @@
     content: "";
     top: -15px;
     left: -15px;
-    background-image: url("../img/svg/icon-calc.svg");
-    background-repeat: no-repeat;
 
     @include tablet-width {
       width: 35px;
@@ -42,6 +40,13 @@
       top: -10px;
       left: -10px;
       background-size: 35px 35px;
+    }
+  }
+
+  &--image-1 {
+    &::before {
+      background-image: url("../img/svg/icon-calc.svg");
+      background-repeat: no-repeat;
     }
   }
 }
@@ -81,7 +86,7 @@
 }
 
 .form-order__box-2 {
-  display: none;
+  //display: none;
   width: 100%;
   max-width: 860px;
   margin: 0 auto;
@@ -405,6 +410,17 @@
 .form-order__volume,
 .form-order__textarea {
   position: relative;
+}
+
+.form-order__points-2 {
+  input[type='number'] {
+    -moz-appearance:textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 }
 
 .form-order__point-3 {
