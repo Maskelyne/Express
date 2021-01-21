@@ -5,7 +5,7 @@ mixin form-order()
       .form-order__inner-box.form-order__inner-box--image-1
         .form-order__wrap-box
           form.form-order__box
-            .form-order__box-1
+            .form-order__box-1.form-order__active
               h3 Рассчитать и заказать доставку
               .form-order__data-box
                 .form-order__points-box
@@ -19,7 +19,6 @@ mixin form-order()
                     .form-order__point-2
                       input(id="point-2" type="text" name="email")
                       label(for="point-2") Куда
-                      span(style="color: red;" id="emailf")
                   .form-order__points-2
                     .form-order__weight
                       input(id="weight" type="number" min="1")

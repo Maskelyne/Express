@@ -18,6 +18,8 @@
 
     if (questionsText) {
       questionsText.forEach(function (item, i) {
+        questionsText[0].classList.add('questions__item-active');
+        questionsBox[0].classList.add('questions__text-active');
         item.addEventListener('click', function (evt) {
           evt.preventDefault();
 

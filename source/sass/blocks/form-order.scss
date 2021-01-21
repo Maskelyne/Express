@@ -71,7 +71,7 @@
 }
 
 .form-order__box-1 {
-  //display: none;
+  display: none;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -86,7 +86,7 @@
 }
 
 .form-order__box-2 {
-  //display: none;
+  display: none;
   width: 100%;
   max-width: 860px;
   margin: 0 auto;
@@ -111,6 +111,10 @@
       line-height: 18px;
     }
   }
+}
+
+.form-order__active {
+  display: block;
 }
 
 .form-group__box {
@@ -622,8 +626,13 @@
   }
 
   .form-order__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0 30px 0;
+
     p {
-      margin: 20px 0 30px 0;
+      margin: 0;
       font-size: 16px;
       line-height: 24px;
 
@@ -683,7 +692,8 @@
     }
 
     img {
-      border: solid 1px $white;
+      border-image: linear-gradient(330deg, rgba(86, 100, 130, 0.81) -7%, rgba(28, 40, 69, 0.7) 95%, #172340 97%);
+      border-image-slice: 1;
       border-radius: 50%;
       width: 95px;
       height: 95px;
@@ -731,4 +741,62 @@
       }
     }
   }
+}
+
+.rating {
+  .ec-rating-stars {
+    margin: 0;
+  }
+
+  .ec-rating-stars span {
+    width: 30px;
+    height: 26px;
+  }
+
+  .ec-rating-stars span, .ec-stars, .ec-stars span {
+    background-image: url("../img/svg/icon-stars.svg");
+    background-position: 0 -26px;
+  }
+
+  .ec-rating-stars span.active-disabled {
+    background-position: 0 -26px;
+  }
+
+  .ec-rating-stars span.active {
+    background-position: 0 0;
+  }
+}
+
+#feedback-info .ec-stars span {
+  background-image: url("../img/svg/icon-stars-active.svg");
+  background-position: 0 0px;
+  height: 23px;
+}
+
+#feedback-info .ec-stars {
+  background-image: url("../img/svg/icon-stars-active.svg");
+  background-position: 0 -22px;
+  width: 125px;
+  height: 23px;
+  margin: 0;
+}
+
+#feedback-info .ec-stars span.rating-1 {
+  width: 25px;
+}
+
+#feedback-info .ec-stars span.rating-2 {
+  width: 50px;
+}
+
+#feedback-info .ec-stars span.rating-3 {
+  width: 75px;
+}
+
+#feedback-info .ec-stars span.rating-4 {
+  width: 100px;
+}
+
+#feedback-info .ec-stars span.rating-5 {
+  width: 125px;
 }

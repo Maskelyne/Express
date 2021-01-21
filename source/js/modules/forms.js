@@ -8,13 +8,16 @@
   if (btnRevers) {
 
     var number = 0;
-
-    var formReverse = function () {
+    var swapValues = function () {
       number = number + 180;
       btnRevers.style.transform = 'rotate(' + number + 'deg)';
-    };
 
-    btnRevers.addEventListener('click', formReverse);
+      var tmp = document.querySelector("#point-1").value;
+      document.querySelector("#point-1").value = document.querySelector("#point-2").value;
+      document.querySelector("#point-2").value = tmp;
+    }
+
+    btnRevers.addEventListener('click', swapValues);
 
     $(document).ready(function(){
       $("#user-phone").inputmask("+375 (99) 999-99-99",
@@ -40,11 +43,19 @@
       }
     });
 
-    $("#point-3").keyup(function () {
-      if ($(this).val()) {
-        $(this).addClass("not-empty");
+    $("#calendar").click(function () {
+      if ($('#point-3').hasClass("not-empty")) {
+        $('#point-3').removeClass("not-empty");
       } else {
-        $(this).removeClass("not-empty");
+        $('#point-3').addClass("not-empty");
+      }
+    });
+
+    $("#point-3").click(function () {
+      if ($('#point-3').hasClass("not-empty")) {
+        $('#point-3').removeClass("not-empty");
+      } else {
+        $('#point-3').addClass("not-empty");
       }
     });
 
@@ -110,7 +121,7 @@
     var $btn = $('#calendar'),
       $input = $('#point-3'),
       dp = $input.datepicker({
-        showEvent: 'focus',
+        showEvent: 'button',
       }).data('datepicker');
 
     $btn.on('click', function(){
