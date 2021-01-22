@@ -416,24 +416,12 @@
   position: relative;
 }
 
-.form-order__points-2 {
-  input[type='number'] {
-    -moz-appearance:textfield;
-  }
-
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-}
-
 .form-order__point-3 {
-  button {
+  position: relative;
+
+  &::after {
     width: 25px;
     height: 25px;
-    padding: 0;
-    border: none;
-    background-color: transparent;
     position: absolute;
     content: "";
     top: -5px;
@@ -441,8 +429,6 @@
     background-image: url("../img/svg/icon-calendar.svg");
     background-repeat: no-repeat;
     background-size: 25px 25px;
-    outline: none;
-    cursor: pointer;
   }
 
   @include desktop-width-min {
@@ -549,6 +535,7 @@
   input {
     &:checked + {
       label {
+        color: $white;
         &::before {
           border: solid 1px rgba(255, 199, 56, 0.3);
         }
@@ -702,6 +689,12 @@
         width: 75px;
         height: 75px;
       }
+    }
+  }
+
+  .form-order__point-3 {
+    &::after {
+      display: none;
     }
   }
 

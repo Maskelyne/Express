@@ -384,7 +384,7 @@ textarea {
 
 
 .ymap-container {
-  background: url('../img/prew.jpg') #fff no-repeat;
+  background: url('../img/jpg/prew.jpg') #fff no-repeat;
   background-size: cover;
   background-position: center center;
   width: 100%;
@@ -446,47 +446,6 @@ textarea {
   -webkit-animation: rotation 1s linear infinite;
   animation: rotation 1s linear infinite;
 }
-
-@-webkit-keyframes rotation {
-  from {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-  to {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
-@keyframes rotation {
-  from {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-  to {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
-@-webkit-keyframes blink {
-  from {
-    opacity: .5;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes blink {
-  from {
-    opacity: .5;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 
 .main-blog {
   background: url("../img/blog-bg.png") no-repeat top;
@@ -584,13 +543,13 @@ textarea {
     .blog__item-head {
       transform: translateY(-100%);
       opacity: 0;
-      transition: .1s;
+      transition: all 0.1s linear;
     }
 
     .blog__item--overlay {
       transform: translateY(0);
       opacity: 1;
-      transition: 0.5s;
+      transition: all 0.5s linear;
     }
   }
 
@@ -607,7 +566,7 @@ textarea {
     background: linear-gradient(253.67deg, rgba(23, 35, 64, 0.55) -3.35%, rgba(86, 100, 130, 0.9) 100.41%), linear-gradient(137.74deg, #6A7AA4 -7.86%, #2A375A 93.68%);
     padding: 15px 18px 14px 19px;
     margin-bottom: 5px;
-    transition: .1s;
+    transition: all 0.1s linear;
     @media(max-width: 767px) {
       padding: 15px 12px 14px 14px;
     }
@@ -672,22 +631,22 @@ textarea {
       width: 100%;
       object-fit: cover;
       height: 278px;
-      transition: 0.5s;
+      transition: all 0.3s linear;
 
     }
   }
 
   &:hover {
     .blog__item-desc {
-      transition: 0.2s;
+      transition: all 0.2s linear;
     }
 
     .blog__img {
       img {
         top: -45%;
         height: 365px;
-        transform: scale(1.1);
-        transition: 0.4s;
+        transform: scale(1.001);
+        transition: all 0.5s linear;
       }
     }
   }
@@ -948,7 +907,7 @@ textarea {
   &__hero {
     position: relative;
     min-height: 439px;
-    background-image: url('../img/abouthero.jpg');
+    background-image: url('../img/jpg/abouthero.jpg');
     background-position: center;
     background-repeat: no-repeat;
 
@@ -976,7 +935,6 @@ textarea {
 
   &__caption {
     p {
-      font-weight: 600;
       font-size: 18px;
       line-height: 25px;
 
@@ -990,8 +948,6 @@ textarea {
       display: inline-block;
       align-items: baseline;
       gap: 10px;
-      font-style: normal;
-      font-weight: 600;
       color: #FFB520;
       margin: 0;
       max-width: 470px;
@@ -1002,8 +958,6 @@ textarea {
     }
 
     p:not(:first-child):not(:last-child) {
-      font-style: normal;
-      font-weight: normal;
       color: #FFFFFF;
       max-width: 470px;
       margin-left: 38px;
@@ -1014,10 +968,10 @@ textarea {
     }
 
     p:last-child {
-      font-style: normal;
+      font-family: $openSansBold;
       color: #FFB520;
-      margin-left: 85px;
-      margin-top: 8px;
+      margin: 15px 0 0 85px;
+
       @media(max-width: 766px) {
         margin-left: 60px;
       }
@@ -1026,8 +980,8 @@ textarea {
     img {
       width: 111px;
       height: 42px;
-      margin-right: 10px;
-
+      margin-right: 5px;
+      display: inline-block;
 
       @media(max-width: 766px) {
         width: 93px;
@@ -1333,13 +1287,13 @@ textarea {
 
     h3 {
       position: relative;
-      font-weight: bold;
+      font-family: $openSansBold;
       font-size: 26px;
       line-height: 36px;
       color: #FFC130;
       text-align: center;
       padding-bottom: 20px;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
 
       @media(max-width: 1024px) {
         font-size: 16px;
@@ -1373,22 +1327,24 @@ textarea {
 
     li::marker {
       color: #FFC130;
-      font-style: normal;
-      font-weight: bold;
+      font-family: $openSansBold;
       font-size: 18px;
       line-height: 25px;
     }
 
     p {
-      font-style: normal;
-      font-weight: normal;
       font-size: 18px;
       line-height: 25px;
       margin-left: 10px;
+      color: rgba(255, 255, 255, 0.9);
 
       @media(max-width: 1024px) {
         font-size: 14px;
         line-height: 19px;
+      }
+
+      strong {
+        font-weight: $normal;
       }
     }
 
@@ -1403,8 +1359,7 @@ textarea {
   }
 
   &__caption {
-    font-style: normal;
-    font-weight: bold;
+    font-family: $openSansBold;
     font-size: 26px;
     line-height: 36px;
     max-width: 650px;
@@ -2036,26 +1991,10 @@ input:focus {
     }
   }
 }
-.form-order__title-block{
-  font-size: 16px;
-  line-height: 22px;
-  color: #FFB520;
-  margin-bottom: 20px;
-  margin-top: -30px;
-  @media(max-width: 767px){
-    margin-bottom: 10px;
-    margin-top: -20px;
-  }
-}
 
 .main-delivery{
   .form-order__data-box-2 ul{
     grid-gap: 30px;
     grid-template-columns: repeat(2, auto);
-  }
-}
-.main{
-  .form-order__data-box-2 ul{
-    grid-template-columns: repeat(4, auto);
   }
 }

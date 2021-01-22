@@ -13,7 +13,6 @@ mixin form-order()
                     .form-order__point-1
                       input(id="point-1" type="text" name="name")
                       label(for="point-1") Откуда
-                      span(style="color: red;" id="namef")
                     button.button-revers(type="button")
                       span.visually-hidden Изменить маршрут
                     .form-order__point-2
@@ -30,27 +29,26 @@ mixin form-order()
                 .form-order__point-3
                   input.datepicker-here(id="point-3" type="text")
                   label(for="point-3") Доставка
-                  button(type="button" id="calendar")
-                    span.visually-hidden Дата доставки
               .form-order__data-box-2
                 ul
                   li
-                    input.visually-hidden(id="check-1" type="checkbox" checked)
+                    input.visually-hidden(id="check-1" type="radio"  name="face" checked)
                     label(for="check-1") Груз упакован
                   li
-                    input.visually-hidden(id="check-2" type="checkbox")
+                    input.visually-hidden(id="check-2" type="radio" name="face")
                     label(for="check-2") Груз не упакован
                   li
-                    input.visually-hidden(id="check-3" type="checkbox" checked)
+                    input.visually-hidden(id="check-3" type="radio" name="1" checked)
                     label(for="check-3") Можно кантовать
                   li
-                    input.visually-hidden(id="check-4" type="checkbox")
+                    input.visually-hidden(id="check-4" type="radio" name="1")
                     label(for="check-4") Хрупкий груз
               a.button.button--effect-1.btn-calc(href="#")
                 span Рассчитать
             .form-order__box-2
               h3 Стоимость вашей доставки будет составлять
-                span.form-order__price 0
+                input.form-order__price.visually-hidden(type="number" id="price")
+                label.form-order__price-2(for="price") 0
               p Оставьте свои контактные данные для оформления заявки
               .form-order__data-box.form-order__data-box--calc
                 .form-group__box

@@ -4,6 +4,7 @@
   ul {
     @include reset-list;
     display: flex;
+    flex-wrap: wrap;
   }
 
   a {
@@ -38,6 +39,13 @@
 }
 
 .breadcrumbs__item-active {
+  a {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
   span {
     font-size: 16px;
     line-height: 21px;

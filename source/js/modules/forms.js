@@ -19,14 +19,6 @@
 
     btnRevers.addEventListener('click', swapValues);
 
-    $(document).ready(function(){
-      $("#user-phone").inputmask("+375 (99) 999-99-99",
-        {
-          showMaskOnHover: false,
-          showMaskOnFocus: true,
-        });
-    });
-
     $("#point-1").keyup(function () {
       if ($(this).val()) {
         $(this).addClass("not-empty");
@@ -43,19 +35,11 @@
       }
     });
 
-    $("#calendar").click(function () {
-      if ($('#point-3').hasClass("not-empty")) {
-        $('#point-3').removeClass("not-empty");
+    $('#point-3').on('keyup change blur', function() {
+      if ($(this).val().trim() !== '') {
+        $(this).addClass("not-empty");
       } else {
-        $('#point-3').addClass("not-empty");
-      }
-    });
-
-    $("#point-3").click(function () {
-      if ($('#point-3').hasClass("not-empty")) {
-        $('#point-3').removeClass("not-empty");
-      } else {
-        $('#point-3').addClass("not-empty");
+        $(this).removeClass("not-empty");
       }
     });
 
@@ -118,13 +102,12 @@
 
     $("#point-3").inputmask(inputmask_options);
 
-    var $btn = $('#calendar'),
-      $input = $('#point-3'),
+    var $input = $('#point-3'),
       dp = $input.datepicker({
-        showEvent: 'button',
+        showEvent: 'focus',
       }).data('datepicker');
 
-    $btn.on('click', function(){
+    $input.on('click', function(){
       dp.show();
       $input.focus();
     });
@@ -158,33 +141,31 @@
     $('.file-res').css('display', 'none');
   })
 
-  // var btnCalc = document.querySelector('.btn-calc');
+  // var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
+  // var maskOpts = {
+  //   inputmask: {
+  //     definitions: {
+  //       '#': {
+  //         validator: "[0-9]",
+  //         cardinality: 1
+  //       }
+  //     },
+  //     showMaskOnHover: false,
+  //     autoUnmask: true,
+  //     clearMaskOnLostFocus: true
+  //   },
+  //   match: /[0-9]/,
+  //   replace: '#',
+  //   list: maskList,
+  //   listKey: "mask",
+  //   onMaskChange: function(maskObj, determined) {}
+  // };
   //
-  // var validate = function (evt) {
-  //   evt.preventDefault();
-  //   //Считаем значения из полей name и email в переменные x и y
-  //   var x = document.forms[0]['name'].value;
-  //   var y = document.forms[0]['email'].value;
-  //   //Если поле name пустое выведем сообщение и предотвратим отправку формы
-  //   if (x.length == 0) {
-  //     document.getElementById('namef').innerHTML = '*данное поле обязательно для заполнения';
-  //     return false;
-  //   }
-  //   //Если поле email пустое выведем сообщение и предотвратим отправку формы
-  //   if (y.length == 0) {
-  //     document.getElementById('emailf').innerHTML = '*данное поле обязательно для заполнения';
-  //     return false;
-  //   }
-  //   //Проверим содержит ли значение введенное в поле email символы @ и .
-  //   var at = y.indexOf("@");
-  //   var dot = y.indexOf(".");
-  //   //Если поле не содержит эти символы знач email введен не верно
-  //   if (at < 1 || dot < 1) {
-  //     document.getElementById('emailf').innerHTML = '*email введен не верно';
-  //     return false;
-  //   }
-  // }
+  // $('#user-phone').change(function() {
+  //   $('#user-phone').inputmask("remove");
+  //   $('#user-phone').inputmasks(maskOpts);
+  // });
   //
-  // btnCalc.addEventListener('click', validate);
+  // $('#user-phone').change();
 
 })();

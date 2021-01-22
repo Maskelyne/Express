@@ -126,7 +126,7 @@
                       <div class="form-order__points">
                         <div class="form-order__point-1">
                           <input id="point-1" type="text" name="name"/>
-                          <label for="point-1">Откуда</label><span style="color: red;" id="namef"></span>
+                          <label for="point-1">Откуда</label>
                         </div>
                         <button class="button-revers" type="button"><span class="visually-hidden">Изменить маршрут</span></button>
                         <div class="form-order__point-2">
@@ -148,32 +148,34 @@
                     <div class="form-order__point-3">
                       <input class="datepicker-here" id="point-3" type="text"/>
                       <label for="point-3">Доставка</label>
-                      <button type="button" id="calendar"><span class="visually-hidden">Дата доставки</span></button>
                     </div>
                   </div>
                   <div class="form-order__data-box-2">
                     <ul>
                       <li>
-                        <input class="visually-hidden" id="check-1" type="checkbox" checked="checked"/>
+                        <input class="visually-hidden" id="check-1" type="radio" name="face" checked="checked"/>
                         <label for="check-1">Груз упакован</label>
                       </li>
                       <li>
-                        <input class="visually-hidden" id="check-2" type="checkbox"/>
+                        <input class="visually-hidden" id="check-2" type="radio" name="face"/>
                         <label for="check-2">Груз не упакован</label>
                       </li>
                       <li>
-                        <input class="visually-hidden" id="check-3" type="checkbox" checked="checked"/>
+                        <input class="visually-hidden" id="check-3" type="radio" name="1" checked="checked"/>
                         <label for="check-3">Можно кантовать</label>
                       </li>
                       <li>
-                        <input class="visually-hidden" id="check-4" type="checkbox"/>
+                        <input class="visually-hidden" id="check-4" type="radio" name="1"/>
                         <label for="check-4">Хрупкий груз</label>
                       </li>
                     </ul>
                   </div><a class="button button--effect-1 btn-calc" href="#"><span>Рассчитать</span></a>
                 </div>
                 <div class="form-order__box-2">
-                  <h3>Стоимость вашей доставки будет составлять<span class="form-order__price">0</span></h3>
+                  <h3>Стоимость вашей доставки будет составлять
+                    <input class="form-order__price visually-hidden" type="number" id="price"/>
+                    <label class="form-order__price-2" for="price">0</label>
+                  </h3>
                   <p>Оставьте свои контактные данные для оформления заявки</p>
                   <div class="form-order__data-box form-order__data-box--calc">
                     <div class="form-group__box">

@@ -207,14 +207,6 @@
 
     btnRevers.addEventListener('click', swapValues);
 
-    $(document).ready(function(){
-      $("#user-phone").inputmask("+375 (99) 999-99-99",
-        {
-          showMaskOnHover: false,
-          showMaskOnFocus: true,
-        });
-    });
-
     $("#point-1").keyup(function () {
       if ($(this).val()) {
         $(this).addClass("not-empty");
@@ -231,19 +223,11 @@
       }
     });
 
-    $("#calendar").click(function () {
-      if ($('#point-3').hasClass("not-empty")) {
-        $('#point-3').removeClass("not-empty");
+    $('#point-3').on('keyup change blur', function() {
+      if ($(this).val().trim() !== '') {
+        $(this).addClass("not-empty");
       } else {
-        $('#point-3').addClass("not-empty");
-      }
-    });
-
-    $("#point-3").click(function () {
-      if ($('#point-3').hasClass("not-empty")) {
-        $('#point-3').removeClass("not-empty");
-      } else {
-        $('#point-3').addClass("not-empty");
+        $(this).removeClass("not-empty");
       }
     });
 
@@ -306,13 +290,12 @@
 
     $("#point-3").inputmask(inputmask_options);
 
-    var $btn = $('#calendar'),
-      $input = $('#point-3'),
+    var $input = $('#point-3'),
       dp = $input.datepicker({
-        showEvent: 'button',
+        showEvent: 'focus',
       }).data('datepicker');
 
-    $btn.on('click', function(){
+    $input.on('click', function(){
       dp.show();
       $input.focus();
     });
@@ -346,34 +329,32 @@
     $('.file-res').css('display', 'none');
   })
 
-  // var btnCalc = document.querySelector('.btn-calc');
+  // var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
+  // var maskOpts = {
+  //   inputmask: {
+  //     definitions: {
+  //       '#': {
+  //         validator: "[0-9]",
+  //         cardinality: 1
+  //       }
+  //     },
+  //     showMaskOnHover: false,
+  //     autoUnmask: true,
+  //     clearMaskOnLostFocus: true
+  //   },
+  //   match: /[0-9]/,
+  //   replace: '#',
+  //   list: maskList,
+  //   listKey: "mask",
+  //   onMaskChange: function(maskObj, determined) {}
+  // };
   //
-  // var validate = function (evt) {
-  //   evt.preventDefault();
-  //   //Считаем значения из полей name и email в переменные x и y
-  //   var x = document.forms[0]['name'].value;
-  //   var y = document.forms[0]['email'].value;
-  //   //Если поле name пустое выведем сообщение и предотвратим отправку формы
-  //   if (x.length == 0) {
-  //     document.getElementById('namef').innerHTML = '*данное поле обязательно для заполнения';
-  //     return false;
-  //   }
-  //   //Если поле email пустое выведем сообщение и предотвратим отправку формы
-  //   if (y.length == 0) {
-  //     document.getElementById('emailf').innerHTML = '*данное поле обязательно для заполнения';
-  //     return false;
-  //   }
-  //   //Проверим содержит ли значение введенное в поле email символы @ и .
-  //   var at = y.indexOf("@");
-  //   var dot = y.indexOf(".");
-  //   //Если поле не содержит эти символы знач email введен не верно
-  //   if (at < 1 || dot < 1) {
-  //     document.getElementById('emailf').innerHTML = '*email введен не верно';
-  //     return false;
-  //   }
-  // }
+  // $('#user-phone').change(function() {
+  //   $('#user-phone').inputmask("remove");
+  //   $('#user-phone').inputmasks(maskOpts);
+  // });
   //
-  // btnCalc.addEventListener('click', validate);
+  // $('#user-phone').change();
 
 })();
 'use strict';
@@ -689,6 +670,7 @@
   var volumeInput = document.querySelector('#volume');
   var btnCalc = document.querySelector('.btn-calc');
   var priceText = document.querySelector('.form-order__price');
+  var priceLabel = document.querySelector('.form-order__price-2');
   var formOrderBox1 = document.querySelector('.form-order__box-1');
   var formOrderBox2 = document.querySelector('.form-order__box-2');
 
@@ -720,43 +702,55 @@
 
       var x = weightInput.value;
       var y = volumeInput.value;
+      var input = priceText;
 
       switch (true) {
         case x >= 1 && x <= obj.weight[0]:
 
           switch (true) {
             case y > 0 && y <= obj.cubs[0]:
-              priceText.innerHTML = obj.price.volume[0];
+              input.value = obj.price.volume[0];
+              priceLabel.innerHTML = obj.price.volume[0];
               break;
             case y > obj.cubs[0] && y <= obj.cubs[1]:
-              priceText.innerHTML = obj.price.volume[1];
+              input.value = obj.price.volume[1];
+              priceLabel.innerHTML = obj.price.volume[1];
               break;
             case y > obj.cubs[1] && y <= obj.cubs[2]:
-              priceText.innerHTML = obj.price.volume[2];
+              input.value = obj.price.volume[2];
+              priceLabel.innerHTML = obj.price.volume[2];
               break;
             case y > obj.cubs[2] && y <= obj.cubs[3]:
-              priceText.innerHTML = obj.price.volume[3];
+              input.value = obj.price.volume[3];
+              priceLabel.innerHTML = obj.price.volume[3];
               break;
             case y > obj.cubs[3] && y <= obj.cubs[4]:
-              priceText.innerHTML = obj.price.volume[4];
+              input.value = obj.price.volume[4];
+              priceLabel.innerHTML = obj.price.volume[4];
               break;
             case y > obj.cubs[4] && y <= obj.cubs[5]:
-              priceText.innerHTML = obj.price.volume[5];
+              input.value = obj.price.volume[5];
+              priceLabel.innerHTML = obj.price.volume[5];
               break;
             case y > obj.cubs[5] && y <= obj.cubs[6]:
-              priceText.innerHTML = obj.price.volume[6];
+              input.value = obj.price.volume[6];
+              priceLabel.innerHTML = obj.price.volume[6];
               break;
             case y > obj.cubs[6] && y <= obj.cubs[7]:
-              priceText.innerHTML = obj.price.volume[7];
+              input.value = obj.price.volume[7];
+              priceLabel.innerHTML = obj.price.volume[7];
               break;
             case y > obj.cubs[7] && y <= obj.cubs[8]:
-              priceText.innerHTML = obj.price.volume[8];
+              input.value = obj.price.volume[8];
+              priceLabel.innerHTML = obj.price.volume[8];
               break;
             case y > obj.cubs[8] && y <= obj.cubs[9]:
-              priceText.innerHTML = obj.price.volume[9];
+              input.value = obj.price.volume[9];
+              priceLabel.innerHTML = obj.price.volume[9];
               break;
             default:
-              priceText.innerHTML = ' 0';
+              input.value = '0';
+              priceLabel.innerHTML = '0';
           }
           break;
 
@@ -764,37 +758,48 @@
 
           switch (true) {
             case y >= 0 && y <= obj.cubs[0]:
-              priceText.innerHTML = obj.price.volume2[0];
+              input.value = obj.price.volume2[0];
+              priceLabel.innerHTML = obj.price.volume2[0];
               break;
             case y >= obj.cubs[0] && y <= obj.cubs[1]:
-              priceText.innerHTML = obj.price.volume2[1];
+              input.value = obj.price.volume2[1];
+              priceLabel.innerHTML = obj.price.volume2[1];
               break;
             case y >= obj.cubs[1] && y <= obj.cubs[2]:
-              priceText.innerHTML = obj.price.volume2[2];
+              input.value = obj.price.volume2[2];
+              priceLabel.innerHTML = obj.price.volume2[2];
               break;
             case y >= obj.cubs[2] && y <= obj.cubs[3]:
-              priceText.innerHTML = obj.price.volume2[3];
+              input.value = obj.price.volume2[3];
+              priceLabel.innerHTML = obj.price.volume2[3];
               break;
             case y >= obj.cubs[3] && y <= obj.cubs[4]:
-              priceText.innerHTML = obj.price.volume2[4];
+              input.value = obj.price.volume2[4];
+              priceLabel.innerHTML = obj.price.volume2[4];
               break;
             case y >= obj.cubs[4] && y <= obj.cubs[5]:
-              priceText.innerHTML = obj.price.volume2[5];
+              input.value = obj.price.volume2[5];
+              priceLabel.innerHTML = obj.price.volume2[5];
               break;
             case y >= obj.cubs[5] && y <= obj.cubs[6]:
-              priceText.innerHTML = obj.price.volume2[6];
+              input.value = obj.price.volume2[6];
+              priceLabel.innerHTML = obj.price.volume2[6];
               break;
             case y >= obj.cubs[6] && y <= obj.cubs[7]:
-              priceText.innerHTML = obj.price.volume2[7];
+              input.value = obj.price.volume2[7];
+              priceLabel.innerHTML = obj.price.volume2[7];
               break;
             case y >= obj.cubs[7] && y <= obj.cubs[8]:
-              priceText.innerHTML = obj.price.volume2[8];
+              input.value = obj.price.volume2[8];
+              priceLabel.innerHTML = obj.price.volume2[8];
               break;
             case y >= obj.cubs[8] && y <= obj.cubs[9]:
-              priceText.innerHTML = obj.price.volume2[9];
+              input.value = obj.price.volume2[9];
+              priceLabel.innerHTML = obj.price.volume2[9];
               break;
             default:
-              priceText.innerHTML = ' 0';
+              input.value = '0';
+              priceLabel.innerHTML = '0';
           }
           break;
 
@@ -802,37 +807,48 @@
 
           switch (true) {
             case y >= 0 && y <= obj.cubs[0]:
-              priceText.innerHTML = obj.price.volume3[0];
+              input.value = obj.price.volume3[0];
+              priceLabel.innerHTML = obj.price.volume3[0];
               break;
             case y >= obj.cubs[0] && y <= obj.cubs[1]:
-              priceText.innerHTML = obj.price.volume3[1];
+              input.value = obj.price.volume3[1];
+              priceLabel.innerHTML = obj.price.volume3[1];
               break;
             case y >= obj.cubs[1] && y <= obj.cubs[2]:
-              priceText.innerHTML = obj.price.volume3[2];
+              input.value = obj.price.volume3[2];
+              priceLabel.innerHTML = obj.price.volume3[2];
               break;
             case y >= obj.cubs[2] && y <= obj.cubs[3]:
-              priceText.innerHTML = obj.price.volume3[3];
+              input.value = obj.price.volume3[3];
+              priceLabel.innerHTML = obj.price.volume3[3];
               break;
             case y >= obj.cubs[3] && y <= obj.cubs[4]:
-              priceText.innerHTML = obj.price.volume3[4];
+              input.value = obj.price.volume3[4];
+              priceLabel.innerHTML = obj.price.volume3[4];
               break;
             case y >= obj.cubs[4] && y <= obj.cubs[5]:
-              priceText.innerHTML = obj.price.volume3[5];
+              input.value = obj.price.volume3[5];
+              priceLabel.innerHTML = obj.price.volume3[5];
               break;
             case y >= obj.cubs[5] && y <= obj.cubs[6]:
-              priceText.innerHTML = obj.price.volume3[6];
+              input.value = obj.price.volume3[6];
+              priceLabel.innerHTML = obj.price.volume3[6];
               break;
             case y >= obj.cubs[6] && y <= obj.cubs[7]:
-              priceText.innerHTML = obj.price.volume3[7];
+              input.value = obj.price.volume3[7];
+              priceLabel.innerHTML = obj.price.volume3[7];
               break;
             case y >= obj.cubs[7] && y <= obj.cubs[8]:
-              priceText.innerHTML = obj.price.volume3[8];
+              input.value = obj.price.volume3[8];
+              priceLabel.innerHTML = obj.price.volume3[8];
               break;
             case y >= obj.cubs[8] && y <= obj.cubs[9]:
-              priceText.innerHTML = obj.price.volume3[9];
+              input.value = obj.price.volume3[9];
+              priceLabel.innerHTML = obj.price.volume3[9];
               break;
             default:
-              priceText.innerHTML = ' 0';
+              input.value = ' 0';
+              priceLabel.innerHTML = '0';
           }
           break;
 
@@ -840,37 +856,48 @@
 
           switch (true) {
             case y >= 0 && y <= obj.cubs[0]:
-              priceText.innerHTML = obj.price.volume4[0];
+              input.value = obj.price.volume4[0];
+              priceLabel.innerHTML = obj.price.volume4[0];
               break;
             case y >= obj.cubs[0] && y <= obj.cubs[1]:
-              priceText.innerHTML = obj.price.volume4[1];
+              input.value = obj.price.volume4[1];
+              priceLabel.innerHTML = obj.price.volume4[1];
               break;
             case y >= obj.cubs[1] && y <= obj.cubs[2]:
-              priceText.innerHTML = obj.price.volume4[2];
+              input.value = obj.price.volume4[2];
+              priceLabel.innerHTML = obj.price.volume4[2];
               break;
             case y >= obj.cubs[2] && y <= obj.cubs[3]:
-              priceText.innerHTML = obj.price.volume4[3];
+              input.value = obj.price.volume4[3];
+              priceLabel.innerHTML = obj.price.volume4[3];
               break;
             case y >= obj.cubs[3] && y <= obj.cubs[4]:
-              priceText.innerHTML = obj.price.volume4[4];
+              input.value = obj.price.volume4[4];
+              priceLabel.innerHTML = obj.price.volume4[4];
               break;
             case y >= obj.cubs[4] && y <= obj.cubs[5]:
-              priceText.innerHTML = obj.price.volume4[5];
+              input.value = obj.price.volume4[5];
+              priceLabel.innerHTML = obj.price.volume4[5];
               break;
             case y >= obj.cubs[5] && y <= obj.cubs[6]:
-              priceText.innerHTML = obj.price.volume4[6];
+              input.value = obj.price.volume4[6];
+              priceLabel.innerHTML = obj.price.volume4[6];
               break;
             case y >= obj.cubs[6] && y <= obj.cubs[7]:
-              priceText.innerHTML = obj.price.volume4[7];
+              input.value = obj.price.volume4[7];
+              priceLabel.innerHTML = obj.price.volume4[7];
               break;
             case y >= obj.cubs[7] && y <= obj.cubs[8]:
-              priceText.innerHTML = obj.price.volume4[8];
+              input.value = obj.price.volume4[8];
+              priceLabel.innerHTML = obj.price.volume4[8];
               break;
             case y >= obj.cubs[8] && y <= obj.cubs[9]:
-              priceText.innerHTML = obj.price.volume4[9];
+              input.value = obj.price.volume4[9];
+              priceLabel.innerHTML = obj.price.volume4[9];
               break;
             default:
-              priceText.innerHTML = ' 0';
+              input.value = '0';
+              priceLabel.innerHTML = '0';
           }
           break;
 
@@ -878,37 +905,48 @@
 
           switch (true) {
             case y >= 0 && y <= obj.cubs[0]:
-              priceText.innerHTML = obj.price.volume5[0];
+              input.value = obj.price.volume5[0];
+              priceLabel.innerHTML = obj.price.volume5[0];
               break;
             case y >= obj.cubs[0] && y <= obj.cubs[1]:
-              priceText.innerHTML = obj.price.volume5[1];
+              input.value = obj.price.volume5[1];
+              priceLabel.innerHTML = obj.price.volume5[1];
               break;
             case y >= obj.cubs[1] && y <= obj.cubs[2]:
-              priceText.innerHTML = obj.price.volume5[2];
+              input.value = obj.price.volume5[2];
+              priceLabel.innerHTML = obj.price.volume5[2];
               break;
             case y >= obj.cubs[2] && y <= obj.cubs[3]:
-              priceText.innerHTML = obj.price.volume5[3];
+              input.value = obj.price.volume5[3];
+              priceLabel.innerHTML = obj.price.volume5[3];
               break;
             case y >= obj.cubs[3] && y <= obj.cubs[4]:
-              priceText.innerHTML = obj.price.volume5[4];
+              input.value = obj.price.volume5[4];
+              priceLabel.innerHTML = obj.price.volume5[4];
               break;
             case y >= obj.cubs[4] && y <= obj.cubs[5]:
-              priceText.innerHTML = obj.price.volume5[5];
+              input.value = obj.price.volume5[5];
+              priceLabel.innerHTML = obj.price.volume5[5];
               break;
             case y >= obj.cubs[5] && y <= obj.cubs[6]:
-              priceText.innerHTML = obj.price.volume5[6];
+              input.value = obj.price.volume5[6];
+              priceLabel.innerHTML = obj.price.volume6[6];
               break;
             case y >= obj.cubs[6] && y <= obj.cubs[7]:
-              priceText.innerHTML = obj.price.volume5[7];
+              input.value = obj.price.volume5[7];
+              priceLabel.innerHTML = obj.price.volume5[7];
               break;
             case y >= obj.cubs[7] && y <= obj.cubs[8]:
-              priceText.innerHTML = obj.price.volume5[8];
+              input.value = obj.price.volume5[8];
+              priceLabel.innerHTML = obj.price.volume5[8];
               break;
             case y >= obj.cubs[8] && y <= obj.cubs[9]:
-              priceText.innerHTML = obj.price.volume5[9];
+              input.value = obj.price.volume5[9];
+              priceLabel.innerHTML = obj.price.volume5[9];
               break;
             default:
-              priceText.innerHTML = ' 0';
+              input.value = '0';
+              priceLabel.innerHTML = '0';
           }
           break;
 
@@ -916,37 +954,48 @@
 
           switch (true) {
             case y >= 0 && y <= obj.cubs[0]:
-              priceText.innerHTML = obj.price.volume6[0];
+              input.value = obj.price.volume6[0];
+              priceLabel.innerHTML = obj.price.volume6[0];
               break;
             case y >= obj.cubs[0] && y <= obj.cubs[1]:
-              priceText.innerHTML = obj.price.volume6[1];
+              input.value = obj.price.volume6[1];
+              priceLabel.innerHTML = obj.price.volume6[1];
               break;
             case y >= obj.cubs[1] && y <= obj.cubs[2]:
-              priceText.innerHTML = obj.price.volume6[2];
+              input.value = obj.price.volume6[2];
+              priceLabel.innerHTML = obj.price.volume6[2];
               break;
             case y >= obj.cubs[2] && y <= obj.cubs[3]:
-              priceText.innerHTML = obj.price.volume6[3];
+              input.value = obj.price.volume6[3];
+              priceLabel.innerHTML = obj.price.volume6[3];
               break;
             case y >= obj.cubs[3] && y <= obj.cubs[4]:
-              priceText.innerHTML = obj.price.volume6[4];
+              input.value = obj.price.volume6[4];
+              priceLabel.innerHTML = obj.price.volume6[4];
               break;
             case y >= obj.cubs[4] && y <= obj.cubs[5]:
-              priceText.innerHTML = obj.price.volume6[5];
+              input.value = obj.price.volume6[5];
+              priceLabel.innerHTML = obj.price.volume6[5];
               break;
             case y >= obj.cubs[5] && y <= obj.cubs[6]:
-              priceText.innerHTML = obj.price.volume6[6];
+              input.value = obj.price.volume6[6];
+              priceLabel.innerHTML = obj.price.volume6[6];
               break;
             case y >= obj.cubs[6] && y <= obj.cubs[7]:
-              priceText.innerHTML = obj.price.volume6[7];
+              input.value = obj.price.volume6[7];
+              priceLabel.innerHTML = obj.price.volume6[7];
               break;
             case y >= obj.cubs[7] && y <= obj.cubs[8]:
-              priceText.innerHTML = obj.price.volume6[8];
+              input.value = obj.price.volume6[8];
+              priceLabel.innerHTML = obj.price.volume6[8];
               break;
             case y >= obj.cubs[8] && y <= obj.cubs[9]:
-              priceText.innerHTML = obj.price.volume6[9];
+              input.value = obj.price.volume6[9];
+              priceLabel.innerHTML = obj.price.volume6[9];
               break;
             default:
-              priceText.innerHTML = ' 0';
+              input.value = '0';
+              priceLabel.innerHTML = '0';
           }
           break;
 
@@ -954,37 +1003,48 @@
 
           switch (true) {
             case y >= 0 && y <= obj.cubs[0]:
-              priceText.innerHTML = obj.price.volume7[0];
+              input.value = obj.price.volume7[0];
+              priceLabel.innerHTML = obj.price.volume7[0];
               break;
             case y >= obj.cubs[0] && y <= obj.cubs[1]:
-              priceText.innerHTML = obj.price.volume7[1];
+              input.value = obj.price.volume7[1];
+              priceLabel.innerHTML = obj.price.volume7[1];
               break;
             case y >= obj.cubs[1] && y <= obj.cubs[2]:
-              priceText.innerHTML = obj.price.volume7[2];
+              input.value = obj.price.volume7[2];
+              priceLabel.innerHTML = obj.price.volume7[2];
               break;
             case y >= obj.cubs[2] && y <= obj.cubs[3]:
-              priceText.innerHTML = obj.price.volume7[3];
+              input.value = obj.price.volume7[3];
+              priceLabel.innerHTML = obj.price.volume7[3];
               break;
             case y >= obj.cubs[3] && y <= obj.cubs[4]:
-              priceText.innerHTML = obj.price.volume7[4];
+              input.value = obj.price.volume7[4];
+              priceLabel.innerHTML = obj.price.volume7[4];
               break;
             case y >= obj.cubs[4] && y <= obj.cubs[5]:
-              priceText.innerHTML = obj.price.volume7[5];
+              input.value = obj.price.volume7[5];
+              priceLabel.innerHTML = obj.price.volume7[5];
               break;
             case y >= obj.cubs[5] && y <= obj.cubs[6]:
-              priceText.innerHTML = obj.price.volume7[6];
+              input.value = obj.price.volume7[6];
+              priceLabel.innerHTML = obj.price.volume7[6];
               break;
             case y >= obj.cubs[6] && y <= obj.cubs[7]:
-              priceText.innerHTML = obj.price.volume7[7];
+              input.value = obj.price.volume7[7];
+              priceLabel.innerHTML = obj.price.volume7[7];
               break;
             case y >= obj.cubs[7] && y <= obj.cubs[8]:
-              priceText.innerHTML = obj.price.volume7[8];
+              input.value = obj.price.volume7[8];
+              priceLabel.innerHTML = obj.price.volume7[8];
               break;
             case y >= obj.cubs[8] && y <= obj.cubs[9]:
-              priceText.innerHTML = obj.price.volume7[9];
+              input.value = obj.price.volume7[9];
+              priceLabel.innerHTML = obj.price.volume7[9];
               break;
             default:
-              priceText.innerHTML = ' 0';
+              input.value = '0';
+              priceLabel.innerHTML = '0';
           }
           break;
 
@@ -992,74 +1052,97 @@
 
           switch (true) {
             case y >= 0 && y <= obj.cubs[0]:
-              priceText.innerHTML = obj.price.volume8[0];
+              input.value = obj.price.volume8[0];
+              priceLabel.innerHTML = obj.price.volume8[0];
               break;
             case y >= obj.cubs[0] && y <= obj.cubs[1]:
-              priceText.innerHTML = obj.price.volume8[1];
+              input.value = obj.price.volume8[1];
+              priceLabel.innerHTML = obj.price.volume8[1];
               break;
             case y >= obj.cubs[1] && y <= obj.cubs[2]:
-              priceText.innerHTML = obj.price.volume8[2];
+              input.value = obj.price.volume8[2];
+              priceLabel.innerHTML = obj.price.volume8[2];
               break;
             case y >= obj.cubs[2] && y <= obj.cubs[3]:
-              priceText.innerHTML = obj.price.volume8[3];
+              input.value = obj.price.volume8[3];
+              priceLabel.innerHTML = obj.price.volume8[3];
               break;
             case y >= obj.cubs[3] && y <= obj.cubs[4]:
-              priceText.innerHTML = obj.price.volume8[4];
+              input.value = obj.price.volume8[4];
+              priceLabel.innerHTML = obj.price.volume8[4];
               break;
             case y >= obj.cubs[4] && y <= obj.cubs[5]:
-              priceText.innerHTML = obj.price.volume8[5];
+              input.value = obj.price.volume8[5];
+              priceLabel.innerHTML = obj.price.volume8[5];
               break;
             case y >= obj.cubs[5] && y <= obj.cubs[6]:
-              priceText.innerHTML = obj.price.volume8[6];
+              input.value = obj.price.volume8[6];
+              priceLabel.innerHTML = obj.price.volume8[6];
               break;
             case y >= obj.cubs[6] && y <= obj.cubs[7]:
-              priceText.innerHTML = obj.price.volume8[7];
+              input.value = obj.price.volume8[7];
+              priceLabel.innerHTML = obj.price.volume8[7];
               break;
             case y >= obj.cubs[7] && y <= obj.cubs[8]:
-              priceText.innerHTML = obj.price.volume8[8];
+              input.value = obj.price.volume8[8];
+              priceLabel.innerHTML = obj.price.volume8[8];
               break;
             case y >= obj.cubs[8] && y <= obj.cubs[9]:
-              priceText.innerHTML = obj.price.volume8[9];
+              input.value = obj.price.volume8[9];
+              priceLabel.innerHTML = obj.price.volume8[9];
               break;
             default:
-              priceText.innerHTML = ' 0';
+              input.value = '0';
+              priceLabel.innerHTML = '0';
           }
           break;
 
         case x > obj.weight[7] && x <= obj.weight[8]:
+
           switch (true) {
             case y >= 0 && y <= obj.cubs[0]:
-              priceText.innerHTML = obj.price.volume9[0];
+              input.value = obj.price.volume9[0];
+              priceLabel.innerHTML = obj.price.volume9[0];
               break;
             case y >= obj.cubs[0] && y <= obj.cubs[1]:
-              priceText.innerHTML = obj.price.volume9[1];
+              input.value = obj.price.volume9[1];
+              priceLabel.innerHTML = obj.price.volume9[1];
               break;
             case y >= obj.cubs[1] && y <= obj.cubs[2]:
-              priceText.innerHTML = obj.price.volume9[2];
+              input.value = obj.price.volume9[2];
+              priceLabel.innerHTML = obj.price.volume9[2];
               break;
             case y >= obj.cubs[2] && y <= obj.cubs[3]:
-              priceText.innerHTML = obj.price.volume9[3];
+              input.value = obj.price.volume9[3];
+              priceLabel.innerHTML = obj.price.volume9[3];
               break;
             case y >= obj.cubs[3] && y <= obj.cubs[4]:
-              priceText.innerHTML = obj.price.volume9[4];
+              input.value = obj.price.volume9[4];
+              priceLabel.innerHTML = obj.price.volume9[4];
               break;
             case y >= obj.cubs[4] && y <= obj.cubs[5]:
-              priceText.innerHTML = obj.price.volume9[5];
+              input.value = obj.price.volume9[5];
+              priceLabel.innerHTML = obj.price.volume9[5];
               break;
             case y >= obj.cubs[5] && y <= obj.cubs[6]:
-              priceText.innerHTML = obj.price.volume9[6];
+              input.value = obj.price.volume9[6];
+              priceLabel.innerHTML = obj.price.volume9[6];
               break;
             case y >= obj.cubs[6] && y <= obj.cubs[7]:
-              priceText.innerHTML = obj.price.volume9[7];
+              input.value = obj.price.volume9[7];
+              priceLabel.innerHTML = obj.price.volume9[7];
               break;
             case y >= obj.cubs[7] && y <= obj.cubs[8]:
-              priceText.innerHTML = obj.price.volume9[8];
+              input.value = obj.price.volume9[8];
+              priceLabel.innerHTML = obj.price.volume9[8];
               break;
             case y >= obj.cubs[8] && y <= obj.cubs[9]:
-              priceText.innerHTML = obj.price.volume9[9];
+              input.value = obj.price.volume9[9];
+              priceLabel.innerHTML = obj.price.volume9[9];
               break;
             default:
-              priceText.innerHTML = ' 0';
+              input.value = '0';
+              priceLabel.innerHTML = '0';
           }
           break;
 
@@ -1067,42 +1150,54 @@
 
           switch (true) {
             case y >= 0 && y <= obj.cubs[0]:
-              priceText.innerHTML = obj.price.volume10[0];
+              input.value = obj.price.volume10[0];
+              priceLabel.innerHTML = obj.price.volume10[0];
               break;
             case y >= obj.cubs[0] && y <= obj.cubs[1]:
-              priceText.innerHTML = obj.price.volume10[1];
+              input.value = obj.price.volume10[1];
+              priceLabel.innerHTML = obj.price.volume10[1];
               break;
             case y >= obj.cubs[1] && y <= obj.cubs[2]:
-              priceText.innerHTML = obj.price.volume10[2];
+              input.value = obj.price.volume10[2];
+              priceLabel.innerHTML = obj.price.volume10[2];
               break;
             case y >= obj.cubs[2] && y <= obj.cubs[3]:
-              priceText.innerHTML = obj.price.volume10[3];
+              input.value = obj.price.volume10[3];
+              priceLabel.innerHTML = obj.price.volume10[3];
               break;
             case y >= obj.cubs[3] && y <= obj.cubs[4]:
-              priceText.innerHTML = obj.price.volume10[4];
+              input.value = obj.price.volume10[4];
+              priceLabel.innerHTML = obj.price.volume10[4];
               break;
             case y >= obj.cubs[4] && y <= obj.cubs[5]:
-              priceText.innerHTML = obj.price.volume10[5];
+              input.value = obj.price.volume10[5];
+              priceLabel.innerHTML = obj.price.volume10[5];
               break;
             case y >= obj.cubs[5] && y <= obj.cubs[6]:
-              priceText.innerHTML = obj.price.volume10[6];
+              input.value = obj.price.volume10[6];
+              priceLabel.innerHTML = obj.price.volume10[6];
               break;
             case y >= obj.cubs[6] && y <= obj.cubs[7]:
-              priceText.innerHTML = obj.price.volume10[7];
+              input.value = obj.price.volume10[7];
+              priceLabel.innerHTML = obj.price.volume10[7];
               break;
             case y >= obj.cubs[7] && y <= obj.cubs[8]:
-              priceText.innerHTML = obj.price.volume10[8];
+              input.value = obj.price.volume10[8];
+              priceLabel.innerHTML = obj.price.volume10[8];
               break;
             case y >= obj.cubs[8] && y <= obj.cubs[9]:
-              priceText.innerHTML = obj.price.volume10[9];
+              input.value = obj.price.volume10[9];
+              priceLabel.innerHTML = obj.price.volume10[9];
               break;
             default:
-              priceText.innerHTML = ' 0';
+              input.value = '0';
+              priceLabel.innerHTML = '0';
           }
           break;
 
         default:
-          priceText.innerHTML = ' 0';
+          input.value = '0';
+          priceLabel.innerHTML = '0';
       }
 
       if (formOrderBox1.classList.contains('form-order__active')) {
@@ -1113,5 +1208,6 @@
 
     btnCalc.addEventListener('click', calc);
   }
+
 
 })();
