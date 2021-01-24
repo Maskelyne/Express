@@ -281,7 +281,6 @@
   }
 
   input {
-    margin-bottom: 30px;
     max-width: 320px;
     width: 100%;
     padding: 0 0 5px 0;
@@ -329,7 +328,8 @@
 }
 
 .form-order__textarea {
-  margin-top: 35px;
+  margin-top: 30px;
+  margin-bottom: 0;
 
   @include tablet-width {
     margin-top: 45px;
@@ -414,6 +414,7 @@
 .form-order__volume,
 .form-order__textarea {
   position: relative;
+  margin-bottom: 30px;
 }
 
 .form-order__point-3 {
@@ -477,7 +478,7 @@
 .form-order__points-2 {
   display: grid;
   grid-gap: 0 70px;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
 
   @include tablet-width {
     grid-template-columns: 1fr;
@@ -762,7 +763,7 @@
 
 #feedback-info .ec-stars span {
   background-image: url("../img/svg/icon-stars-active.svg");
-  background-position: 0 0px;
+  background-position: 0 0;
   height: 23px;
 }
 
@@ -792,4 +793,18 @@
 
 #feedback-info .ec-stars span.rating-5 {
   width: 125px;
+}
+
+#form-order__calc .error {
+  margin-top: 10px;
+  display: inline;
+  font-size: 12px;
+  line-height: 14px;
+  color: red;
+}
+
+input#user-phone.error {
+  color: $white;
+  font-size: 18px;
+  line-height: 21px;
 }

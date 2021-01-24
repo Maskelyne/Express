@@ -2,7 +2,6 @@
 
 (function () {
 
-  var formOrder = document.querySelector('.form-order__box');
   var btnRevers = document.querySelector('.button-revers');
 
   if (btnRevers) {
@@ -141,31 +140,37 @@
     $('.file-res').css('display', 'none');
   })
 
-  // var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
-  // var maskOpts = {
-  //   inputmask: {
-  //     definitions: {
-  //       '#': {
-  //         validator: "[0-9]",
-  //         cardinality: 1
-  //       }
-  //     },
-  //     showMaskOnHover: false,
-  //     autoUnmask: true,
-  //     clearMaskOnLostFocus: true
-  //   },
-  //   match: /[0-9]/,
-  //   replace: '#',
-  //   list: maskList,
-  //   listKey: "mask",
-  //   onMaskChange: function(maskObj, determined) {}
-  // };
-  //
-  // $('#user-phone').change(function() {
-  //   $('#user-phone').inputmask("remove");
-  //   $('#user-phone').inputmasks(maskOpts);
-  // });
-  //
-  // $('#user-phone').change();
+  var userPhone = document.querySelector("#user-phone");
+
+  if (userPhone) {
+
+    var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
+    var maskOpts = {
+      inputmask: {
+        definitions: {
+          '#': {
+            validator: "[0-9]",
+            cardinality: 1
+          }
+        },
+        showMaskOnHover: false,
+        autoUnmask: true,
+        clearMaskOnLostFocus: true
+      },
+      match: /[0-9]/,
+      replace: '#',
+      list: maskList,
+      listKey: "mask",
+      onMaskChange: function (maskObj, determined) {
+      }
+    };
+
+    $('#user-phone').change(function () {
+      $('#user-phone').inputmask("remove");
+      $('#user-phone').inputmasks(maskOpts);
+    });
+
+    $('#user-phone').change();
+  }
 
 })();

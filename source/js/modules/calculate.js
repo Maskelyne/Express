@@ -2,16 +2,21 @@
 
 (function () {
 
-  var weightInput = document.querySelector('#weight');
-  var volumeInput = document.querySelector('#volume');
-  var btnCalc = document.querySelector('.btn-calc');
-  var priceText = document.querySelector('.form-order__price');
-  var priceLabel = document.querySelector('.form-order__price-2');
-  var formOrderBox1 = document.querySelector('.form-order__box-1');
-  var formOrderBox2 = document.querySelector('.form-order__box-2');
+  var formCalc = document.querySelector('#form-order__calc');
 
-  if (priceText) {
+  if (formCalc) {
 
+    var weightInput = formCalc.querySelector('#weight');
+    var volumeInput = formCalc.querySelector('#volume');
+    var city1 = formCalc.querySelector('#point-1');
+    var city2 = formCalc.querySelector('#point-2');
+    var btnCalc = formCalc.querySelector('.btn-calc');
+    var priceText = formCalc.querySelector('.form-order__price');
+    var priceLabel = formCalc.querySelector('.form-order__price-2');
+    var formOrderBox1 = formCalc.querySelector('.form-order__box-1');
+    var formOrderBox2 = formCalc.querySelector('.form-order__box-2');
+    var error = formCalc.querySelectorAll('.error');
+    var regex = /[0-9]/g;
     var obj = {
       cubs: [],
       weight: [150, 300, 550, 800, 1100, 1500, 2000, 2600, 3300, 4000],
@@ -33,12 +38,54 @@
       obj.cubs.push(i);
     }
 
+    city1.oninput = function () {
+      if (this.value.match(regex)) {
+        this.value = this.value.replace(regex, '');
+        error[0].innerHTML = 'Символы запрещены для ввода';
+      } else {
+        error[0].innerHTML = '';
+      }
+    }
+
+    city2.oninput = function () {
+      if (this.value.match(regex)) {
+        this.value = this.value.replace(regex, '');
+        error[1].innerHTML = 'Символы запрещены для ввода';
+      } else {
+        error[1].innerHTML = '';
+      }
+    }
+
     var calc = function (evt) {
       evt.preventDefault();
 
       var x = weightInput.value;
       var y = volumeInput.value;
       var input = priceText;
+
+      switch (true) {
+        case !city1.value:
+          error[0].innerHTML = 'Заполните поле';
+          break;
+        case !city2.value:
+          error[1].innerHTML = 'Заполните поле';
+          break;
+        case !weightInput.value || !weightInput.checkValidity():
+          error[3].innerHTML = '';
+          error[2].innerHTML = 'Мин 1 Макс 4000';
+          break;
+        case !volumeInput.value || !volumeInput.checkValidity():
+          error[2].innerHTML = '';
+          error[3].innerHTML = 'Мин 1 Макс 10';
+          break;
+        default:
+          error[0].innerHTML = '';
+          error[1].innerHTML = '';
+          error[2].innerHTML = '';
+          error[3].innerHTML = '';
+          formOrderBox1.classList.remove('form-order__active');
+          formOrderBox2.classList.add('form-order__active');
+      }
 
       switch (true) {
         case x >= 1 && x <= obj.weight[0]:
@@ -535,12 +582,14 @@
           input.value = '0';
           priceLabel.innerHTML = '0';
       }
-
-      if (formOrderBox1.classList.contains('form-order__active')) {
-        formOrderBox1.classList.remove('form-order__active');
-        formOrderBox2.classList.add('form-order__active');
-      }
     };
+
+    $(formCalc).validate({
+      messages: {
+        tel: 'Введите ваш номер телефона',
+      },
+      errorElement: 'span',
+    });
 
     btnCalc.addEventListener('click', calc);
   }

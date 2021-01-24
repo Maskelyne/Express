@@ -118,30 +118,30 @@
         <div class="form-order__wrapper container">
           <div class="form-order__inner-box form-order__inner-box--image-1">
             <div class="form-order__wrap-box">
-              <form class="form-order__box">
+              <form class="form-order__box" id="form-order__calc">
                 <div class="form-order__box-1 form-order__active">
                   <h3>Рассчитать и заказать доставку</h3>
                   <div class="form-order__data-box">
                     <div class="form-order__points-box">
                       <div class="form-order__points">
                         <div class="form-order__point-1">
-                          <input id="point-1" type="text" name="name"/>
-                          <label for="point-1">Откуда</label>
+                          <input id="point-1" type="text" name="city_1"/>
+                          <label for="point-1">Откуда</label><span class="error"></span>
                         </div>
                         <button class="button-revers" type="button"><span class="visually-hidden">Изменить маршрут</span></button>
                         <div class="form-order__point-2">
-                          <input id="point-2" type="text" name="email"/>
-                          <label for="point-2">Куда</label>
+                          <input id="point-2" type="text" name="city_2"/>
+                          <label for="point-2">Куда</label><span class="error"></span>
                         </div>
                       </div>
                       <div class="form-order__points-2">
                         <div class="form-order__weight">
-                          <input id="weight" type="number" min="1"/>
-                          <label for="weight">Вес, кг</label>
+                          <input id="weight" type="number" min="1" max="4000"/>
+                          <label for="weight">Вес, кг</label><span class="error"></span>
                         </div>
                         <div class="form-order__volume">
-                          <input id="volume" type="number" min="1"/>
-                          <label for="volume">Объем, м<sup>3</sup></label>
+                          <input id="volume" type="number" min="1" max="10"/>
+                          <label for="volume">Объем, м<sup>3</sup></label><span class="error"></span>
                         </div>
                       </div>
                     </div>
@@ -173,15 +173,14 @@
                 </div>
                 <div class="form-order__box-2">
                   <h3>Стоимость вашей доставки будет составлять
-                    <input class="form-order__price visually-hidden" type="number" id="price"/>
-                    <label class="form-order__price-2" for="price">0</label>
+                    <input class="form-order__price visually-hidden" type="number" id="price"/><span class="form-order__price-2" for="price">0</span><span>$</span>
                   </h3>
                   <p>Оставьте свои контактные данные для оформления заявки</p>
                   <div class="form-order__data-box form-order__data-box--calc">
                     <div class="form-group__box">
                       <div class="form-order__point-4">
                         <input id="user-phone" type="text"/>
-                        <label for="user-phone">Телефон*</label>
+                        <label for="user-phone">Телефон*</label><span class="error"></span>
                       </div>
                       <div class="form-order__point-5">
                         <input id="user-email" type="text"/>
