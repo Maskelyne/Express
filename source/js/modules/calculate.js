@@ -11,12 +11,14 @@
     var city1 = formCalc.querySelector('#point-1');
     var city2 = formCalc.querySelector('#point-2');
     var btnCalc = formCalc.querySelector('.btn-calc');
+    var btnPrev = formCalc.querySelector('.button--prev-js');
     var priceText = formCalc.querySelector('.form-order__price');
     var priceLabel = formCalc.querySelector('.form-order__price-2');
     var formOrderBox1 = formCalc.querySelector('.form-order__box-1');
     var formOrderBox2 = formCalc.querySelector('.form-order__box-2');
     var error = formCalc.querySelectorAll('.error');
     var regex = /[0-9]/g;
+
     var obj = {
       cubs: [],
       weight: [150, 300, 550, 800, 1100, 1500, 2000, 2600, 3300, 4000],
@@ -584,7 +586,15 @@
       }
     };
 
+    var prevStep = function (evt) {
+      evt.preventDefault();
+
+      formOrderBox1.classList.add('form-order__active');
+      formOrderBox2.classList.remove('form-order__active');
+    };
+
     $(formCalc).validate({
+      ignore: ".ignore",
       messages: {
         tel: 'Введите ваш номер телефона',
       },
@@ -592,7 +602,7 @@
     });
 
     btnCalc.addEventListener('click', calc);
+    btnPrev.addEventListener('click', prevStep);
   }
-
 
 })();

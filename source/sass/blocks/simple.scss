@@ -1261,14 +1261,16 @@ textarea {
   }
 
   .form-order__box--delivery {
-    .service-slider__btn {
-      margin-left: auto;
-      max-width: 246px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-right: auto;
-      margin-bottom: 0;
+    .button {
+      margin: 40px auto 0 auto;
+
+      &:hover {
+        &::after,
+        &::before {
+          width: calc(100% + 26px);
+          height: calc(100% + 26px);
+        }
+      }
     }
   }
 
@@ -1814,13 +1816,10 @@ input:focus {
 
 .social-ch {
   p {
-    font-style: normal;
-    font-weight: normal;
+    margin: 30px 0 20px 0;
     font-size: 16px;
     line-height: 25px;
     color: rgba(255, 255, 255, 0.7);
-    margin-top: 0;
-    margin-bottom: 20px;
   }
 
   ul {

@@ -136,11 +136,11 @@
                       </div>
                       <div class="form-order__points-2">
                         <div class="form-order__weight">
-                          <input id="weight" type="number" min="1" max="4000"/>
+                          <input class="ignore" id="weight" type="number" min="1" max="4000" name="weight"/>
                           <label for="weight">Вес, кг</label><span class="error"></span>
                         </div>
                         <div class="form-order__volume">
-                          <input id="volume" type="number" min="1" max="10"/>
+                          <input class="ignore" id="volume" type="number" min="1" max="10" name="volume"/>
                           <label for="volume">Объем, м<sup>3</sup></label><span class="error"></span>
                         </div>
                       </div>
@@ -237,7 +237,9 @@
                       </div>
                     </div>
                   </div>
-                  <button class="button button--effect-1" type="submit"><span>Заказать</span></button>
+                  <div class="form-order__buttons"><a class="button--prev-js" href="#"><img src="assets/img/svg/icon-arrow-prev.svg" width="49" height="15" alt="Вернуться назад"/>Назад</a>
+                    <button class="button button--effect-1" type="submit"><span>Заказать</span></button>
+                  </div>
                 </div>
               </form>
             </div>

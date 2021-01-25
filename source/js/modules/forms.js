@@ -18,78 +18,6 @@
 
     btnRevers.addEventListener('click', swapValues);
 
-    $("#point-1").keyup(function () {
-      if ($(this).val()) {
-        $(this).addClass("not-empty");
-      } else {
-        $(this).removeClass("not-empty");
-      }
-    });
-
-    $("#point-2").keyup(function () {
-      if ($(this).val()) {
-        $(this).addClass("not-empty");
-      } else {
-        $(this).removeClass("not-empty");
-      }
-    });
-
-    $('#point-3').on('keyup change blur', function() {
-      if ($(this).val().trim() !== '') {
-        $(this).addClass("not-empty");
-      } else {
-        $(this).removeClass("not-empty");
-      }
-    });
-
-    $("#weight").keyup(function () {
-      if ($(this).val()) {
-        $(this).addClass("not-empty");
-      } else {
-        $(this).removeClass("not-empty");
-      }
-    });
-
-    $("#volume").keyup(function () {
-      if ($(this).val()) {
-        $(this).addClass("not-empty");
-      } else {
-        $(this).removeClass("not-empty");
-      }
-    });
-
-    $("#user-phone").keyup(function () {
-      if ($(this).val()) {
-        $(this).addClass("not-empty");
-      } else {
-        $(this).removeClass("not-empty");
-      }
-    });
-
-    $("#user-email").keyup(function () {
-      if ($(this).val()) {
-        $(this).addClass("not-empty");
-      } else {
-        $(this).removeClass("not-empty");
-      }
-    });
-
-    $("#user-company").keyup(function () {
-      if ($(this).val()) {
-        $(this).addClass("not-empty");
-      } else {
-        $(this).removeClass("not-empty");
-      }
-    });
-
-    $("#user-text").keyup(function () {
-      if ($(this).val()) {
-        $(this).addClass("not-empty");
-      } else {
-        $(this).removeClass("not-empty");
-      }
-    });
-
     var inputmask_options;
 
     inputmask_options = {
@@ -100,6 +28,7 @@
     };
 
     $("#point-3").inputmask(inputmask_options);
+    $("#time-d").inputmask("hh:mm", {showMaskOnHover: false, showMaskOnFocus: true});
 
     var $input = $('#point-3'),
       dp = $input.datepicker({
@@ -110,7 +39,6 @@
       dp.show();
       $input.focus();
     });
-
   }
 
   $(document).ready(function() {
@@ -140,37 +68,196 @@
     $('.file-res').css('display', 'none');
   })
 
-  var userPhone = document.querySelector("#user-phone");
+  $("#point-1").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
 
-  if (userPhone) {
+  $("#point-2").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
 
-    var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
-    var maskOpts = {
-      inputmask: {
-        definitions: {
-          '#': {
-            validator: "[0-9]",
-            cardinality: 1
-          }
-        },
-        showMaskOnHover: false,
-        autoUnmask: true,
-        clearMaskOnLostFocus: true
-      },
-      match: /[0-9]/,
-      replace: '#',
-      list: maskList,
-      listKey: "mask",
-      onMaskChange: function (maskObj, determined) {
-      }
-    };
+  $('#point-3').on('keyup change blur', function() {
+    if ($(this).val().trim() !== '') {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
 
-    $('#user-phone').change(function () {
-      $('#user-phone').inputmask("remove");
-      $('#user-phone').inputmasks(maskOpts);
-    });
+  $("#weight").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
 
-    $('#user-phone').change();
-  }
+  $("#volume").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#user-name").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#user-contacts").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#user-phone").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#user-email").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#ec-user_contacts-resource-3").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#ec-text-resource-3").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#ec-user_name-resource-3").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#ec-user_email-resource-3").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#user-company").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#user-text").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#street-1").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#street-2").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#house-1").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#korp-1").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#room-1").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#house-2").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#korp-2").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#room-2").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
+
+  $("#time-d").keyup(function () {
+    if ($(this).val()) {
+      $(this).addClass("not-empty");
+    } else {
+      $(this).removeClass("not-empty");
+    }
+  });
 
 })();

@@ -22,11 +22,11 @@ mixin form-order()
                       span.error
                   .form-order__points-2
                     .form-order__weight
-                      input(id="weight" type="number" min="1" max="4000")
+                      input.ignore(id="weight" type="number" min="1" max="4000" name="weight")
                       label(for="weight") Вес, кг
                       span.error
                     .form-order__volume
-                      input(id="volume" type="number" min="1" max="10")
+                      input.ignore(id="volume" type="number" min="1" max="10" name="volume")
                       label(for="volume") Объем, м
                         sup 3
                       span.error
@@ -104,5 +104,9 @@ mixin form-order()
                   .form-order__textarea
                     textarea(id="user-text")
                     label(for="user-text") Для юр. лиц и ИП введите реквизиты
-              button(type="submit").button.button--effect-1
-                span Заказать
+              .form-order__buttons
+                a.button--prev-js(href="#")
+                  +img('svg', 'icon-arrow-prev', 'svg', '49', '15', 'Вернуться назад')
+                  | Назад
+                button(type="submit").button.button--effect-1
+                  span Заказать

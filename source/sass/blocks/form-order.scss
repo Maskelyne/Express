@@ -414,7 +414,7 @@
 .form-order__volume,
 .form-order__textarea {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .form-order__point-3 {
@@ -795,16 +795,52 @@
   width: 125px;
 }
 
-#form-order__calc .error {
-  margin-top: 10px;
+#form-order__calc span.error,
+#form-order__delivery span.error,
+#form-order__contacts span.error,
+#ec-form-resource-3 span.error {
   display: inline;
   font-size: 12px;
   line-height: 14px;
   color: red;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
 }
 
-input#user-phone.error {
+input#user-phone.error,
+input#ec-user_contacts-resource-3.error {
   color: $white;
   font-size: 18px;
   line-height: 21px;
+  position: static;
+}
+
+.form-order__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include desktop-width-min {
+    max-width: 355px;
+    margin: 0 auto;
+  }
+
+  .button {
+    margin: 0;
+    max-width: 200px;
+    justify-self: flex-end;
+  }
+
+  .button--prev-js {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: $yellow;
+
+    img {
+      max-width: 40px;
+      margin-right: 10px;
+      transform: rotate(180deg);
+    }
+  }
 }

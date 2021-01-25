@@ -1447,6 +1447,9 @@ input::-webkit-inner-spin-button {
 .active-item a {
   color: #ffC130; }
 
+.grecaptcha-badge {
+  display: none; }
+
 .main-header {
   border-bottom: solid 2px #ffC130; }
   @media (max-width: 1023px) {
@@ -3899,14 +3902,11 @@ textarea {
   max-width: 27px;
   max-height: 27px; }
 
-.delivery .form-order__box--delivery .service-slider__btn {
-  margin-left: auto;
-  max-width: 246px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-right: auto;
-  margin-bottom: 0; }
+.delivery .form-order__box--delivery .button {
+  margin: 40px auto 0 auto; }
+  .delivery .form-order__box--delivery .button:hover::after, .delivery .form-order__box--delivery .button:hover::before {
+    width: calc(100% + 26px);
+    height: calc(100% + 26px); }
 
 .delivery__delivery-caption {
   margin-top: 198px;
@@ -4313,13 +4313,10 @@ input:focus {
   height: 10px; }
 
 .social-ch p {
-  font-style: normal;
-  font-weight: normal;
+  margin: 30px 0 20px 0;
   font-size: 16px;
   line-height: 25px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 0;
-  margin-bottom: 20px; }
+  color: rgba(255, 255, 255, 0.7); }
 
 .social-ch ul {
   padding-left: 0; }
@@ -4883,7 +4880,7 @@ input:focus {
 .form-order__volume,
 .form-order__textarea {
   position: relative;
-  margin-bottom: 30px; }
+  margin-bottom: 35px; }
 
 .form-order__point-3 {
   position: relative; }
@@ -5148,17 +5145,45 @@ input:focus {
 #feedback-info .ec-stars span.rating-5 {
   width: 125px; }
 
-#form-order__calc .error {
-  margin-top: 10px;
+#form-order__calc span.error,
+#form-order__delivery span.error,
+#form-order__contacts span.error,
+#ec-form-resource-3 span.error {
   display: inline;
   font-size: 12px;
   line-height: 14px;
-  color: red; }
+  color: red;
+  position: absolute;
+  bottom: -20px;
+  left: 0; }
 
-input#user-phone.error {
+input#user-phone.error,
+input#ec-user_contacts-resource-3.error {
   color: #ffffff;
   font-size: 18px;
-  line-height: 21px; }
+  line-height: 21px;
+  position: static; }
+
+.form-order__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 1023px) {
+    .form-order__buttons {
+      max-width: 355px;
+      margin: 0 auto; } }
+  .form-order__buttons .button {
+    margin: 0;
+    max-width: 200px;
+    justify-self: flex-end; }
+  .form-order__buttons .button--prev-js {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #ffC130; }
+    .form-order__buttons .button--prev-js img {
+      max-width: 40px;
+      margin-right: 10px;
+      transform: rotate(180deg); }
 
 .modal {
   padding: 0 10px;
