@@ -224,9 +224,9 @@
           document.querySelector('#korp-1').value = document.querySelector('#korp-2').value;
           document.querySelector('#korp-2').value = input4;
 
-        var input4 = document.querySelector('#room-1').value;
+        var input5 = document.querySelector('#room-1').value;
           document.querySelector('#room-1').value = document.querySelector('#room-2').value;
-          document.querySelector('#room-2').value = input4;
+          document.querySelector('#room-2').value = input5;
       }
     }
 
@@ -257,7 +257,7 @@
 
   $(document).ready(function() {
     $('input[type="file"]').change(function () {
-      var file = this.files; //Files[0] = 1st file
+      var file = this.files;
       if (file[0]) {
         var reader = new FileReader();
         reader.readAsDataURL(file[0], 'UTF-8');
@@ -1362,7 +1362,7 @@
     $(formDelivery).validate({
       ignore: ".ignore",
       messages: {
-        tel: 'Введите ваш номер телефона',
+        tel: 'Введите номер телефона',
       },
       errorElement: 'span',
     });
@@ -1374,7 +1374,8 @@
     $(formContacts).validate({
       ignore: ".ignore",
       messages: {
-        phone: 'Введите ваш номер телефона',
+        phone: 'Введите номер телефона',
+        text: 'Введите текст'
       },
       errorElement: 'span',
     });
@@ -1384,7 +1385,8 @@
     $(formFeedback).validate({
       ignore: ".ignore",
       messages: {
-        user_contacts: 'Введите ваш номер телефона',
+        user_contacts: 'Введите номер телефона',
+        text: 'Введите текст'
       },
       errorElement: 'span',
     });
@@ -1540,7 +1542,7 @@
       response.message = '';
 
     } else if (form.attr('id') === 'form-order__contacts') {
-      modalFeedback.classList.add('modal--active');
+      modalThanks.classList.add('modal--active');
       document.body.style.overflow = 'hidden';
       response.message = '';
 

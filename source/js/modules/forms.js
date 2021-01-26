@@ -36,9 +36,9 @@
           document.querySelector('#korp-1').value = document.querySelector('#korp-2').value;
           document.querySelector('#korp-2').value = input4;
 
-        var input4 = document.querySelector('#room-1').value;
+        var input5 = document.querySelector('#room-1').value;
           document.querySelector('#room-1').value = document.querySelector('#room-2').value;
-          document.querySelector('#room-2').value = input4;
+          document.querySelector('#room-2').value = input5;
       }
     }
 
@@ -69,7 +69,7 @@
 
   $(document).ready(function() {
     $('input[type="file"]').change(function () {
-      var file = this.files; //Files[0] = 1st file
+      var file = this.files;
       if (file[0]) {
         var reader = new FileReader();
         reader.readAsDataURL(file[0], 'UTF-8');

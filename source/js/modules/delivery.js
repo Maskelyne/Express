@@ -83,7 +83,7 @@
     $(formDelivery).validate({
       ignore: ".ignore",
       messages: {
-        tel: 'Введите ваш номер телефона',
+        tel: 'Введите номер телефона',
       },
       errorElement: 'span',
     });
@@ -95,7 +95,8 @@
     $(formContacts).validate({
       ignore: ".ignore",
       messages: {
-        phone: 'Введите ваш номер телефона',
+        phone: 'Введите номер телефона',
+        text: 'Введите текст'
       },
       errorElement: 'span',
     });
@@ -105,7 +106,8 @@
     $(formFeedback).validate({
       ignore: ".ignore",
       messages: {
-        user_contacts: 'Введите ваш номер телефона',
+        user_contacts: 'Введите номер телефона',
+        text: 'Введите текст'
       },
       errorElement: 'span',
     });
