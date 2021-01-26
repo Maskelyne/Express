@@ -236,11 +236,6 @@
         grid-gap: 0 10px;
         grid-template-columns: 25px auto;
 
-        @include tablet-width {
-          font-size: 14px;
-          line-height: 16px;
-        }
-
         &::before {
           top: 0;
         }
@@ -404,6 +399,39 @@
   }
 }
 
+#ec-form-resource-3 {
+  .form-order__textarea {
+    margin-bottom: 0;
+  }
+
+  textarea {
+    &:required {
+      ~ label {
+        &::after {
+          position: absolute;
+          content: "*";
+          top: 0;
+          right: -8px;
+        }
+      }
+    }
+
+    &:focus,
+    &.not-empty {
+      ~ label {
+        font-size: 13px;
+        transform: translateY(-40px);
+        transition: all 0.3s linear;
+        color: rgba(255, 193, 48, 0.5);
+
+        @include tablet-width {
+          transform: translateY(-40px);
+        }
+      }
+    }
+  }
+}
+
 .form-order__point-1,
 .form-order__point-2,
 .form-order__point-3,
@@ -419,6 +447,7 @@
 
 .form-order__point-3 {
   position: relative;
+  z-index: 0;
 
   &::after {
     width: 25px;
@@ -430,6 +459,7 @@
     background-image: url("../img/svg/icon-calendar.svg");
     background-repeat: no-repeat;
     background-size: 25px 25px;
+    z-index: -1;
   }
 
   @include desktop-width-min {
@@ -516,11 +546,6 @@
     position: relative;
     cursor: pointer;
 
-    @include tablet-width {
-      font-size: 14px;
-      line-height: 19px;
-    }
-
     &:before {
       width: 25px;
       height: 25px;
@@ -589,6 +614,7 @@
       height: 55px;
       background-size: 60px 55px;
       background-image: url("../img/svg/icon-feedback.svg");
+      background-repeat: no-repeat;
 
       @include tablet-width {
         width: 50px;
@@ -619,6 +645,11 @@
     justify-content: space-between;
     margin: 20px 0 30px 0;
 
+    @include tablet-width {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+
     p {
       margin: 0;
       font-size: 16px;
@@ -627,6 +658,12 @@
       @include tablet-width {
         font-size: 12px;
         line-height: 18px;
+      }
+    }
+
+    .rating {
+      @include tablet-width {
+        margin-top: 10px;
       }
     }
   }
@@ -648,6 +685,10 @@
 
   .form-group__box {
     margin-top: 25px;
+
+    @include tablet-width {
+      margin-top: 0;
+    }
 
     input {
       max-width: 100%;
@@ -671,10 +712,16 @@
         bottom: 0;
         right: 0;
         border: none;
+        transition: all 0.5s ease;
 
         @include tablet-width {
           width: 30px;
           height: 30px;
+        }
+
+        &:hover {
+          transform: scale(0.9);
+          transition: all 0.5s ease;
         }
       }
     }

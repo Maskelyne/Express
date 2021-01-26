@@ -39,7 +39,7 @@
     var burgerBtn = document.querySelector('.main-header__burger');
     var burgerSocial = document.querySelector('.main-header__link');
     var headerSocial = document.querySelector('.main-header__tel');
-    var headerWrapMenu = document.querySelector('.main-header__wrap-menu');
+    var headerWrapMenu = document.querySelector('.main-header__link-tablet');
     var headerWrapActive = document.querySelector('.main-header__wrap')
 
     var activeMenu = function () {
@@ -108,7 +108,7 @@
       slidesPerView: 1,
       allowTouchMove: false,
       autoplay: {
-        delay: 7000,
+        delay: 10000,
       },
       navigation: {
         nextEl: '.swiper-button-next',
@@ -191,6 +191,8 @@
 (function () {
 
   var btnRevers = document.querySelector('.button-revers');
+  var formCalc = document.querySelector('#form-order__calc');
+  var formDelivery = document.querySelector('#form-order__delivery');
 
   if (btnRevers) {
 
@@ -199,9 +201,33 @@
       number = number + 180;
       btnRevers.style.transform = 'rotate(' + number + 'deg)';
 
-      var tmp = document.querySelector("#point-1").value;
-      document.querySelector("#point-1").value = document.querySelector("#point-2").value;
-      document.querySelector("#point-2").value = tmp;
+      if (formCalc) {
+        var input = document.querySelector("#point-1").value;
+        document.querySelector("#point-1").value = document.querySelector("#point-2").value;
+        document.querySelector("#point-2").value = input;
+      }
+
+      if (formDelivery) {
+        var input1 = document.querySelector("#point-1").value;
+          document.querySelector("#point-1").value = document.querySelector("#point-2").value;
+          document.querySelector("#point-2").value = input1;
+
+        var input2 = document.querySelector('#street-1').value;
+          document.querySelector('#street-1').value = document.querySelector('#street-2').value;
+          document.querySelector('#street-2').value = input2;
+
+        var input3 = document.querySelector('#house-1').value;
+          document.querySelector('#house-1').value = document.querySelector('#house-2').value;
+          document.querySelector('#house-2').value = input3;
+
+        var input4 = document.querySelector('#korp-1').value;
+          document.querySelector('#korp-1').value = document.querySelector('#korp-2').value;
+          document.querySelector('#korp-2').value = input4;
+
+        var input4 = document.querySelector('#room-1').value;
+          document.querySelector('#room-1').value = document.querySelector('#room-2').value;
+          document.querySelector('#room-2').value = input4;
+      }
     }
 
     btnRevers.addEventListener('click', swapValues);
@@ -520,8 +546,8 @@
   });
 
 
-  $(window).on('load resize', function(){
-    if ($(window).width() <= 1024) {
+  $(window).on('load', function(){
+    if ($(window).width() <= 1023) {
       $('.form-order__delivery').insertAfter('.insert');
       if($('.form-order__delivery').hasClass('form-order__delivery--hide')){
         $('.form-order__delivery').removeClass('form-order__delivery--hide')
@@ -1506,7 +1532,7 @@
     if (form.attr('id') === 'ec-form-resource-3') {
       modalFeedback.classList.add('modal--active');
       document.body.style.overflow = 'hidden';
-      // response.message = '';
+      response.message = '';
 
     } else if (form.attr('id') === 'form-order__calc') {
       modalThanks.classList.add('modal--active');
@@ -1514,6 +1540,11 @@
       response.message = '';
 
     } else if (form.attr('id') === 'form-order__contacts') {
+      modalFeedback.classList.add('modal--active');
+      document.body.style.overflow = 'hidden';
+      response.message = '';
+
+    } else if (form.attr('id') === 'form-order__delivery') {
       modalFeedback.classList.add('modal--active');
       document.body.style.overflow = 'hidden';
       response.message = '';

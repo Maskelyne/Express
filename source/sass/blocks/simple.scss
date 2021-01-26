@@ -131,7 +131,6 @@
   p {
     font-size: 20px;
     line-height: 20px;
-    /* or 100% */
 
     letter-spacing: 0.02em;
   }
@@ -237,7 +236,6 @@
     background-image: linear-gradient(289.07deg, rgba(86, 100, 130, 0.81) -7.49%, #172340 95.19%);
     @media(max-width: 767px) {
       padding: 30px 27px 40px 13px;
-      background-image: linear-gradient(289.07deg, rgba(86, 100, 130, 0.81) -7.49%, #212D4A 96.19%);
     }
   }
 
@@ -329,8 +327,8 @@
 
   &:hover::before,
   &:hover::after {
-    width: calc(100% + 24px);
-    height: calc(100% + 24px);
+    width: calc(100% + 26px);
+    height: calc(100% + 26px);
     border-color: $yellow;
   }
 
@@ -876,7 +874,6 @@ textarea {
       padding: 0;
     }
 
-
     p {
       font-style: normal;
       font-weight: normal;
@@ -888,8 +885,6 @@ textarea {
       }
 
     }
-
-
   }
 }
 
@@ -992,8 +987,6 @@ textarea {
     }
 
     &-wrap {
-
-
       padding-top: 74px;
       @media(max-width: 1200px) {
         padding-left: 20px;
@@ -1179,9 +1172,7 @@ textarea {
       display: none;
     }
   }
-
 }
-
 
 .download {
   font-size: 18px;
@@ -1204,7 +1195,6 @@ textarea {
   }
 }
 
-
 .requisites {
   margin-bottom: 15px;
   max-height: 0;
@@ -1222,7 +1212,6 @@ textarea {
   }
 }
 
-
 .hide-d {
   display: none;
   @media(max-width: 1024px) and (min-width: 767px) {
@@ -1231,7 +1220,6 @@ textarea {
   @media(max-width: 766px) {
     display: block;
   }
-
 }
 
 .hide-m-t {
@@ -1297,7 +1285,7 @@ textarea {
       padding-bottom: 20px;
       margin-bottom: 40px;
 
-      @media(max-width: 1024px) {
+      @include tablet-width {
         font-size: 16px;
         line-height: 36px;
         margin-bottom: 20px;
@@ -1312,7 +1300,6 @@ textarea {
         bottom: 0;
         left: 0;
       }
-
     }
 
     ul {
@@ -1340,7 +1327,7 @@ textarea {
       margin-left: 10px;
       color: rgba(255, 255, 255, 0.9);
 
-      @media(max-width: 1024px) {
+      @include tablet-width {
         font-size: 14px;
         line-height: 19px;
       }
@@ -1366,14 +1353,20 @@ textarea {
     line-height: 36px;
     max-width: 650px;
 
-    @media(max-width: 1400px) and (min-width: 1024px) {
+    @media(max-width: 1400px) and (min-width: 1023px) {
       margin-bottom: 120px;
     }
 
-    @media(max-width: 1024px) {
+    @media(max-width: 1023px) {
       max-width: unset;
       font-size: 20px;
       line-height: 26px;
+      margin-bottom: 40px;
+    }
+
+    @include tablet-width {
+      font-size: 18px;
+      line-height: 24px;
     }
   }
 
@@ -1382,6 +1375,7 @@ textarea {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
+
     @media(max-width: 767px) {
       background-position: 31%;
     }
@@ -1433,11 +1427,14 @@ textarea {
     }
 
     &-wrap {
+      min-height: 1130px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
 
-
+      @include desktop-width-min {
+        min-height: auto;
+      }
     }
 
     ul {
@@ -1449,12 +1446,13 @@ textarea {
       gap: 30px;
       justify-content: center;
 
-      @include desktop-width-min {
+      @media (max-width: 1024px) {
         margin-left: auto;
         margin-right: auto;
         margin-top: 76px;
         margin-bottom: 76px;
       }
+
       @include tablet-width {
         margin-top: 52px;
         margin-bottom: 52px;
@@ -1487,7 +1485,8 @@ textarea {
           letter-spacing: 0.03em;
           color: #FFC130;
           text-transform: uppercase;
-          @media(max-width: 1024px) {
+
+          @include tablet-width {
             font-size: 14px;
             line-height: 19px;
           }
@@ -1500,7 +1499,8 @@ textarea {
           line-height: 25px;
           color: #FFFFFF;
           margin: 0;
-          @media(max-width: 1024px) {
+
+          @include tablet-width {
             font-size: 14px;
             line-height: 19px;
           }
@@ -1677,8 +1677,11 @@ textarea {
     font-weight: normal;
     font-size: 16px;
     line-height: 25px;
+
     @include tablet-width {
-      padding-left: 23px;
+      padding-left: 20px;
+      font-size: 14px;
+      line-height: 25px;
     }
   }
 
@@ -1728,26 +1731,19 @@ button {
 }
 
 textarea {
-  padding-top: 12px;
-  padding-left: 20px;
-  padding-right: 12px;
-  padding-bottom: 20px;
+  padding: 12px 20px;
   border-radius: 2px;
   min-height: 100px;
   color: #FFFFFF;
   border: solid 1px transparent;
   border-image: linear-gradient(47deg, #ffffff 23%, rgba(28, 40, 69, 0.7) 108%, #212d4a00 80%);
   border-image-slice: 1;
-  background: -webkit-gradient(linear, left top, right top, from(#FFFFFF), color-stop(105.92%, rgba(255, 255, 255, 0.25)));
-  background: -o-linear-gradient(left, #FFFFFF 0%, rgba(255, 255, 255, 0.25) 105.92%);
   background: linear-gradient(248deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.25) 105.92%);
-
 
   &:focus {
     border: solid 1px transparent;
     border-image: linear-gradient(47deg, #FFB520 23%, rgba(28, 40, 69, 0.7) 108%, #212d4a00 80%);
     border-image-slice: 1;
-
   }
 }
 
@@ -1778,10 +1774,6 @@ input:focus {
     left: 10px;
     font-size: 13px;
   }
-}
-
-.text-label {
-  top: 12px !important;
 }
 
 .form-group textarea:focus ~ label, .form-group textarea.not-empty ~ label {
@@ -1914,7 +1906,6 @@ input:focus {
       max-width: 224px;
     }
   }
-
 }
 
 .about__slider-title {
@@ -1997,5 +1988,21 @@ input:focus {
     margin-top: 30px;
     grid-gap: 30px;
     grid-template-columns: repeat(2, auto);
+
+    @include tablet-width {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.form-group-gap {
+  @include tablet-width {
+    margin: 30px 0;
+  }
+}
+
+.form-order__where:last-child {
+  @include tablet-width {
+    margin-top: 30px;
   }
 }

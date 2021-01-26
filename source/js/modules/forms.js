@@ -3,6 +3,8 @@
 (function () {
 
   var btnRevers = document.querySelector('.button-revers');
+  var formCalc = document.querySelector('#form-order__calc');
+  var formDelivery = document.querySelector('#form-order__delivery');
 
   if (btnRevers) {
 
@@ -11,9 +13,33 @@
       number = number + 180;
       btnRevers.style.transform = 'rotate(' + number + 'deg)';
 
-      var tmp = document.querySelector("#point-1").value;
-      document.querySelector("#point-1").value = document.querySelector("#point-2").value;
-      document.querySelector("#point-2").value = tmp;
+      if (formCalc) {
+        var input = document.querySelector("#point-1").value;
+        document.querySelector("#point-1").value = document.querySelector("#point-2").value;
+        document.querySelector("#point-2").value = input;
+      }
+
+      if (formDelivery) {
+        var input1 = document.querySelector("#point-1").value;
+          document.querySelector("#point-1").value = document.querySelector("#point-2").value;
+          document.querySelector("#point-2").value = input1;
+
+        var input2 = document.querySelector('#street-1').value;
+          document.querySelector('#street-1').value = document.querySelector('#street-2').value;
+          document.querySelector('#street-2').value = input2;
+
+        var input3 = document.querySelector('#house-1').value;
+          document.querySelector('#house-1').value = document.querySelector('#house-2').value;
+          document.querySelector('#house-2').value = input3;
+
+        var input4 = document.querySelector('#korp-1').value;
+          document.querySelector('#korp-1').value = document.querySelector('#korp-2').value;
+          document.querySelector('#korp-2').value = input4;
+
+        var input4 = document.querySelector('#room-1').value;
+          document.querySelector('#room-1').value = document.querySelector('#room-2').value;
+          document.querySelector('#room-2').value = input4;
+      }
     }
 
     btnRevers.addEventListener('click', swapValues);

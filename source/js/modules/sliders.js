@@ -14,7 +14,7 @@
       slidesPerView: 1,
       allowTouchMove: false,
       autoplay: {
-        delay: 7000,
+        delay: 10000,
       },
       navigation: {
         nextEl: '.swiper-button-next',

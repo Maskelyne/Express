@@ -11,7 +11,7 @@
     if (form.attr('id') === 'ec-form-resource-3') {
       modalFeedback.classList.add('modal--active');
       document.body.style.overflow = 'hidden';
-      // response.message = '';
+      response.message = '';
 
     } else if (form.attr('id') === 'form-order__calc') {
       modalThanks.classList.add('modal--active');
@@ -19,6 +19,11 @@
       response.message = '';
 
     } else if (form.attr('id') === 'form-order__contacts') {
+      modalFeedback.classList.add('modal--active');
+      document.body.style.overflow = 'hidden';
+      response.message = '';
+
+    } else if (form.attr('id') === 'form-order__delivery') {
       modalFeedback.classList.add('modal--active');
       document.body.style.overflow = 'hidden';
       response.message = '';

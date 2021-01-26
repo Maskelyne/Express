@@ -34,8 +34,8 @@
   });
 
 
-  $(window).on('load resize', function(){
-    if ($(window).width() <= 1024) {
+  $(window).on('load', function(){
+    if ($(window).width() <= 1023) {
       $('.form-order__delivery').insertAfter('.insert');
       if($('.form-order__delivery').hasClass('form-order__delivery--hide')){
         $('.form-order__delivery').removeClass('form-order__delivery--hide')

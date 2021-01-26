@@ -154,3 +154,80 @@
 .modal--active {
   display: flex;
 }
+
+.alert-success {
+  .modal__wrapper {
+    background-image: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .modal__image {
+    position: static;
+    max-width: 100%;
+
+    img {
+      &:first-child {
+        max-width: 128px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include tablet-width {
+          max-width: 100px;
+        }
+      }
+
+      &:last-child {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include tablet-width {
+          max-width: 250px;
+        }
+      }
+    }
+  }
+
+  .modal__box {
+    background-image: none;
+    padding: 150px 0 200px 0;
+
+    @include tablet-width {
+      padding: 110px 0 120px 0;
+    }
+
+    h2 {
+      display: flex;
+      justify-content: center;
+
+      @include tablet-width {
+        font-size: 16px;
+        line-height: 21px;
+      }
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.7);
+
+      @include tablet-width {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+
+    img {
+      max-width: 105px;
+      margin-right: 10px;
+      margin-top: -11px;
+
+      @include tablet-width {
+        max-width: 58px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

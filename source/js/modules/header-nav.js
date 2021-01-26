@@ -9,7 +9,7 @@
     var burgerBtn = document.querySelector('.main-header__burger');
     var burgerSocial = document.querySelector('.main-header__link');
     var headerSocial = document.querySelector('.main-header__tel');
-    var headerWrapMenu = document.querySelector('.main-header__wrap-menu');
+    var headerWrapMenu = document.querySelector('.main-header__link-tablet');
     var headerWrapActive = document.querySelector('.main-header__wrap')
 
     var activeMenu = function () {
