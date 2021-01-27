@@ -14,11 +14,17 @@
       slidesPerView: 1,
       allowTouchMove: false,
       autoplay: {
-        delay: 10000,
+        delay: 8000,
+        disableOnInteraction: false,
       },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          allowTouchMove: true,
+        }
       }
     });
   };
@@ -33,13 +39,12 @@
       speed: 1000,
       slidesPerView: 3,
       spaceBetween: 30,
-      autoplay: {
-        delay: 5000,
-      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
+      centeredSlides: true,
+      slideToClickedSlide: true,
       breakpoints: {
         1440: {
           slidesPerView: 3,

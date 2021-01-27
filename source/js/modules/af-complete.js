@@ -24,7 +24,7 @@
       response.message = '';
 
     } else if (form.attr('id') === 'form-order__delivery') {
-      modalFeedback.classList.add('modal--active');
+      modalThanks.classList.add('modal--active');
       document.body.style.overflow = 'hidden';
       response.message = '';
 
@@ -37,3 +37,5 @@
   });
 
 })();
+
+

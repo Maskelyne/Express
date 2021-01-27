@@ -5,6 +5,7 @@
   border-bottom: solid 2px #45516E;
 
   @include tablet-width {
+    margin-top: 20px;
     padding-bottom: 50px;
     position: relative;
     border-bottom: none;
@@ -121,8 +122,8 @@
   position: relative;
 
   @include desktop-width {
-  display: none;
-}
+    display: none;
+  }
 
   img {
     height: 100%;
@@ -135,11 +136,13 @@
   width: 100%;
   max-width: 820px;
   padding-left: 16%;
+  padding-top: 40px;
+  padding-bottom: 40px;
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 
   @include desktop-width-middle {
     padding-left: 20%;
@@ -222,11 +225,11 @@
     padding-bottom: 15px;
     font-size: 20px;
     line-height: 31px;
-    font-family: $openSansBold;
 
     @include tablet-width {
       font-size: 16px;
-      line-height: 25px;
+      line-height: 20px;
+      padding-bottom: 10px;
     }
 
     strong {
@@ -242,15 +245,6 @@
 
       @include mobile-width {
         display: block;
-      }
-    }
-
-    &:nth-child(3) {
-      font-family: $openSansRegular;
-
-      @include tablet-width {
-        font-size: 13px;
-        line-height: 18px;
       }
     }
 
@@ -277,6 +271,7 @@
 
     @include tablet-width {
       font-size: 22px;
+      line-height: 20px;
       padding-bottom: 10px;
     }
 
@@ -285,108 +280,25 @@
       max-width: 60px;
     }
   }
-}
 
-.swiper-slide-active {
-  h2 {
-    animation: opacity;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-play-state: running;
-    opacity: 0;
-  }
+  .text {
+    font-family: $openSansBold;
+    font-size: 26px;
+    line-height: 35px;
 
-  p {
-    &:nth-child(1) {
-      animation: opacity;
-      animation-duration: 1s;
-      animation-delay: 1s;
-      animation-timing-function: linear;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-      opacity: 0;
-    }
-
-    &:nth-child(3) {
-      animation: opacity;
-      animation-duration: 1s;
-      animation-delay: 1.5s;
-      animation-timing-function: linear;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-      opacity: 0;
-    }
-
-    &:nth-child(4) {
-      animation: opacity;
-      animation-duration: 1s;
-      animation-delay: 2s;
-      animation-timing-function: linear;
-      animation-iteration-count: 1;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-      animation-play-state: running;
-      opacity: 0;
+    @include tablet-width {
+      font-size: 18px;
+      line-height: 24px;
     }
   }
 
-  ul {
-    li {
-      &:nth-child(1) {
-        animation: opacity;
-        animation-duration: 1s;
-        animation-delay: 1s;
-        animation-timing-function: linear;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-        opacity: 0;
-      }
+  .text-2 {
+    font-family: $openSansBold;
+    color: $yellow;
 
-      &:nth-child(2) {
-        animation: opacity;
-        animation-duration: 1s;
-        animation-delay: 1.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-        opacity: 0;
-      }
-
-      &:nth-child(3) {
-        animation: opacity;
-        animation-duration: 1s;
-        animation-delay: 2s;
-        animation-timing-function: linear;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-        opacity: 0;
-      }
-
-      &:nth-child(4) {
-        animation: opacity;
-        animation-duration: 1s;
-        animation-delay: 2.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
-        animation-play-state: running;
-        opacity: 0;
-      }
+    @include tablet-width {
+      font-size: 14px;
+      line-height: 19px;
     }
   }
 }

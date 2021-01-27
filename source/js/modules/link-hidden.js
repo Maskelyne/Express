@@ -5,7 +5,7 @@
   let btn = document.querySelectorAll('a[href^="tel:"]');
 
   let resizeWindow = function (evt) {
-    if (window.innerWidth <= 1023) {
+    if (window.innerWidth <= 1024) {
       evt.stopPropagation();
     } else {
       evt.preventDefault();

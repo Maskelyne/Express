@@ -12,7 +12,7 @@
   let btn = document.querySelectorAll('a[href^="tel:"]');
 
   let resizeWindow = function (evt) {
-    if (window.innerWidth <= 1023) {
+    if (window.innerWidth <= 1024) {
       evt.stopPropagation();
     } else {
       evt.preventDefault();
@@ -108,11 +108,17 @@
       slidesPerView: 1,
       allowTouchMove: false,
       autoplay: {
-        delay: 10000,
+        delay: 8000,
+        disableOnInteraction: false,
       },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          allowTouchMove: true,
+        }
       }
     });
   };
@@ -127,13 +133,12 @@
       speed: 1000,
       slidesPerView: 3,
       spaceBetween: 30,
-      autoplay: {
-        delay: 5000,
-      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
+      centeredSlides: true,
+      slideToClickedSlide: true,
       breakpoints: {
         1440: {
           slidesPerView: 3,
@@ -1547,7 +1552,7 @@
       response.message = '';
 
     } else if (form.attr('id') === 'form-order__delivery') {
-      modalFeedback.classList.add('modal--active');
+      modalThanks.classList.add('modal--active');
       document.body.style.overflow = 'hidden';
       response.message = '';
 

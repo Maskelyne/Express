@@ -6,8 +6,17 @@
   background-position: top center;
   overflow-x: hidden;
 
+  @include desktop-width {
+    background-position: 63% -85px;
+  }
+
   @include desktop-width-min {
     background-image: url("../img/jpg/img-bckg-mobile.jpg");
+    background-position: right;
+  }
+
+  @media  (max-width: 767px){
+    background-position: top center;
   }
 
 }
