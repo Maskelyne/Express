@@ -2141,12 +2141,3 @@ select:-webkit-autofill, {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
 }
-
-header{
-  @media (max-width: 767px) {
-    position: sticky;
-    top: 0;
-    background: #172340;
-    z-index: 10;
-  }
-}

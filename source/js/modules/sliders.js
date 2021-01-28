@@ -12,9 +12,8 @@
       speed: 1000,
       effect: 'fade',
       slidesPerView: 1,
-      allowTouchMove: false,
       autoplay: {
-        delay: 8000,
+        delay: 7000,
         disableOnInteraction: false,
       },
       navigation: {
@@ -22,7 +21,10 @@
         prevEl: '.swiper-button-prev',
       },
       breakpoints: {
-        768: {
+        1024: {
+          allowTouchMove: false,
+        },
+        320: {
           allowTouchMove: true,
         }
       }
