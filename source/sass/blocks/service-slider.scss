@@ -93,7 +93,10 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    cursor: pointer;
+
+    @include desktop-width-min {
+      cursor: pointer;
+    }
 
     @include tablet-width {
       height: auto;

@@ -70,13 +70,16 @@
   $(document).ready(function() {
     $('input[type="file"]').change(function () {
       var file = this.files;
-      if (file[0]) {
+      console.log(file[0].type);
+      if (file[0].type === 'image/jpeg' || file[0].type === 'image/png' || file[0].type === 'image/jpg') {
         var reader = new FileReader();
         reader.readAsDataURL(file[0], 'UTF-8');
         reader.onload = function (event) {
           var result = event.target.result;
           $('.user-img').attr('src', event.target.result);
         };
+      } else {
+        alert('Выберите подходящий формат изображения: jpeg/jpg/png');
       }
     })
   });

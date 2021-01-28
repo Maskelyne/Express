@@ -14,12 +14,14 @@
 
   @include desktop-width-min {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 50px;
   }
 
   @include tablet-width {
     font-size: 14px;
     line-height: 20px;
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 15px;
   }
   @media (max-width: 490px) {
     grid-template-columns: 1fr;

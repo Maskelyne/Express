@@ -40,7 +40,7 @@
 
   @include tablet-width {
     padding: 15px 10px;
-    max-width: 480px;
+    max-width: 420px;
   }
 }
 
@@ -51,10 +51,33 @@
 }
 
 .modal__image {
-  max-width: 570px;
-  position: absolute;
-  top: 50px;
-  left: 50px;
+  img {
+    position: absolute;
+
+    &:first-child {
+      max-width: 300px;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include tablet-width {
+        max-width: 180px;
+        top: 30px;
+      }
+    }
+
+    &:last-child {
+      max-width: 550px;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include tablet-width {
+        max-width: 250px;
+        bottom: 20px;
+      }
+    }
+  }
 
   @include tablet-width {
     top: 25px;
@@ -69,7 +92,7 @@
   letter-spacing: 0.02em;
 
   @include tablet-width {
-    padding: 50px 20px;
+    padding: 90px 10px;
   }
 
   h2 {
@@ -83,8 +106,8 @@
     z-index: 1;
 
     @include tablet-width {
-      font-size: 24px;
-      line-height: 33px;
+      font-size: 20px;
+      line-height: 25px;
     }
 
     span {
@@ -97,6 +120,10 @@
     padding-top: 20px;
     position: relative;
     z-index: 1;
+
+    @include tablet-width {
+      padding-top: 10px;
+    }
   }
 }
 

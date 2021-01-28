@@ -62,6 +62,7 @@
 .contacts__wrap-phone {
   display: flex;
   gap: 5px;
+  align-items: center;
 
   a {
     white-space: nowrap;
@@ -75,20 +76,21 @@
     }
   }
 
-  @media(min-width: $tablet-width) and (max-width: $desktop-width) {
+  @include desktop-width {
     flex-direction: column;
-    justify-content: center;
   }
 
-  @include mobile-width {
+  @media (max-width: 766px) {
     flex-direction: row;
   }
-  @media(max-width: 350px){
+
+  @media (max-width: 350px) {
     flex-direction: column;
   }
 
   span {
     color: $yellow;
+    margin-bottom: 2px;
 
     @media(max-width: 1200px) and (min-width: 767px){
       display: none;
@@ -191,17 +193,24 @@
   @media(max-width: 767px) {
     background: #212D4A;
   }
-@media(max-width: 970px){
-  .form-order__wrapper{
-    padding: 0;
+
+  @include desktop-width-min {
+    .form-order__wrapper {
+      padding: 0;
+    }
   }
-}
-.form-group--textarea{
-  margin-top: 20px;
-}
+
+  .form-group--textarea{
+    margin-top: 20px;
+  }
 
   .form-order__points {
     grid-template-columns: repeat(1, 1fr);
+
+    @include desktop-width-min {
+      max-width: 400px;
+      margin: 0 auto;
+    }
   }
 
 
@@ -226,9 +235,9 @@
     @media(min-width: $tablet-width) and (max-width: $desktop-width) {
       gap: 10px;
     }
-    @media (max-width: 970px) {
-      flex-direction: column;
 
+    @include desktop-width-min {
+      flex-direction: column;
     }
     @media(max-width: 767px) {
       flex-direction: column;
@@ -431,13 +440,16 @@ textarea {
     width: 100%;
 
   }
-  @media(max-width: 970px) {
+
+  @include desktop-width-min {
     height: 400px;
     width: 100%;
+    margin-bottom: 60px;
   }
-  @media(max-width: 767px) {
+
+  @include tablet-width {
     height: 338px;
-    width: 100%;
+    margin-bottom: 30px;
   }
 }
 
@@ -452,11 +464,10 @@ textarea {
   cursor: pointer;
   height: 82.4%;
   margin: 60px auto;
-  @media(max-width: 970px) {
-    margin: 0 auto;
-  }
-  @media(max-width: 767px) {
-    margin: 0 auto;
+
+  @include desktop-width-min {
+    margin: 0 auto 60px auto;
+    height: 100%;
   }
 }
 
@@ -1462,6 +1473,51 @@ textarea {
     }
   }
 
+  &__text {
+    margin-bottom: 40px;
+
+    @include desktop-width {
+      margin-bottom: 60px;
+    }
+
+    @include desktop-width-min {
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      line-height: 35px;
+      margin-bottom: 30px;
+
+      @include tablet-width {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-family: $openSansBold;
+
+      span {
+        color: $yellow;
+      }
+
+      &:last-child {
+        font-family: $openSansRegular;
+        color: rgba(255, 255, 255, 0.7);
+        margin-right: 53%;
+
+        @include desktop-width {
+          margin-right: 4%;
+        }
+
+        @include desktop-width-min {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
   &__caption {
     font-family: $openSansBold;
     font-size: 26px;
@@ -1498,6 +1554,10 @@ textarea {
     .form-order {
       margin-top: -94px;
       margin-bottom: -94px;
+
+      @include desktop-width {
+        margin-top: -75px;
+      }
     }
 
     .form-order__data-box {

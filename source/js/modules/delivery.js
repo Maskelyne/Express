@@ -96,7 +96,9 @@
       ignore: ".ignore",
       messages: {
         phone: 'Введите номер телефона',
-        text: 'Введите текст'
+        text: 'Обязательное поле',
+        user_name: 'Обязательное поле',
+        user_email: 'Введите email'
       },
       errorElement: 'span',
     });
@@ -107,7 +109,9 @@
       ignore: ".ignore",
       messages: {
         user_contacts: 'Введите номер телефона',
-        text: 'Введите текст'
+        text: 'Введите текст',
+        user_name: 'Обязательное поле',
+        user_email: 'Введите email'
       },
       errorElement: 'span',
     });

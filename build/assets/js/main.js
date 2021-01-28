@@ -40,7 +40,7 @@
     var burgerSocial = document.querySelector('.main-header__link');
     var headerSocial = document.querySelector('.main-header__tel');
     var headerWrapMenu = document.querySelector('.main-header__link-tablet');
-    var headerWrapActive = document.querySelector('.main-header__wrap')
+    var headerWrapActive = document.querySelector('.main-header__wrap');
 
     var activeMenu = function () {
 
@@ -51,11 +51,20 @@
         headerSocial.classList.remove('main-header__tel--active');
         headerSocial.classList.add('main-header__tel--closed');
         document.body.style.overflow = 'hidden';
+        headerMenu.style.width = '100%';
+        headerMenu.style.height = '100%';
       } else {
         burgerBtn.classList.add('main-header__burger--closed');
         burgerBtn.classList.remove('main-header__burger--active');
         headerMenu.classList.remove('main-header__nav--active');
         document.body.style.overflow = '';
+
+        var layout = function () {
+          headerMenu.style.width = '';
+          headerMenu.style.height = '';
+        };
+
+        setTimeout(layout, 500);
       }
 
     };
@@ -70,10 +79,19 @@
         burgerBtn.classList.add('main-header__burger--closed');
         headerMenu.classList.remove('main-header__nav--active');
         document.body.style.overflow = 'hidden';
+        headerSocial.style.width = '100%';
+        headerSocial.style.height = '100%';
       } else {
         headerSocial.classList.add('main-header__tel--closed');
         headerSocial.classList.remove('main-header__tel--active');
         document.body.style.overflow = '';
+
+        var layout = function () {
+          headerSocial.style.width = '';
+          headerSocial.style.height = '';
+        };
+
+        setTimeout(layout, 500);
       }
 
     };
@@ -265,13 +283,16 @@
   $(document).ready(function() {
     $('input[type="file"]').change(function () {
       var file = this.files;
-      if (file[0]) {
+      console.log(file[0].type);
+      if (file[0].type === 'image/jpeg' || file[0].type === 'image/png' || file[0].type === 'image/jpg') {
         var reader = new FileReader();
         reader.readAsDataURL(file[0], 'UTF-8');
         reader.onload = function (event) {
           var result = event.target.result;
           $('.user-img').attr('src', event.target.result);
         };
+      } else {
+        alert('Выберите подходящий формат изображения: jpeg/jpg/png');
       }
     })
   });
@@ -1382,7 +1403,9 @@
       ignore: ".ignore",
       messages: {
         phone: 'Введите номер телефона',
-        text: 'Введите текст'
+        text: 'Обязательное поле',
+        user_name: 'Обязательное поле',
+        user_email: 'Введите email'
       },
       errorElement: 'span',
     });
@@ -1393,7 +1416,9 @@
       ignore: ".ignore",
       messages: {
         user_contacts: 'Введите номер телефона',
-        text: 'Введите текст'
+        text: 'Введите текст',
+        user_name: 'Обязательное поле',
+        user_email: 'Введите email'
       },
       errorElement: 'span',
     });
@@ -1492,40 +1517,40 @@
 
 (function () {
 
-  // var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
-  // var maskOpts = {
-  //   inputmask: {
-  //     definitions: {
-  //       '#': {
-  //         validator: "[0-9]",
-  //         cardinality: 1
-  //       }
-  //     },
-  //     showMaskOnHover: false,
-  //     autoUnmask: true,
-  //     clearMaskOnLostFocus: true
-  //   },
-  //   match: /[0-9]/,
-  //   replace: '#',
-  //   list: maskList,
-  //   listKey: "mask",
-  //   onMaskChange: function (maskObj, determined) {
-  //   }
-  // };
-  //
-  // $('#user-phone').change(function () {
-  //   $('#user-phone').inputmask("remove");
-  //   $('#user-phone').inputmasks(maskOpts);
-  // });
-  //
-  // $('#user-phone').change();
-  //
-  // $('#ec-user_contacts-resource-3').change(function () {
-  //   $('#ec-user_contacts-resource-3-phone').inputmask("remove");
-  //   $('#ec-user_contacts-resource-3').inputmasks(maskOpts);
-  // });
-  //
-  // $('#ec-user_contacts-resource-3').change();
+  var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
+  var maskOpts = {
+    inputmask: {
+      definitions: {
+        '#': {
+          validator: "[0-9]",
+          cardinality: 1
+        }
+      },
+      showMaskOnHover: false,
+      autoUnmask: true,
+      clearMaskOnLostFocus: true
+    },
+    match: /[0-9]/,
+    replace: '#',
+    list: maskList,
+    listKey: "mask",
+    onMaskChange: function (maskObj, determined) {
+    }
+  };
+
+  $('#user-phone').change(function () {
+    $('#user-phone').inputmask("remove");
+    $('#user-phone').inputmasks(maskOpts);
+  });
+
+  $('#user-phone').change();
+
+  $('#ec-user_contacts-resource-3').change(function () {
+    $('#ec-user_contacts-resource-3-phone').inputmask("remove");
+    $('#ec-user_contacts-resource-3').inputmasks(maskOpts);
+  });
+
+  $('#ec-user_contacts-resource-3').change();
 
 })();
 'use strict';
