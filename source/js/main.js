@@ -10,11 +10,11 @@
 //= modules/sliders.js
 //= modules/forms.js
 //= modules/questions-tabs.js
-//= modules/vendors.js
 //= modules/ya-maps.js
 //= modules/calculate.js
 //= modules/delivery.js
 //= modules/modals.js
 //= modules/mask-tel.js
 //= modules/af-complete.js
+//= modules/vendors.js
 

@@ -5,7 +5,7 @@
   var formDelivery = document.querySelector('#form-order__delivery');
   var formContacts = document.querySelector('#form-order__contacts');
   var formFeedback = document.querySelector('#ec-form-resource-3');
-  var error = document.querySelectorAll('.error');
+  var error = document.querySelectorAll('.error-text');
 
   if (formDelivery) {
 
@@ -58,18 +58,10 @@
     var calcDel = function () {
 
       switch (true) {
-        case !city1.value:
-          error[0].innerHTML = 'Заполните поле';
-          break;
-        case !city2.value:
-          error[1].innerHTML = 'Заполните поле';
-          break;
-        case !weightInput.value || !weightInput.checkValidity():
-          error[3].innerHTML = '';
+        case !weightInput.checkValidity():
           error[2].innerHTML = 'Мин 1 Макс 4000';
           break;
-        case !volumeInput.value || !volumeInput.checkValidity():
-          error[2].innerHTML = '';
+        case !volumeInput.checkValidity():
           error[3].innerHTML = 'Мин 1 Макс 10';
           break;
         default:
@@ -78,15 +70,16 @@
           error[2].innerHTML = '';
           error[3].innerHTML = '';
       }
-    };
 
-    $(formDelivery).validate({
-      ignore: ".ignore",
-      messages: {
-        tel: 'Введите номер телефона',
-      },
-      errorElement: 'span',
-    });
+      $(formDelivery).validate({
+        ignore: ".ignore",
+        messages: {
+          tel: 'Введите номер телефона',
+          email: 'Введите email'
+        },
+        errorElement: 'span',
+      });
+    };
 
     btnDel.addEventListener('click', calcDel);
   }

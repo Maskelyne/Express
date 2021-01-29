@@ -16,7 +16,7 @@
     var priceLabel = formCalc.querySelector('.form-order__price-2');
     var formOrderBox1 = formCalc.querySelector('.form-order__box-1');
     var formOrderBox2 = formCalc.querySelector('.form-order__box-2');
-    var error = formCalc.querySelectorAll('.error');
+    var error = formCalc.querySelectorAll('.error-text');
     var regex = /[0-9]/g;
 
     var obj = {
@@ -47,7 +47,7 @@
       } else {
         error[0].innerHTML = '';
       }
-    }
+    };
 
     city2.oninput = function () {
       if (this.value.match(regex)) {
@@ -56,7 +56,13 @@
       } else {
         error[1].innerHTML = '';
       }
-    }
+    };
+
+    weightInput.oninput = function () {
+      if (this.value) {
+        error[2].innerHTML = '';
+      }
+    };
 
     var calc = function (evt) {
       evt.preventDefault();
@@ -66,18 +72,37 @@
       var input = priceText;
 
       switch (true) {
+        case !city1.value && !city2.value && !weightInput.value && !volumeInput.value:
+          error[0].innerHTML = 'Заполните поле';
+          error[1].innerHTML = 'Заполните поле';
+          error[2].innerHTML = 'Мин 1 Макс 4000';
+          error[3].innerHTML = 'Мин 1 Макс 10';
+          break;
         case !city1.value:
           error[0].innerHTML = 'Заполните поле';
           break;
+        case city1.value:
+          error[0].innerHTML = '';
+          break
         case !city2.value:
           error[1].innerHTML = 'Заполните поле';
-          break;
-        case !weightInput.value || !weightInput.checkValidity():
-          error[3].innerHTML = '';
+          break
+        case !weightInput.value:
           error[2].innerHTML = 'Мин 1 Макс 4000';
           break;
-        case !volumeInput.value || !volumeInput.checkValidity():
+        case !volumeInput.value:
+          error[3].innerHTML = 'Мин 1 Макс 10';
+          break;
+        case weightInput.value:
           error[2].innerHTML = '';
+          break;
+        case volumeInput.value:
+          error[3].innerHTML = '';
+          break;
+        case !weightInput.checkValidity():
+          error[2].innerHTML = 'Мин 1 Макс 4000';
+          break;
+        case !volumeInput.checkValidity():
           error[3].innerHTML = 'Мин 1 Макс 10';
           break;
         default:

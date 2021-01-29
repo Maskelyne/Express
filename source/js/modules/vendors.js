@@ -47,4 +47,58 @@
     }
   });
 
+  var btn = document.querySelectorAll(".btn-show-more");
+  var z;
+  if (btn && pdoPage) {
+
+    for (z = 0; z < btn.length; z++) {
+      btn[z].addEventListener("click", function () {
+
+        this.classList.toggle("active-box");
+        var panel = this.previousElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+
+    $(document).on('pdopage_load', function (e, config, response) {
+      var btn = document.querySelectorAll(".btn-show-more");
+      var z;
+
+      for (z = 0; z < btn.length; z++) {
+        btn[z].addEventListener("click", function () {
+
+          this.classList.toggle("active-box");
+          var panel = this.previousElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    });
+
+    pdoPage.callbacks['before'] = function (config) {
+      var btn = document.querySelectorAll(".btn-show-more");
+      var z;
+
+      for (z = 0; z < btn.length; z++) {
+        btn[z].addEventListener("click", function () {
+
+          this.classList.toggle("active-box");
+          var panel = this.previousElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    };
+  }
+
 })();

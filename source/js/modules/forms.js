@@ -68,7 +68,7 @@
   }
 
   $(document).ready(function() {
-    $('input[type="file"]').change(function () {
+    $('.image').change(function () {
       var file = this.files;
       console.log(file[0].type);
       if (file[0].type === 'image/jpeg' || file[0].type === 'image/png' || file[0].type === 'image/jpg') {
@@ -84,10 +84,16 @@
     })
   });
 
-  $("input[type='file']").on("change", function () {
+  $('.file').on("change", function () {
+    var file = this.files;
     var numFiles = $(this).get(0).files.length;
-    $('.file-res').css('display', 'flex');
-    $('.file-res span').text('Выбрано файлов:' + ' ' + numFiles);
+    if (file[0].type === 'image/png' || file[0].type === 'image/jpeg' || file[0].type === 'image/jpg') {
+      $('.file-res').css('display', 'flex');
+      $('.file-res span').text('Выбрано файлов:' + ' ' + numFiles);
+    } else {
+      alert('Выберите подходящий формат изображения: jpeg/jpg/png');
+    }
+
   });
 
 

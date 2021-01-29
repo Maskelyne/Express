@@ -843,10 +843,13 @@
   width: 125px;
 }
 
+#form-order__calc span.error-text,
 #form-order__calc span.error,
+#form-order__delivery span.error-text,
 #form-order__delivery span.error,
+#form-order__contacts span.error-text,
 #form-order__contacts span.error,
-#ec-form-resource-3 span.error {
+#ec-form-resource-3 span.error-text {
   display: inline;
   font-size: 12px;
   line-height: 14px;
@@ -856,8 +859,9 @@
   left: 0;
 }
 
+input#user-phone.error-text,
 input#user-phone.error,
-input#ec-user_contacts-resource-3.error {
+input#ec-user_contacts-resource-3.error-text {
   color: $white;
   font-size: 18px;
   line-height: 21px;

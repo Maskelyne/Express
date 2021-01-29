@@ -1949,6 +1949,7 @@ input:focus {
   @media(max-width: 767px) {
     left: 10px;
     font-size: 13px;
+    line-height: 15px;
   }
 }
 
@@ -1958,7 +1959,7 @@ input:focus {
   transition: all 0.3s linear;
   color: rgba(255, 193, 48, 0.5);
   @media(max-width: 767px) {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
@@ -2098,65 +2099,80 @@ input:focus {
   }
 
   .about__slider-arrow {
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    gap: 80px;
-  }
-
-  .swiper-button-next:after {
-    font-size: 0;
-    background: url(../img/svg/icon-arrow-right.svg) no-repeat center;
-    width: 57px;
-    height: 12px;
-    transition: all 0.2s linear;
-
-  }
-
-  .swiper-button-prev:after {
-    font-size: 0;
-    background: url(../img/svg/icon-arrow-left.svg) no-repeat center;
-    width: 57px;
-    height: 12px;
-    transform: rotate(0deg);
-    transition: all 0.2s linear;
-  }
-
-  .swiper-button-prev, .swiper-button-next {
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    top: 45%;
     right: 0;
-    outline: none;
-    width: 65px;
-    height: 12px;
-    margin: 0;
-    transform: translateY(-100%);
 
+    @include tablet-width {
+      top: 37%;
+    }
 
-    @media(max-width: 410px) {
-      top: 240px;
+    @media (max-width: 480px) {
+      top: auto;
+      right: 50%;
+      transform: translateX(50%);
+      bottom: -100%;
     }
-    @media(max-width: 380px) {
-      top: 230px;
-    }
-    @media(max-width: 335px) {
-      top: 225px;
-    }
-  }
 
-  .swiper-button-next {
-    right: 16px;
-    @media(max-width: 410px) {
-      right: 24%;
+    @media (max-width: 430px) {
+      bottom: -90%;
     }
-  }
 
-  .swiper-button-prev {
-    left: unset;
-    right: 110px;
-    @media(max-width: 450px) {
-      right: 88px;
+    @media (max-width: 370px) {
+      bottom: -80%;
     }
-    @media(max-width: 410px) {
-      right: 56%;
+
+    .swiper-button-next {
+      width: 65px;
+      height: 15px;
+      top: 95%;
+      right: 0;
+      outline: none;
+
+      &::after {
+        width: 100%;
+        height: 15px;
+        font-size: 0;
+        background-image: url("../img/svg/icon-arrow-right.svg");
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
+        transition: all 0.2s linear;
+      }
+
+      &:hover {
+        &::after {
+          background-size: 100% 100%;
+          transition: all 0.2s linear;
+        }
+      }
+    }
+
+    .swiper-button-prev {
+      width: 65px;
+      height: 15px;
+      top: 95%;
+      left: 0;
+      outline: none;
+
+      &::after {
+        width: 100%;
+        height: 15px;
+        background-image: url("../img/svg/icon-arrow-left.svg");
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
+        background-position: right;
+        font-size: 0;
+        transition: all 0.2s linear;
+      }
+
+      &:hover {
+        &::after {
+          background-size: 100% 100%;
+          transition: all 0.2s linear;
+        }
+      }
     }
   }
 }

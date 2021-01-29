@@ -41,7 +41,7 @@
   }
 
   &::before {
-    width: 280px;
+    width: 360px;
     height: 130px;
     position: absolute;
     content: "";
@@ -49,18 +49,19 @@
     left: 0;
     background-image: url("../img/png/404-text.png");
     background-repeat: no-repeat;
+    background-size: 360px;
 
     @include desktop-width-min {
-      width: 210px;
+      width: 280px;
       height: 100px;
-      background-size: 210px;
+      background-size: 280px;
       top: -45px;
     }
 
     @include tablet-width {
-      width: 130px;
+      width: 200px;
       height: 60px;
-      background-size: 130px;
+      background-size: 200px;
       top: -25px;
     }
   }

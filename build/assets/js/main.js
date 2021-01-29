@@ -281,7 +281,7 @@
   }
 
   $(document).ready(function() {
-    $('input[type="file"]').change(function () {
+    $('.image').change(function () {
       var file = this.files;
       console.log(file[0].type);
       if (file[0].type === 'image/jpeg' || file[0].type === 'image/png' || file[0].type === 'image/jpg') {
@@ -297,10 +297,16 @@
     })
   });
 
-  $("input[type='file']").on("change", function () {
+  $('.file').on("change", function () {
+    var file = this.files;
     var numFiles = $(this).get(0).files.length;
-    $('.file-res').css('display', 'flex');
-    $('.file-res span').text('Выбрано файлов:' + ' ' + numFiles);
+    if (file[0].type === 'image/png' || file[0].type === 'image/jpeg' || file[0].type === 'image/jpg') {
+      $('.file-res').css('display', 'flex');
+      $('.file-res span').text('Выбрано файлов:' + ' ' + numFiles);
+    } else {
+      alert('Выберите подходящий формат изображения: jpeg/jpg/png');
+    }
+
   });
 
 
@@ -542,56 +548,6 @@
 
 (function () {
 
-  var acc = document.getElementsByClassName("show-more");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
-
-  $('.js-btn').click(function (e) {
-    e.preventDefault();
-    $('.form-order__delivery').removeClass('form-order__delivery--show');
-    setTimeout(function () {
-      $('.js-btn').css('display', 'none')
-    }, 100);
-  })
-
-  $(".js-btn").on("click", function (event) {
-    event.preventDefault();
-    var id = $(this).attr('href'),
-      top = $(id).offset().top;
-    $('body,html').animate({scrollTop: top - 100}, 1000);
-  });
-
-
-  $(window).on('load', function(){
-    if ($(window).width() <= 1023) {
-      $('.form-order__delivery').insertAfter('.insert');
-      if($('.form-order__delivery').hasClass('form-order__delivery--hide')){
-        $('.form-order__delivery').removeClass('form-order__delivery--hide')
-      }
-      $('.form-order__delivery').addClass('form-order__delivery--show');
-      $('.form-order__delivery').attr('id', 'form-delivery');
-    }else{
-      $('.form-order__delivery').addClass('form-order__delivery--hide');
-    }
-  });
-
-})();
-"use strict";
-
-(function () {
-
   var spinner = $('.ymap-container').children('.loader');
 //Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки при наведении)
   var check_if_load = false;
@@ -715,7 +671,7 @@
     var priceLabel = formCalc.querySelector('.form-order__price-2');
     var formOrderBox1 = formCalc.querySelector('.form-order__box-1');
     var formOrderBox2 = formCalc.querySelector('.form-order__box-2');
-    var error = formCalc.querySelectorAll('.error');
+    var error = formCalc.querySelectorAll('.error-text');
     var regex = /[0-9]/g;
 
     var obj = {
@@ -746,7 +702,7 @@
       } else {
         error[0].innerHTML = '';
       }
-    }
+    };
 
     city2.oninput = function () {
       if (this.value.match(regex)) {
@@ -755,7 +711,13 @@
       } else {
         error[1].innerHTML = '';
       }
-    }
+    };
+
+    weightInput.oninput = function () {
+      if (this.value) {
+        error[2].innerHTML = '';
+      }
+    };
 
     var calc = function (evt) {
       evt.preventDefault();
@@ -765,18 +727,37 @@
       var input = priceText;
 
       switch (true) {
+        case !city1.value && !city2.value && !weightInput.value && !volumeInput.value:
+          error[0].innerHTML = 'Заполните поле';
+          error[1].innerHTML = 'Заполните поле';
+          error[2].innerHTML = 'Мин 1 Макс 4000';
+          error[3].innerHTML = 'Мин 1 Макс 10';
+          break;
         case !city1.value:
           error[0].innerHTML = 'Заполните поле';
           break;
+        case city1.value:
+          error[0].innerHTML = '';
+          break
         case !city2.value:
           error[1].innerHTML = 'Заполните поле';
-          break;
-        case !weightInput.value || !weightInput.checkValidity():
-          error[3].innerHTML = '';
+          break
+        case !weightInput.value:
           error[2].innerHTML = 'Мин 1 Макс 4000';
           break;
-        case !volumeInput.value || !volumeInput.checkValidity():
+        case !volumeInput.value:
+          error[3].innerHTML = 'Мин 1 Макс 10';
+          break;
+        case weightInput.value:
           error[2].innerHTML = '';
+          break;
+        case volumeInput.value:
+          error[3].innerHTML = '';
+          break;
+        case !weightInput.checkValidity():
+          error[2].innerHTML = 'Мин 1 Макс 4000';
+          break;
+        case !volumeInput.checkValidity():
           error[3].innerHTML = 'Мин 1 Макс 10';
           break;
         default:
@@ -1312,7 +1293,7 @@
   var formDelivery = document.querySelector('#form-order__delivery');
   var formContacts = document.querySelector('#form-order__contacts');
   var formFeedback = document.querySelector('#ec-form-resource-3');
-  var error = document.querySelectorAll('.error');
+  var error = document.querySelectorAll('.error-text');
 
   if (formDelivery) {
 
@@ -1365,18 +1346,10 @@
     var calcDel = function () {
 
       switch (true) {
-        case !city1.value:
-          error[0].innerHTML = 'Заполните поле';
-          break;
-        case !city2.value:
-          error[1].innerHTML = 'Заполните поле';
-          break;
-        case !weightInput.value || !weightInput.checkValidity():
-          error[3].innerHTML = '';
+        case !weightInput.checkValidity():
           error[2].innerHTML = 'Мин 1 Макс 4000';
           break;
-        case !volumeInput.value || !volumeInput.checkValidity():
-          error[2].innerHTML = '';
+        case !volumeInput.checkValidity():
           error[3].innerHTML = 'Мин 1 Макс 10';
           break;
         default:
@@ -1385,15 +1358,16 @@
           error[2].innerHTML = '';
           error[3].innerHTML = '';
       }
-    };
 
-    $(formDelivery).validate({
-      ignore: ".ignore",
-      messages: {
-        tel: 'Введите номер телефона',
-      },
-      errorElement: 'span',
-    });
+      $(formDelivery).validate({
+        ignore: ".ignore",
+        messages: {
+          tel: 'Введите номер телефона',
+          email: 'Введите email'
+        },
+        errorElement: 'span',
+      });
+    };
 
     btnDel.addEventListener('click', calcDel);
   }
@@ -1590,5 +1564,109 @@
     }
 
   });
+
+})();
+"use strict";
+
+(function () {
+
+  var acc = document.getElementsByClassName("show-more");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+
+  $('.js-btn').click(function (e) {
+    e.preventDefault();
+    $('.form-order__delivery').removeClass('form-order__delivery--show');
+    setTimeout(function () {
+      $('.js-btn').css('display', 'none')
+    }, 100);
+  })
+
+  $(".js-btn").on("click", function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+      top = $(id).offset().top;
+    $('body,html').animate({scrollTop: top - 100}, 1000);
+  });
+
+
+  $(window).on('load', function(){
+    if ($(window).width() <= 1023) {
+      $('.form-order__delivery').insertAfter('.insert');
+      if($('.form-order__delivery').hasClass('form-order__delivery--hide')){
+        $('.form-order__delivery').removeClass('form-order__delivery--hide')
+      }
+      $('.form-order__delivery').addClass('form-order__delivery--show');
+      $('.form-order__delivery').attr('id', 'form-delivery');
+    }else{
+      $('.form-order__delivery').addClass('form-order__delivery--hide');
+    }
+  });
+
+  var btn = document.querySelectorAll(".btn-show-more");
+  var z;
+  if (btn && pdoPage) {
+
+    for (z = 0; z < btn.length; z++) {
+      btn[z].addEventListener("click", function () {
+
+        this.classList.toggle("active-box");
+        var panel = this.previousElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+
+    $(document).on('pdopage_load', function (e, config, response) {
+      var btn = document.querySelectorAll(".btn-show-more");
+      var z;
+
+      for (z = 0; z < btn.length; z++) {
+        btn[z].addEventListener("click", function () {
+
+          this.classList.toggle("active-box");
+          var panel = this.previousElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    });
+
+    pdoPage.callbacks['before'] = function (config) {
+      var btn = document.querySelectorAll(".btn-show-more");
+      var z;
+
+      for (z = 0; z < btn.length; z++) {
+        btn[z].addEventListener("click", function () {
+
+          this.classList.toggle("active-box");
+          var panel = this.previousElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    };
+  }
 
 })();
