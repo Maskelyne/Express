@@ -1,0 +1,44 @@
+mixin messengers()
+
+  -
+    var messengers = [
+      {
+        path: 'svg',
+        image: 'icon-viber',
+        format: 'svg',
+        width: '35',
+        height: '35',
+        text: 'Вайбер',
+      },
+      {
+        path: 'svg',
+        image: 'icon-telegram',
+        format: 'svg',
+        width: '35',
+        height: '35',
+        text: 'Телеграм',
+      },
+      {
+        path: 'svg',
+        image: 'icon-whatsapp',
+        format: 'svg',
+        width: '35',
+        height: '35',
+        text: 'Ватсап',
+      },
+      {
+        path: 'svg',
+        image: 'icon-skype',
+        format: 'svg',
+        width: '35',
+        height: '35',
+        text: 'Скайп',
+      },
+    ];
+
+  ul.messengers
+    each item in messengers
+      li
+        a(href="#")
+          span.visually-hidden= item.text
+          +img(item.path, item.image, item.format, item.width, item.height, item.text)

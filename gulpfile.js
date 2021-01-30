@@ -20,7 +20,6 @@ var path = {
   build: {
     html: 'build/',
     js: 'build/assets/js/',
-    jsWorker: 'build',
     css: 'build/assets/css/',
     img: 'build/assets/img/',
     fonts: 'build/assets/fonts/'

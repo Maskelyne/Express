@@ -1,0 +1,40 @@
+//general
+@import "general/normalize.scss";
+@import "general/swiper-bundle.min.scss";
+@import "general/datepicker.min.scss";
+@import "general/variables.scss";
+@import "general/fonts.scss";
+@import "general/mixins.scss";
+@import "general/global.scss";
+
+//header
+@import "blocks/main-header.scss";
+
+//footer
+@import "blocks/main-footer.scss";
+
+//main
+@import "blocks/messengers.scss";
+@import "blocks/socials.scss";
+@import "blocks/service-slider.scss";
+@import "blocks/services.scss";
+@import "blocks/activity.scss";
+@import "blocks/questions.scss";
+@import "blocks/breadcrumbs.scss";
+@import "blocks/feedback.scss";
+@import "blocks/developers.scss";
+@import "blocks/simple.scss";
+@import "blocks/page-unavailvable.scss";
+
+//buttons
+@import "blocks/buttons.scss";
+
+//forms
+@import "blocks/form-order.scss";
+
+//modals
+@import "blocks/modal.scss";
+
+//keyframes
+@import "blocks/keyframes.scss";
+

@@ -1,0 +1,173 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: $openSansRegular;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: $normal;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: $blue;
+
+  @media (max-width: $tablet-width) {
+    font-size: 16px;
+  }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+#user-image {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $desktop-padding;
+
+  @media (max-width: $desktop-width) {
+    padding: $tablet-padding;
+  }
+}
+
+a {
+  color: $white;
+  position: relative;
+  transition: all 0.5s linear;
+}
+
+h2 {
+  margin: 0 0 40px 0;
+  padding-bottom: 15px;
+  font-family: $openSansBold;
+  font-size: 36px;
+  line-height: 49px;
+  color: $white;
+  letter-spacing: 0.02em;
+  border-bottom: solid 2px;
+  border-image: linear-gradient(90deg, #565F75 74.54%, rgba(86, 95, 117, 0) 101.51%) 2;
+
+  @include tablet-width {
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 20px;
+  }
+}
+
+h3 {
+  margin: 0;
+  font-family: $openSansBold;
+  font-size: 26px;
+  line-height: 41px;
+  letter-spacing: 0.02em;
+}
+
+input[type='number'] {
+  -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.effects {
+  &::after {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: all 0.5s linear;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 2px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    transition: all 0.5s linear;
+  }
+
+  &:hover {
+    color: $yellow;
+
+    &::before {
+      width: 100%;
+      background-color: $yellow;
+      transition: all 0.5s linear;
+    }
+  }
+}
+
+.active-item {
+  a {
+    color: $yellow;
+  }
+}
+
+.grecaptcha-badge {
+  display: none;
+}

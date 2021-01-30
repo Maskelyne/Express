@@ -1,0 +1,118 @@
+.questions {
+  @media (max-width: $desktop-width-min) {
+    display: none;
+  }
+}
+
+.questions__wrapper {
+  margin-top: 145px;
+  margin-bottom: 60px;
+}
+
+.questions__box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0 70px;
+}
+
+.questions__box-left {
+  ul {
+    @include reset-list;
+    display: grid;
+    grid-gap: 20px 0;
+  }
+
+  p {
+    margin: 0;
+    padding: 25px 0 25px 30px;
+    cursor: pointer;
+    font-family: $openSansBold;
+    font-size: 18px;
+    line-height: 24px;
+    z-index: 1;
+    position: relative;
+    background-image: linear-gradient(99.92deg, rgba(255, 255, 255, 0.2) 4.46%, rgba(255, 255, 255, 0.02) 76.5%), linear-gradient(283.81deg, #172340 -4.47%, #27324F 96.77%);
+  }
+}
+
+.questions__box-right {
+  min-height: 630px;
+  background-color: rgba(39, 50, 79, 0.5);
+  position: relative;
+
+  &::before {
+    width: 5px;
+    height: calc(100% - 200px);
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(359.99deg, #303D61 -2.72%, #172340 122.65%);
+  }
+
+  &::after {
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(90deg, #303D61 -2.72%, #172340 122.65%);
+  }
+
+  article {
+    width: 100%;
+    height: 100%;
+    padding: 0 30px 200px 30px;
+    display: none;
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      max-height: 215px;
+      max-width: 145px;
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: -40px;
+      background-image: url("../img/svg/icon-questions.svg");
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+
+    ul {
+      @include reset-list;
+
+      p {
+        padding: 0;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 15px 0;
+
+    strong {
+      display: block;
+      font-weight: $normal;
+      color: $yellow;
+    }
+  }
+
+  .questions__text-active {
+    display: block;
+
+    &::before {
+      display: block;
+    }
+  }
+}
+
+.questions__item-active {
+  p {
+    color: $yellow;
+    background-image: linear-gradient(279.07deg, #505870 -2.62%, #172340 87.4%);
+  }
+}
+

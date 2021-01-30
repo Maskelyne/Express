@@ -1,0 +1,17 @@
+.developers__wrapper {
+  padding: 10px 0;
+  border-top: solid 1px #565F75;
+
+  a {
+    display: grid;
+    grid-template-columns: auto 100px;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 0 10px;
+
+    @include tablet-width {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

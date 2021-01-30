@@ -12,7 +12,8 @@
   </head>
   <body>
     <header class="main-header">
-      <nav class="main-header__wrapper container">
+      <h1 class="visually-hidden">Экспресс-доставка грузов Mexp</h1>
+      <nav class="main-header__wrapper main-header__wrapper--none container">
         <div class="main-header__logo"><a href="#"><img src="assets/img/svg/logo.svg" width="195" height="80" alt="Логотип"/></a></div>
         <div class="main-header__nav">
           <div class="main-header__nav-box">
@@ -61,29 +62,9 @@
                 <h2>Минск<img src="assets/img/svg/icon-path.svg" width="60" height="30" alt="Маршрут"/>Москва
                 </h2>
                 <p>У нас предусмотрены услуги доставки на все случаи жизни – от срочных небольших посылок  до тяжеловесных грузов. Благодаря новому и надежному транпорту, доставка всегда осуществляется в экспресс-режиме и приходит  точно в срок!</p>
-                <p>Возможна доставка в другие города России в течение 24 часов!</p><a class="service-slider__btn" href="#">Оформить доставку</a>
+                <p>Возможна доставка в другие города России в течение 24 часов!</p><a class="button button--effect-2" href="#">Оформить доставку</a>
               </div>
-              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-1.jpg" width="770" height="600" alt="Первый слайд"/>
-              </div>
-            </li>
-            <li class="swiper-slide">
-              <div class="service-slider__text">
-                <ul>
-                  <li><img src="assets/img/svg/icon-clock.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
-                    <p>Быстрая доставка<strong>за 12 часов</strong></p>
-                  </li>
-                  <li><img src="assets/img/svg/icon-shild.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
-                    <p><strong>CMR-Страхование</strong>гарантирует сохранность груза</p>
-                  </li>
-                  <li><img src="assets/img/svg/icon-money.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
-                    <p>За доставку<strong>ОТ 60 y.e.</strong></p>
-                  </li>
-                  <li><img src="assets/img/svg/icon-contract.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
-                    <p>Заключение<strong>Договора на услуги</strong></p>
-                  </li>
-                </ul><a class="service-slider__btn" href="#">Оформить доставку</a>
-              </div>
-              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-2.jpg" width="770" height="600" alt="Второй слайд"/>
+              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-4.jpg" width="770" height="600" alt="Первый слайд"/>
               </div>
             </li>
             <li class="swiper-slide">
@@ -101,9 +82,29 @@
                   <li><img src="assets/img/svg/icon-contract.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
                     <p>Заключение<strong>Договора на услуги</strong></p>
                   </li>
-                </ul><a class="service-slider__btn" href="#">Оформить доставку</a>
+                </ul><a class="button button--effect-2" href="#">Оформить доставку</a>
               </div>
-              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-3.jpg" width="770" height="600" alt="Третий слайд"/>
+              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-5.jpg" width="770" height="600" alt="Второй слайд"/>
+              </div>
+            </li>
+            <li class="swiper-slide">
+              <div class="service-slider__text">
+                <ul>
+                  <li><img src="assets/img/svg/icon-clock.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p>Быстрая доставка<strong>за 12 часов</strong></p>
+                  </li>
+                  <li><img src="assets/img/svg/icon-shild.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p><strong>CMR-Страхование</strong>гарантирует сохранность груза</p>
+                  </li>
+                  <li><img src="assets/img/svg/icon-money.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p>За доставку<strong>ОТ 60 y.e.</strong></p>
+                  </li>
+                  <li><img src="assets/img/svg/icon-contract.svg" width="70" height="70" alt="Быстрая доставка за 12 часов"/>
+                    <p>Заключение<strong>Договора на услуги</strong></p>
+                  </li>
+                </ul><a class="button button--effect-2" href="#">Оформить доставку</a>
+              </div>
+              <div class="service-slider__image"><img src="assets/img/jpg/image-slide-6.jpg" width="770" height="600" alt="Третий слайд"/>
               </div>
             </li>
           </ul>
@@ -115,32 +116,32 @@
       </section>
       <section class="form-order">
         <div class="form-order__wrapper container">
-          <div class="form-order__inner-box">
+          <div class="form-order__inner-box form-order__inner-box--image-1">
             <div class="form-order__wrap-box">
-              <form class="form-order__box">
-                <div class="form-order__box-1">
+              <form class="form-order__box" id="form-order__calc">
+                <div class="form-order__box-1 form-order__active">
                   <h3>Рассчитать и заказать доставку</h3>
                   <div class="form-order__data-box">
                     <div class="form-order__points-box">
                       <div class="form-order__points">
                         <div class="form-order__point-1">
-                          <input id="point-1" type="text"/>
-                          <label for="point-1">Откуда</label>
+                          <input id="point-1" type="text" name="city_1"/>
+                          <label for="point-1">Откуда</label><span class="error"></span>
                         </div>
                         <button class="button-revers" type="button"><span class="visually-hidden">Изменить маршрут</span></button>
                         <div class="form-order__point-2">
-                          <input id="point-2" type="text"/>
-                          <label for="point-2">Куда</label>
+                          <input id="point-2" type="text" name="city_2"/>
+                          <label for="point-2">Куда</label><span class="error"></span>
                         </div>
                       </div>
                       <div class="form-order__points-2">
                         <div class="form-order__weight">
-                          <input id="weight" type="text"/>
-                          <label for="weight">Вес, кг</label>
+                          <input class="ignore" id="weight" type="number" min="1" max="4000" name="weight"/>
+                          <label for="weight">Вес, кг</label><span class="error"></span>
                         </div>
                         <div class="form-order__volume">
-                          <input id="volume" type="text"/>
-                          <label for="volume">Объем, м</label>
+                          <input class="ignore" id="volume" type="number" min="1" max="10" name="volume"/>
+                          <label for="volume">Объем, м<sup>3</sup></label><span class="error"></span>
                         </div>
                       </div>
                     </div>
@@ -152,27 +153,93 @@
                   <div class="form-order__data-box-2">
                     <ul>
                       <li>
-                        <input class="visually-hidden" id="check-1" type="checkbox" checked="checked"/>
+                        <input class="visually-hidden" id="check-1" type="radio" name="face" checked="checked"/>
                         <label for="check-1">Груз упакован</label>
                       </li>
                       <li>
-                        <input class="visually-hidden" id="check-2" type="checkbox"/>
+                        <input class="visually-hidden" id="check-2" type="radio" name="face"/>
                         <label for="check-2">Груз не упакован</label>
                       </li>
                       <li>
-                        <input class="visually-hidden" id="check-3" type="checkbox" checked="checked"/>
+                        <input class="visually-hidden" id="check-3" type="radio" name="1" checked="checked"/>
                         <label for="check-3">Можно кантовать</label>
                       </li>
                       <li>
-                        <input class="visually-hidden" id="check-4" type="checkbox"/>
+                        <input class="visually-hidden" id="check-4" type="radio" name="1"/>
                         <label for="check-4">Хрупкий груз</label>
                       </li>
                     </ul>
-                  </div><a class="button button--form-order" href="#"><span>Рассчитать</span></a>
+                  </div><a class="button button--effect-1 btn-calc" href="#"><span>Рассчитать</span></a>
                 </div>
                 <div class="form-order__box-2">
-                  <h3>Стоимость вашей доставки будет составлять<span> 60$</span></h3>
+                  <h3>Стоимость вашей доставки будет составлять
+                    <input class="form-order__price visually-hidden" type="number" id="price"/><span class="form-order__price-2" for="price">0</span><span>$</span>
+                  </h3>
                   <p>Оставьте свои контактные данные для оформления заявки</p>
+                  <div class="form-order__data-box form-order__data-box--calc">
+                    <div class="form-group__box">
+                      <div class="form-order__point-4">
+                        <input id="user-phone" type="text"/>
+                        <label for="user-phone">Телефон*</label><span class="error"></span>
+                      </div>
+                      <div class="form-order__point-5">
+                        <input id="user-email" type="text"/>
+                        <label for="user-email">E-mail</label>
+                      </div>
+                      <p>Выберите удобный способ связи</p>
+                      <div class="form-order__data-box-2">
+                        <ul>
+                          <li>
+                            <input class="visually-hidden" id="viber" type="checkbox" checked="checked"/>
+                            <label for="viber"><img src="assets/img/svg/icon-viber.svg" width="30" height="30" alt="Viber"/>Viber
+                            </label>
+                          </li>
+                          <li>
+                            <input class="visually-hidden" id="telegram" type="checkbox"/>
+                            <label for="telegram"><img src="assets/img/svg/icon-telegram.svg" width="30" height="30" alt="Viber"/>Telegram
+                            </label>
+                          </li>
+                          <li>
+                            <input class="visually-hidden" id="whatsapp" type="checkbox" checked="checked"/>
+                            <label for="whatsapp"><img src="assets/img/svg/icon-whatsapp.svg" width="30" height="30" alt="Viber"/>Whatsapp
+                            </label>
+                          </li>
+                          <li>
+                            <input class="visually-hidden" id="skype" type="checkbox"/>
+                            <label for="skype"><img src="assets/img/svg/icon-skype.svg" width="30" height="30" alt="Viber"/>Skype
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="form-group__box">
+                      <div class="form-order__point-6">
+                        <input id="user-company" type="text"/>
+                        <label for="user-company">Имя/ компания*</label>
+                      </div>
+                      <div class="form-order__point-box">
+                        <div class="form-order__point-7">
+                          <input class="visually-hidden" id="radio-1" type="radio" name="user-1" checked="checked"/>
+                          <label for="radio-1">Физ. лицо</label>
+                        </div>
+                        <div class="form-order__point-8">
+                          <input class="visually-hidden" id="radio-2" type="radio" name="user-1"/>
+                          <label for="radio-2">Юр. лицо</label>
+                        </div>
+                        <div class="form-order__point-9">
+                          <input class="visually-hidden" id="radio-3" type="radio" name="user-1"/>
+                          <label for="radio-3">ИП</label>
+                        </div>
+                      </div>
+                      <div class="form-order__textarea">
+                        <textarea id="user-text"></textarea>
+                        <label for="user-text">Для юр. лиц и ИП введите реквизиты</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-order__buttons"><a class="button--prev-js" href="#"><img src="assets/img/svg/icon-arrow-prev.svg" width="49" height="15" alt="Вернуться назад"/>Назад</a>
+                    <button class="button button--effect-1" type="submit"><span>Заказать</span></button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -217,7 +284,7 @@
               <div class="questions__box">
                 <div class="questions__box-left">
                   <ul>
-                    <li class="questions__item-active">
+                    <li>
                       <p>Как правильно упаковать посылку?</p>
                     </li>
                     <li>
@@ -273,27 +340,72 @@
           </section>
         </div>
       </section>
-      <!--section.feedback-->
-      <!--  section.feedback__wrapper.container-->
-      <!--    h2 Отзывы клиентов-->
-      <!--    .feedback__swiper-container.swiper-container-->
-      <!--      ul.swiper-wrapper-->
-      <!--        li.swiper-slide-->
-      <!--          article-->
-      <!--            .feedback__box-->
-      <!--              +img('svg', 'icon-author', 'svg', '90', '90', 'Автор')-->
-      <!--              .feedback__text-->
-      <!--                strong Дривень Сергей Сергеевич-->
-      <!--                p Индивидуальный предприниматель-->
-      <!--            p Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.-->
-      <!--        li.swiper-slide-->
-      <!--          article-->
-      <!--            .feedback__box-->
-      <!--              +img('svg', 'icon-author', 'svg', '90', '90', 'Автор')-->
-      <!--              .feedback__text-->
-      <!--                strong Дривень Сергей Сергеевич-->
-      <!--                p Индивидуальный предприниматель-->
-      <!--            p Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.-->
+      <section class="feedback feedback--main">
+        <section class="feedback__wrapper">
+          <h2>Отзывы клиентов</h2>
+          <div class="feedback__inner-box">
+            <div class="feedback__swiper-container swiper-container">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <article>
+                    <div class="feedback__box"><img src="assets/img/jpg/author-1.jpg" width="90" height="90" alt="Автор"/>
+                      <div class="feedback__text"><strong>Дривень Сергей Сергеевич</strong>
+                        <p>Индивидуальный предприниматель</p>
+                      </div>
+                    </div>
+                    <p>Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.</p>
+                  </article>
+                </li>
+                <li class="swiper-slide">
+                  <article>
+                    <div class="feedback__box"><img src="assets/img/svg/icon-author.svg" width="90" height="90" alt="Автор"/>
+                      <div class="feedback__text"><strong>Дривень Сергей Сергеевич</strong>
+                        <p>Индивидуальный предприниматель</p>
+                      </div>
+                    </div>
+                    <p>Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.</p>
+                  </article>
+                </li>
+                <li class="swiper-slide">
+                  <article>
+                    <div class="feedback__box"><img src="assets/img/svg/icon-author.svg" width="90" height="90" alt="Автор"/>
+                      <div class="feedback__text"><strong>Дривень Сергей Сергеевич</strong>
+                        <p>Индивидуальный предприниматель</p>
+                      </div>
+                    </div>
+                    <p>Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.</p>
+                  </article>
+                </li>
+                <li class="swiper-slide">
+                  <article>
+                    <div class="feedback__box"><img src="assets/img/svg/icon-author.svg" width="90" height="90" alt="Автор"/>
+                      <div class="feedback__text"><strong>Дривень Сергей Сергеевич</strong>
+                        <p>Индивидуальный предприниматель</p>
+                      </div>
+                    </div>
+                    <p>Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.</p>
+                  </article>
+                </li>
+                <li class="swiper-slide">
+                  <article>
+                    <div class="feedback__box"><img src="assets/img/svg/icon-author.svg" width="90" height="90" alt="Автор"/>
+                      <div class="feedback__text"><strong>Дривень Сергей Сергеевич</strong>
+                        <p>Индивидуальный предприниматель</p>
+                      </div>
+                    </div>
+                    <p>Хочется выразить благодарность всем сотрудникам компании ООО «Королевская Служба Доставки» за доброжелательность, слаженность и оперативность в работе. Благодаря грамотной координации работы.</p>
+                  </article>
+                </li>
+              </ul>
+              <div class="feedback-slider__controls">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+            <div class="feedback__buttons"><a class="button button--effect-1 yellow-effect" href="#"><span>Все отзывы</span></a><a class="button button--effect-1 blue-effect" href="feedback.html#feedback-form"><span>Оставить отзыв</span></a></div>
+          </div>
+        </section>
+      </section>
     </main>
     <footer class="main-footer">
       <section class="main-footer__wrapper container">
@@ -340,6 +452,21 @@
         <div class="developers__wrapper"><a href="#">Разработка и продвижение<img src="assets/img/svg/cmbox-logo.svg" width="93" height="33" alt="Digital-Агенство CmBox"/></a></div>
       </section>
     </footer>
+    <section class="modal modal--thanks">
+      <div class="modal__wrapper">
+        <div class="modal__inner">
+          <div class="modal__image"><img src="assets/img/svg/image-plane-modal.svg" width="250" height="80" alt="Элемент 1"/>
+            <picture>
+              <source media="(max-width: 768px)" srcset="assets/img/svg/image-box-mobile.svg"/><img src="assets/img/svg/image-box-big.svg" width="550" height="195" alt="Элемент 2"/>
+            </picture>
+          </div>
+          <div class="modal__box">
+            <h2><span>Mexp</span> благодарит за заявку!</h2>
+            <p>Ваш заказ на доставку принят. Мы свяжемся с Вами в ближайшее время.</p>
+          </div>
+        </div><a class="modal__btn-closed" href="#"><span class="visually-hidden">Закрыть модальное окно</span></a>
+      </div>
+    </section>
     <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/default.js"></script>
