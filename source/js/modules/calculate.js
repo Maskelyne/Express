@@ -18,6 +18,7 @@
     var formOrderBox2 = formCalc.querySelector('.form-order__box-2');
     var error = formCalc.querySelectorAll('.error-text');
     var regex = /[0-9]/g;
+    var weightRegex = /[A-Za-zА-Яа-яЁё]/g;
 
     var obj = {
       cubs: [],
@@ -59,8 +60,24 @@
     };
 
     weightInput.oninput = function () {
-      if (this.value) {
+      if (this.value.match(weightRegex)) {
+        this.value = this.value.replace(weightRegex, '');
+        error[2].innerHTML = 'Символы запрещены для ввода';
+      } else if (weightInput.value <= 0 || weightInput.value > 4000) {
+        error[2].innerHTML = 'Мин 1 Макс 4000';
+      } else {
         error[2].innerHTML = '';
+      }
+    };
+
+    volumeInput.oninput = function () {
+      if (this.value.match(weightRegex)) {
+        this.value = this.value.replace(weightRegex, '');
+        error[3].innerHTML = 'Символы запрещены для ввода';
+      } else if (volumeInput.value <= 0 || volumeInput.value > 10 ) {
+        error[3].innerHTML = 'Мин 1 Макс 10';
+      } else {
+        error[3].innerHTML = '';
       }
     };
 
@@ -87,22 +104,25 @@
         case !city2.value:
           error[1].innerHTML = 'Заполните поле';
           break
+        case city2.value:
+          error[1].innerHTML = '';
+          break;
         case !weightInput.value:
           error[2].innerHTML = 'Мин 1 Макс 4000';
-          break;
-        case !volumeInput.value:
-          error[3].innerHTML = 'Мин 1 Макс 10';
           break;
         case weightInput.value:
           error[2].innerHTML = '';
           break;
+        case !volumeInput.value:
+          error[3].innerHTML = 'Мин 1 Макс 10';
+          break;
         case volumeInput.value:
           error[3].innerHTML = '';
           break;
-        case !weightInput.checkValidity():
+        case weightInput.value <= 0 || weightInput.value > 4000:
           error[2].innerHTML = 'Мин 1 Макс 4000';
           break;
-        case !volumeInput.checkValidity():
+        case volumeInput.value <= 0 || volumeInput.value > 10:
           error[3].innerHTML = 'Мин 1 Макс 10';
           break;
         default:
@@ -617,14 +637,6 @@
       formOrderBox1.classList.add('form-order__active');
       formOrderBox2.classList.remove('form-order__active');
     };
-
-    $(formCalc).validate({
-      ignore: ".ignore",
-      messages: {
-        tel: 'Введите ваш номер телефона',
-      },
-      errorElement: 'span',
-    });
 
     btnCalc.addEventListener('click', calc);
     btnPrev.addEventListener('click', prevStep);

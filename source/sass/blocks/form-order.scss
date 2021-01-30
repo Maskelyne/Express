@@ -64,8 +64,12 @@
     text-align: center;
 
     @include tablet-width {
-      font-size: 16px;
+      font-size: 20px;
       line-height: 22px;
+    }
+
+    @include mobile-width {
+      font-size: 16px;
     }
   }
 }
@@ -142,6 +146,7 @@
 .form-order__point-box {
   display: grid;
   grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
 
   label {
     position: relative;
@@ -225,7 +230,7 @@
         grid-gap: 20px 30px;
         grid-template-columns: repeat(2, auto);
 
-        @include tablet-width {
+        @include mobile-width {
           grid-template-columns: 1fr;
         }
       }
@@ -261,7 +266,7 @@
 .form-order__point-6 {
   label {
     position: absolute;
-    top: 0;
+    top: 5px;
     left: 10px;
     transition: all 0.3s linear;
     color: rgba(255, 255, 255, 0.7);
@@ -395,6 +400,10 @@
         @include tablet-width {
           transform: translateY(-55px);
         }
+
+        @include mobile-width {
+          transform: translateY(-45px);
+        }
       }
     }
   }
@@ -443,7 +452,7 @@
 .form-order__volume,
 .form-order__textarea {
   position: relative;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 .form-order__point-3 {
@@ -534,8 +543,12 @@
     }
 
     @include tablet-width {
-      grid-template-columns: 1fr;
+      justify-content: space-between;
       grid-gap: 10px 0;
+    }
+
+    @include mobile-width {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -748,7 +761,7 @@
   }
 
   .form-order__textarea {
-    margin-top: 15px;
+    margin-top: 50px;
 
     textarea {
       padding: 10px;
@@ -849,7 +862,8 @@
 #form-order__delivery span.error,
 #form-order__contacts span.error-text,
 #form-order__contacts span.error,
-#ec-form-resource-3 span.error-text {
+#ec-form-resource-3 span.error-text,
+#ec-form-resource-3 span.error {
   display: inline;
   font-size: 12px;
   line-height: 14px;
@@ -861,7 +875,8 @@
 
 input#user-phone.error-text,
 input#user-phone.error,
-input#ec-user_contacts-resource-3.error-text {
+input#ec-user_contacts-resource-3.error-text,
+input#ec-user_contacts-resource-3.error {
   color: $white;
   font-size: 18px;
   line-height: 21px;

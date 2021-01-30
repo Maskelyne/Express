@@ -49,7 +49,7 @@
 
   var btn = document.querySelectorAll(".btn-show-more");
   var z;
-  if (btn && pdoPage) {
+  if (btn) {
 
     for (z = 0; z < btn.length; z++) {
       btn[z].addEventListener("click", function () {

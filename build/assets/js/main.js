@@ -673,6 +673,7 @@
     var formOrderBox2 = formCalc.querySelector('.form-order__box-2');
     var error = formCalc.querySelectorAll('.error-text');
     var regex = /[0-9]/g;
+    var weightRegex = /[A-Za-zА-Яа-яЁё]/g;
 
     var obj = {
       cubs: [],
@@ -714,8 +715,24 @@
     };
 
     weightInput.oninput = function () {
-      if (this.value) {
+      if (this.value.match(weightRegex)) {
+        this.value = this.value.replace(weightRegex, '');
+        error[2].innerHTML = 'Символы запрещены для ввода';
+      } else if (weightInput.value <= 0 || weightInput.value > 4000) {
+        error[2].innerHTML = 'Мин 1 Макс 4000';
+      } else {
         error[2].innerHTML = '';
+      }
+    };
+
+    volumeInput.oninput = function () {
+      if (this.value.match(weightRegex)) {
+        this.value = this.value.replace(weightRegex, '');
+        error[3].innerHTML = 'Символы запрещены для ввода';
+      } else if (volumeInput.value <= 0 || volumeInput.value > 10 ) {
+        error[3].innerHTML = 'Мин 1 Макс 10';
+      } else {
+        error[3].innerHTML = '';
       }
     };
 
@@ -742,22 +759,25 @@
         case !city2.value:
           error[1].innerHTML = 'Заполните поле';
           break
+        case city2.value:
+          error[1].innerHTML = '';
+          break;
         case !weightInput.value:
           error[2].innerHTML = 'Мин 1 Макс 4000';
-          break;
-        case !volumeInput.value:
-          error[3].innerHTML = 'Мин 1 Макс 10';
           break;
         case weightInput.value:
           error[2].innerHTML = '';
           break;
+        case !volumeInput.value:
+          error[3].innerHTML = 'Мин 1 Макс 10';
+          break;
         case volumeInput.value:
           error[3].innerHTML = '';
           break;
-        case !weightInput.checkValidity():
+        case weightInput.value <= 0 || weightInput.value > 4000:
           error[2].innerHTML = 'Мин 1 Макс 4000';
           break;
-        case !volumeInput.checkValidity():
+        case volumeInput.value <= 0 || volumeInput.value > 10:
           error[3].innerHTML = 'Мин 1 Макс 10';
           break;
         default:
@@ -1273,14 +1293,6 @@
       formOrderBox2.classList.remove('form-order__active');
     };
 
-    $(formCalc).validate({
-      ignore: ".ignore",
-      messages: {
-        tel: 'Введите ваш номер телефона',
-      },
-      errorElement: 'span',
-    });
-
     btnCalc.addEventListener('click', calc);
     btnPrev.addEventListener('click', prevStep);
   }
@@ -1291,8 +1303,6 @@
 (function () {
 
   var formDelivery = document.querySelector('#form-order__delivery');
-  var formContacts = document.querySelector('#form-order__contacts');
-  var formFeedback = document.querySelector('#ec-form-resource-3');
   var error = document.querySelectorAll('.error-text');
 
   if (formDelivery) {
@@ -1303,27 +1313,7 @@
     var city2 = formDelivery.querySelector('#point-2');
     var btnDel = formDelivery.querySelector('.button--calc-js');
     var regex = /[0-9]/g;
-
-    var obj = {
-      cubs: [],
-      weight: [150, 300, 550, 800, 1100, 1500, 2000, 2600, 3300, 4000],
-      price: {
-        volume: [60, 70, 90, 120, 150, 180, 210, 240, 270, 300],
-        volume2: [80, 85, 90, 140, 170, 200, 230, 260, 290, 320],
-        volume3: [100, 100, 130, 160, 190, 220, 250, 280, 310, 340],
-        volume4: [120, 120, 150, 180, 210, 240, 270, 300, 330, 360],
-        volume5: [150, 150, 170, 200, 230, 260, 290, 320, 350, 380],
-        volume6: [200, 200, 210, 220, 250, 280, 310, 340, 370, 400],
-        volume7: [220, 220, 230, 240, 270, 300, 330, 360, 390, 420],
-        volume8: [280, 280, 290, 300, 330, 360, 390, 420, 450, 480],
-        volume9: [350, 350, 360, 390, 420, 450, 480, 510, 540, 570],
-        volume10: [420, 420, 430, 470, 500, 530, 560, 590, 620, 650],
-      }
-    };
-
-    for (var i = 1; i <= 10; i++) {
-      obj.cubs.push(i);
-    }
+    var weightRegex = /[A-Za-zА-Яа-яЁё]/g;
 
     city1.oninput = function () {
       if (this.value.match(regex)) {
@@ -1332,7 +1322,7 @@
       } else {
         error[0].innerHTML = '';
       }
-    }
+    };
 
     city2.oninput = function () {
       if (this.value.match(regex)) {
@@ -1341,15 +1331,43 @@
       } else {
         error[1].innerHTML = '';
       }
-    }
+    };
+
+    weightInput.oninput = function () {
+      if (this.value.match(weightRegex)) {
+        this.value = this.value.replace(weightRegex, '');
+        error[2].innerHTML = 'Символы запрещены для ввода';
+      } else if (weightInput.value <= 0 || weightInput.value > 4000) {
+        error[2].innerHTML = 'Мин 1 Макс 4000';
+      } else {
+        error[2].innerHTML = '';
+      }
+    };
+
+    volumeInput.oninput = function () {
+      if (this.value.match(weightRegex)) {
+        this.value = this.value.replace(weightRegex, '');
+        error[3].innerHTML = 'Символы запрещены для ввода';
+      } else if (volumeInput.value <= 0 || volumeInput.value > 10 ) {
+        error[3].innerHTML = 'Мин 1 Макс 10';
+      } else {
+        error[3].innerHTML = '';
+      }
+    };
 
     var calcDel = function () {
 
       switch (true) {
-        case !weightInput.checkValidity():
+        case weightInput.value === '':
+          error[2].innerHTML = '';
+          break;
+        case volumeInput.value === '':
+          error[3].innerHTML = '';
+          break;
+        case weightInput.value < 1 || weightInput.value > 4000:
           error[2].innerHTML = 'Мин 1 Макс 4000';
           break;
-        case !volumeInput.checkValidity():
+        case volumeInput.value < 1 || volumeInput.value > 10:
           error[3].innerHTML = 'Мин 1 Макс 10';
           break;
         default:
@@ -1358,45 +1376,24 @@
           error[2].innerHTML = '';
           error[3].innerHTML = '';
       }
-
-      $(formDelivery).validate({
-        ignore: ".ignore",
-        messages: {
-          tel: 'Введите номер телефона',
-          email: 'Введите email'
-        },
-        errorElement: 'span',
-      });
     };
 
     btnDel.addEventListener('click', calcDel);
   }
 
-  if (formContacts) {
-    $(formContacts).validate({
-      ignore: ".ignore",
-      messages: {
-        phone: 'Введите номер телефона',
-        text: 'Обязательное поле',
-        user_name: 'Обязательное поле',
-        user_email: 'Введите email'
-      },
-      errorElement: 'span',
-    });
-  }
-
-  if (formFeedback) {
-    $(formFeedback).validate({
-      ignore: ".ignore",
-      messages: {
-        user_contacts: 'Введите номер телефона',
-        text: 'Введите текст',
-        user_name: 'Обязательное поле',
-        user_email: 'Введите email'
-      },
-      errorElement: 'span',
-    });
-  }
+  $('form').validate({
+    ignore: ".ignore",
+    messages: {
+      name: 'Обязательное поле',
+      phone: 'Введите номер телефона',
+      tel: 'Введите номер телефона',
+      user_contacts: 'Введите номер телефона',
+      user_name: 'Обязательное поле',
+      user_email: 'Неверный email',
+      email: 'Неверный email',
+    },
+    errorElement: 'span',
+  });
 
 })();
 'use strict';
@@ -1617,7 +1614,7 @@
 
   var btn = document.querySelectorAll(".btn-show-more");
   var z;
-  if (btn && pdoPage) {
+  if (btn) {
 
     for (z = 0; z < btn.length; z++) {
       btn[z].addEventListener("click", function () {

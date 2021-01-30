@@ -1371,6 +1371,11 @@ textarea {
   }
 
   .form-order__box--delivery {
+    @include tablet-width {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
     .button {
       margin: 40px auto 0 auto;
 
@@ -1572,22 +1577,6 @@ textarea {
       height: 100%;
       @media(max-width: 1320px) and (min-width: 1024px) {
         padding: 10px;
-      }
-    }
-
-    .form-order__inner-box {
-      padding: 16px;
-      height: 100%;
-      @media(max-width: 1320px) and (min-width: 1024px) {
-        padding: 10px;
-      }
-
-      &--image-2 {
-        &::before {
-          background-image: url(../img/svg/pen.svg);
-          width: 58px;
-          height: 58px;
-        }
       }
     }
 
@@ -1835,14 +1824,10 @@ textarea {
 }
 
 .form-order__radio {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
   margin-bottom: 30px;
-  @include tablet-width {
-    justify-content: space-between;
-    gap: 10px;
-  }
 
   [type="radio"]:checked + label,
   [type="radio"]:not(:checked) + label {
@@ -2010,6 +1995,29 @@ input:focus {
 }
 
 .form-order__delivery {
+  .form-order__inner-box {
+    padding: 16px;
+    height: 100%;
+    @media(max-width: 1320px) and (min-width: 1024px) {
+      padding: 10px;
+    }
+
+    &--image-2 {
+      &::before {
+        background-image: url(../img/svg/pen.svg);
+        background-repeat: no-repeat;
+        width: 58px;
+        height: 58px;
+
+        @include tablet-width {
+          width: 40px;
+          height: 40px;
+          background-size: 40px 40px;
+        }
+      }
+    }
+  }
+
   &--hide {
     @include desktop-width-min {
       display: none;
@@ -2183,7 +2191,7 @@ input:focus {
     grid-gap: 30px;
     grid-template-columns: repeat(2, auto);
 
-    @include tablet-width {
+    @include mobile-width {
       grid-template-columns: 1fr;
     }
   }
@@ -2191,13 +2199,13 @@ input:focus {
 
 .form-group-gap {
   @include tablet-width {
-    margin: 30px 0;
+    margin: 40px 0;
   }
 }
 
 .form-order__where:last-child {
   @include tablet-width {
-    margin-top: 30px;
+    margin-top: 40px;
   }
 }
 
