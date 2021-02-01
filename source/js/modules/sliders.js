@@ -13,7 +13,7 @@
       effect: 'fade',
       slidesPerView: 1,
       autoplay: {
-        delay: 7000,
+        delay: 10000,
         disableOnInteraction: false,
       },
       navigation: {

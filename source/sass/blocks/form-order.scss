@@ -103,17 +103,13 @@
     }
   }
 
-  p:nth-child(2) {
-    margin: 0;
-    font-size: 16px;
-    line-height: 25px;
-    text-align: center;
+  .text-price {
     color: $yellow;
-
-    @include tablet-width {
-      font-size: 14px;
-      line-height: 18px;
-    }
+    font-family: $openSansRegular;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    display: block;
   }
 }
 

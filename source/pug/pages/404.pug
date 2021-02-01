@@ -11,13 +11,16 @@ block main
     section.page-unavailable
       .page-unavailable__wrapper.container
         .page-unavailable__text
-          h2 Упс, этой страницы не существует
-          p Страница, на которую вы зашли не зарегистрирована или не существует
+          h2#page-unavailable__text-1 Упс, этой страницы не существует
+          p#page-unavailable__text-2 Страница, на которую вы зашли не зарегистрирована или не существует
           a(href="#")
             +img('svg', 'icon-arrow-left', 'svg', '60', '15', 'На главную')
             | На главную
         .page-unavailable__image
+          span.page-unavailable__text-image(data-text="error !") error !
+          +img('svg', '404-image-element', 'svg', '165', '195', '404')
           +img('svg', '404-box', 'svg', '620', '445', '404')
+          +img('svg', '404-box-mobile', 'svg', '450', '325', '404')
 
 block footer
   +footer

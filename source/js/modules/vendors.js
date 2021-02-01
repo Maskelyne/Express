@@ -47,6 +47,40 @@
     }
   });
 
+  var text = document.getElementById('page-unavailable__text-1');
+
+  if (text && window.innerWidth >= 768) {
+    var newDom = '';
+    var animationDelay = 6;
+
+    for (var i = 0; i < text.innerText.length; i++) {
+      newDom += '<span class="char-1">' + (text.innerText[i] === ' ' ? '&nbsp;' : text.innerText[i]) + '</span>';
+    }
+
+    text.innerHTML = newDom;
+    var length = text.children.length;
+
+    for (var i = 0; i < length; i++) {
+      text.children[i].style['animation-delay'] = animationDelay * i + 'ms';
+    }
+
+    var text = document.getElementById('page-unavailable__text-2');
+    var newDom = '';
+    var animationDelay = 6;
+
+    for (var i = 0; i < text.innerText.length; i++) {
+      newDom += '<span class="char-2">' + (text.innerText[i] === ' ' ? '&nbsp;' : text.innerText[i]) + '</span>';
+    }
+
+    text.innerHTML = newDom;
+    var length = text.children.length;
+
+    for (var i = 0; i < length; i++) {
+      text.children[i].style['animation-delay'] = animationDelay * i + 'ms';
+    }
+  }
+
+
   var btn = document.querySelectorAll(".btn-show-more");
   var z;
   if (btn) {

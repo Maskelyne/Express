@@ -207,7 +207,7 @@
   }
 
   .main-header__wrap {
-    padding: 10px 10px 0 10px;
+    padding: 10px;
     height: auto;
     width: 435px;
     position: absolute;
@@ -221,6 +221,7 @@
 
     @include tablet-width {
       width: auto;
+      padding: 10px 10px 0 10px;
     }
 
     li {

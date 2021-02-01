@@ -20,11 +20,7 @@
   left: 32%;
 
   @include desktop-width-middle {
-    left: 43%;
-  }
-
-  @include desktop-width {
-    left: 53%;
+    left: 45%;
   }
 
   @include tablet-width {
@@ -109,9 +105,22 @@
       content: "";
       top: 0;
       left: 0;
-      background-image: url("../img/svg/image-bckg.svg");
+      background-image: url("../img/svg/image-bckg-desk.svg");
       background-repeat: no-repeat;
       z-index: 1;
+      background-size: 100% 100%;
+
+      @media (max-width: 1600px) {
+        background-size: 105% 100%;
+      }
+
+      @include desktop-width-middle {
+        background-size: 140% 100%;
+      }
+
+      @include desktop-width {
+        background-size: 147% 100%;
+      }
 
       @include desktop-width-min {
         background-image: url("../img/svg/image-bckg-mobile.svg");
@@ -125,7 +134,7 @@
 .service-slider__image {
   position: relative;
 
-  @include desktop-width {
+  @include desktop-width-middle {
     display: none;
   }
 
@@ -139,7 +148,7 @@
 .service-slider__text {
   width: 100%;
   max-width: 820px;
-  padding-left: 16%;
+  padding-left: 14%;
   padding-top: 40px;
   padding-bottom: 40px;
   position: relative;
@@ -148,19 +157,22 @@
   flex-direction: column;
   justify-content: space-between;
 
+  @media (max-width: 1600px) {
+    max-width: 520px;
+  }
+
   @include desktop-width-middle {
     padding-left: 20%;
   }
 
   @include desktop-width {
-    padding-left: 50px;
-    margin: 0 auto;
-    max-width: 560px;
+    padding-left: 19%;
   }
 
   @include desktop-width-min {
     padding-left: 20px;
     max-width: 600px;
+    margin: 0 auto;
   }
 
   @include tablet-width {
@@ -264,7 +276,7 @@
 
   h2 {
     margin: 0;
-    padding-bottom: 30px;
+    padding-bottom: 8px;
     display: flex;
     align-items: center;
     gap: 0 10px;

@@ -89,8 +89,8 @@
       tel: 'Введите номер телефона',
       user_contacts: 'Введите номер телефона',
       user_name: 'Обязательное поле',
-      user_email: 'Неверный email',
-      email: 'Неверный email',
+      user_email: 'Неверный E-mail',
+      email: 'Неверный E-mail',
     },
     errorElement: 'span',
   });

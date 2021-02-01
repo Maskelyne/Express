@@ -1499,12 +1499,22 @@ textarea {
       }
     }
 
+    span {
+      color: $yellow;
+      font-family: $openSansRegular;
+      font-size: 14px;
+      line-height: 19px;
+    }
+
     p {
       margin: 0;
       font-family: $openSansBold;
 
       span {
+        font-family: $openSansBold;
         color: $yellow;
+        font-size: 18px;
+        line-height: 28px;
       }
 
       &:last-child {
@@ -1829,6 +1839,11 @@ textarea {
   justify-content: space-between;
   margin-bottom: 30px;
 
+  @include mobile-width {
+    grid-template-columns: 1fr;
+    margin-bottom: 35px;
+  }
+
   [type="radio"]:checked + label,
   [type="radio"]:not(:checked) + label {
     position: relative;
@@ -1945,6 +1960,11 @@ input:focus {
   color: rgba(255, 193, 48, 0.5);
   @media(max-width: 767px) {
     font-size: 12px;
+    transform: translateY(-40px);
+  }
+
+  @include mobile-width {
+    transform: translateY(-45px);
   }
 }
 
