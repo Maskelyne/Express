@@ -51,7 +51,7 @@
 
   li {
     padding-top: 10px;
-    padding-right: 15px;
+    //padding-right: 15px;
     height: 100%;
     display: grid;
     align-items: center;
@@ -124,6 +124,7 @@
 
   .main-header__wrap-menu {
     position: relative;
+    padding-right: 25px;
 
     &::before {
       width: 8px;
@@ -131,7 +132,7 @@
       position: absolute;
       content: "";
       top: 61px;
-      right: 0;
+      right: 10px;
       background-color: $white;
       transform: rotate(45deg);
       transition: all 0.5s linear;
@@ -143,7 +144,7 @@
       position: absolute;
       content: "";
       top: 61px;
-      right: -5px;
+      right: 5px;
       background-color: $white;
       transform: rotate(-45deg);
       transition: all 0.5s linear;
