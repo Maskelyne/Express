@@ -10,6 +10,7 @@
 //= modules/sliders.js
 //= modules/forms.js
 //= modules/questions-tabs.js
+//= modules/mask-tel.js
 //= modules/ya-maps.js
 //= modules/calculate.js
 //= modules/delivery.js

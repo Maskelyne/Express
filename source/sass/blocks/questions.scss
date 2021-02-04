@@ -1,6 +1,10 @@
 .questions__wrapper {
   margin-top: 145px;
   margin-bottom: 60px;
+
+  @include tablet-width {
+    margin-top: 40px;
+  }
 }
 
 .questions__box {
@@ -115,55 +119,76 @@
 }
 
 .questions-mobile {
-  ul {
-    @include reset-list;
-    display: grid;
-    grid-gap: 20px 0;
+  display: none;
+
+  @include desktop-width-min {
+    display: block;
+    margin-bottom: 60px;
   }
 
-  li {
-    overflow: hidden;
-  }
+  .questions-mobile__box {
+    margin-bottom: 20px;
 
-  p:first-child {
-    margin: 0;
-    padding: 25px 30px 25px 30px;
-    cursor: pointer;
-    font-family: $openSansBold;
-    font-size: 18px;
-    line-height: 24px;
-    z-index: 1;
-    position: relative;
-    background-image: linear-gradient(99.92deg, rgba(255, 255, 255, 0.2) 4.46%, rgba(255, 255, 255, 0.02) 76.5%), linear-gradient(283.81deg, #172340 -4.47%, #27324F 96.77%);
+    p {
+      margin: 0;
+      padding: 25px 30px 25px 30px;
+      cursor: pointer;
+      font-family: $openSansBold;
+      font-size: 18px;
+      line-height: 24px;
+      z-index: 1;
+      position: relative;
+      background-image: linear-gradient(99.92deg, rgba(255, 255, 255, 0.2) 4.46%, rgba(255, 255, 255, 0.02) 76.5%), linear-gradient(283.81deg, #172340 -4.47%, #27324F 96.77%);
 
+      @include tablet-width {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 15px;
+      }
 
-    &::before {
-      width: 25px;
-      height: 15px;
-      position: absolute;
-      content: "";
-      top: 40%;
-      right: 3%;
-      background-image: url("../img/svg/icon-questions-arrow.svg");
-      background-repeat: no-repeat;
-      transform: rotate(-90deg);
-      transition: all 0.3s linear;
+      &::before {
+        width: 25px;
+        height: 15px;
+        position: absolute;
+        content: "";
+        top: 40%;
+        right: 3%;
+        background-image: url("../img/svg/icon-questions-arrow.svg");
+        background-repeat: no-repeat;
+        transform: rotate(-90deg);
+        transition: all 0.2s linear;
+      }
     }
   }
 
-  p:last-child {
+  .questions-mobile__text {
     display: none;
+
+    ul {
+      @include reset-list;
+    }
   }
 
   .questions-box-active {
-    p:first-child {
+    p {
+      color: $yellow;
+      background-image: linear-gradient(279.07deg, #505870 -2.62%, #172340 87.4%);
+
       &::before {
         transform: rotate(0deg);
       }
     }
 
-    p:last-child {
+    + .questions-mobile__text {
       display: block;
+
+      p {
+        strong {
+          color: $yellow;
+          font-weight: $normal;
+        }
+      }
     }
   }
+
 }

@@ -12,7 +12,7 @@
 
   @include desktop-width-min {
     background-image: url("../img/jpg/img-bckg-mobile.jpg");
-    background-position: right;
+    background-position: top right;
   }
 
   @media  (max-width: 767px){

@@ -514,10 +514,12 @@
 (function () {
 
   var questions = document.querySelector('.questions');
-  var questionsText = questions.querySelectorAll('.questions__box-left li');
+  var questionsMobile = document.querySelector('.questions-mobile');
+  var questionsText = document.querySelectorAll('.questions__box-left li');
   var questionsBox = document.querySelectorAll('.questions__box-right article');
 
-  if (questionsText) {
+  if (questions) {
+
     var removeActive = function (array, activeClass) {
       array.forEach(function (item) {
         item.classList.remove(activeClass);
@@ -539,29 +541,59 @@
     });
   }
 
-    var questionsBox2 = document.querySelectorAll('.questions-mobile li');
+  if (questionsMobile && window.innerWidth < 1023) {
+    var questionsBox = document.querySelectorAll('.questions-mobile__box'),
+      active = document.getElementsByClassName('questions-box-active');
 
-    if (questionsBox2) {
-
-      questionsBox2.forEach(function (item, i) {
-        item.addEventListener('click', function (evt) {
-          evt.preventDefault();
-
-          questionsBox2.forEach(function (box, z) {
-            if (questionsBox2[z].classList.contains('questions-box-active')) {
-              questionsBox2[z].classList.remove('questions-box-active');
-              console.log('true');
-            } else {
-              questionsBox2[z].classList.remove('questions-box-active');
-            }
-          });
-
-          this.classList.add('questions-box-active');
-
-        });
+    Array.from(questionsBox).forEach(function(item, i, panelItem) {
+      item.addEventListener('click', function(e) {
+        if (active.length > 0 && active[0] !== this) {
+          active[0].classList.remove('questions-box-active');
+        }
+        this.classList.toggle('questions-box-active');
       });
+    });
+  }
 
+})();
+"use strict";
+
+(function () {
+
+  var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
+  var maskOpts = {
+    inputmask: {
+      definitions: {
+        '#': {
+          validator: "[0-9]",
+          cardinality: 1
+        }
+      },
+      showMaskOnHover: false,
+      autoUnmask: true,
+      clearMaskOnLostFocus: true
+    },
+    match: /[0-9]/,
+    replace: '#',
+    list: maskList,
+    listKey: "mask",
+    onMaskChange: function (maskObj, determined) {
     }
+  };
+
+  $('#user-phone').change(function () {
+    $('#user-phone').inputmask("remove");
+    $('#user-phone').inputmasks(maskOpts);
+  });
+
+  $('#user-phone').change();
+
+  $('#ec-user_contacts-resource-3').change(function () {
+    $('#ec-user_contacts-resource-3-phone').inputmask("remove");
+    $('#ec-user_contacts-resource-3').inputmasks(maskOpts);
+  });
+
+  $('#ec-user_contacts-resource-3').change();
 
 })();
 "use strict";
