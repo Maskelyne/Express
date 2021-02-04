@@ -13,23 +13,23 @@ mixin form-order()
                     .form-order__point-1
                       input(id="point-1" type="text" name="city_1")
                       label(for="point-1") Откуда
-                      span.error
+                      span.error-text
                     button.button-revers(type="button")
                       span.visually-hidden Изменить маршрут
                     .form-order__point-2
                       input(id="point-2" type="text" name="city_2")
                       label(for="point-2") Куда
-                      span.error
+                      span.error-text
                   .form-order__points-2
                     .form-order__weight
-                      input.ignore(id="weight" type="number" min="1" max="4000" name="weight")
+                      input.ignore(id="weight" type="text" maxlength="4" name="weight")
                       label(for="weight") Вес, кг
-                      span.error
+                      span.error-text
                     .form-order__volume
-                      input.ignore(id="volume" type="number" min="1" max="10" name="volume")
+                      input.ignore(id="volume" type="text" maxlength="2" name="volume")
                       label(for="volume") Объем, м
                         sup 3
-                      span.error
+                      span.error-text
                 .form-order__point-3
                   input.datepicker-here(id="point-3" type="text")
                   label(for="point-3") Доставка
@@ -60,7 +60,7 @@ mixin form-order()
                   .form-order__point-4
                     input(id="user-phone" type="text")
                     label(for="user-phone") Телефон*
-                    span.error
+                    span.error-text
                   .form-order__point-5
                     input(id="user-email" type="text")
                     label(for="user-email") E-mail
@@ -106,7 +106,7 @@ mixin form-order()
                     label(for="user-text") Для юр. лиц и ИП введите реквизиты
               .form-order__buttons
                 a.button--prev-js(href="#")
-                  +img('svg', 'icon-arrow-prev', 'svg', '49', '15', 'Вернуться назад')
+                  //+img('svg', 'icon-arrow-prev', 'svg', '49', '15', 'Вернуться назад')
                   | Назад
                 button(type="submit").button.button--effect-1
                   span Заказать

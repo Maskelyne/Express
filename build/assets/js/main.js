@@ -514,12 +514,10 @@
 (function () {
 
   var questions = document.querySelector('.questions');
+  var questionsText = questions.querySelectorAll('.questions__box-left li');
+  var questionsBox = document.querySelectorAll('.questions__box-right article');
 
-  if (questions) {
-
-    var questionsText = questions.querySelectorAll('.questions__box-left li');
-    var questionsBox = document.querySelectorAll('.questions__box-right article');
-
+  if (questionsText) {
     var removeActive = function (array, activeClass) {
       array.forEach(function (item) {
         item.classList.remove(activeClass);
@@ -527,21 +525,43 @@
       return;
     };
 
-    if (questionsText) {
-      questionsText.forEach(function (item, i) {
-        questionsText[0].classList.add('questions__item-active');
-        questionsBox[0].classList.add('questions__text-active');
+    questionsText.forEach(function (item, i) {
+      questionsText[0].classList.add('questions__item-active');
+      questionsBox[0].classList.add('questions__text-active');
+      item.addEventListener('click', function (evt) {
+        evt.preventDefault();
+
+        removeActive(questionsText, 'questions__item-active');
+        removeActive(questionsBox, 'questions__text-active');
+        questionsText[i].classList.add('questions__item-active');
+        questionsBox[i].classList.add('questions__text-active');
+      });
+    });
+  }
+
+    var questionsBox2 = document.querySelectorAll('.questions-mobile li');
+
+    if (questionsBox2) {
+
+      questionsBox2.forEach(function (item, i) {
         item.addEventListener('click', function (evt) {
           evt.preventDefault();
 
-          removeActive(questionsText, 'questions__item-active');
-          removeActive(questionsBox, 'questions__text-active');
-          questionsText[i].classList.add('questions__item-active');
-          questionsBox[i].classList.add('questions__text-active');
+          questionsBox2.forEach(function (box, z) {
+            if (questionsBox2[z].classList.contains('questions-box-active')) {
+              questionsBox2[z].classList.remove('questions-box-active');
+              console.log('true');
+            } else {
+              questionsBox2[z].classList.remove('questions-box-active');
+            }
+          });
+
+          this.classList.add('questions-box-active');
+
         });
       });
+
     }
-  }
 
 })();
 "use strict";
@@ -1484,46 +1504,6 @@
   }
 
 })();
-"use strict";
-
-(function () {
-
-  var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
-  var maskOpts = {
-    inputmask: {
-      definitions: {
-        '#': {
-          validator: "[0-9]",
-          cardinality: 1
-        }
-      },
-      showMaskOnHover: false,
-      autoUnmask: true,
-      clearMaskOnLostFocus: true
-    },
-    match: /[0-9]/,
-    replace: '#',
-    list: maskList,
-    listKey: "mask",
-    onMaskChange: function (maskObj, determined) {
-    }
-  };
-
-  $('#user-phone').change(function () {
-    $('#user-phone').inputmask("remove");
-    $('#user-phone').inputmasks(maskOpts);
-  });
-
-  $('#user-phone').change();
-
-  $('#ec-user_contacts-resource-3').change(function () {
-    $('#ec-user_contacts-resource-3-phone').inputmask("remove");
-    $('#ec-user_contacts-resource-3').inputmasks(maskOpts);
-  });
-
-  $('#ec-user_contacts-resource-3').change();
-
-})();
 'use strict';
 
 (function () {
@@ -1583,20 +1563,20 @@
     });
   }
 
-  $('.js-btn').click(function (e) {
-    e.preventDefault();
-    $('.form-order__delivery').removeClass('form-order__delivery--show');
-    setTimeout(function () {
-      $('.js-btn').css('display', 'none')
-    }, 100);
-  })
-
-  $(".js-btn").on("click", function (event) {
-    event.preventDefault();
-    var id = $(this).attr('href'),
-      top = $(id).offset().top;
-    $('body,html').animate({scrollTop: top - 100}, 1000);
-  });
+  // $('.js-btn').click(function (e) {
+  //   e.preventDefault();
+  //   $('.form-order__delivery').removeClass('form-order__delivery--show');
+  //   setTimeout(function () {
+  //     $('.js-btn').css('display', 'none')
+  //   }, 100);
+  // })
+  //
+  // $(".js-btn").on("click", function (event) {
+  //   event.preventDefault();
+  //   var id = $(this).attr('href'),
+  //     top = $(id).offset().top;
+  //   $('body,html').animate({scrollTop: top - 100}, 1000);
+  // });
 
 
   $(window).on('load', function(){

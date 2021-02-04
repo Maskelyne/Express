@@ -67,10 +67,6 @@
       font-size: 20px;
       line-height: 22px;
     }
-
-    @include mobile-width {
-      font-size: 16px;
-    }
   }
 }
 
@@ -79,6 +75,12 @@
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+
+  h3 {
+    @include mobile-width {
+      font-size: 16px;
+    }
+  }
 
   @include desktop-width-min {
     max-width: 615px;
@@ -94,6 +96,12 @@
   width: 100%;
   max-width: 860px;
   margin: 0 auto;
+
+  h3 {
+    @include mobile-width {
+      font-size: 16px;
+    }
+  }
 
   h3 {
     padding-bottom: 5px;
@@ -143,6 +151,10 @@
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: space-between;
+
+  @include mobile-width {
+    grid-template-columns: 1fr;
+  }
 
   label {
     position: relative;
@@ -398,7 +410,7 @@
         }
 
         @include mobile-width {
-          transform: translateY(-45px);
+          transform: translateY(-50px);
         }
       }
     }
@@ -882,6 +894,7 @@ input#ec-user_contacts-resource-3.error {
 .form-order__buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 
   @include desktop-width-min {
     max-width: 355px;
@@ -895,15 +908,39 @@ input#ec-user_contacts-resource-3.error {
   }
 
   .button--prev-js {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
+    padding-left: 65px;
     color: $yellow;
+    position: relative;
 
-    img {
-      max-width: 40px;
-      margin-right: 10px;
-      transform: rotate(180deg);
+    &::before {
+      width: 50px;
+      height: 15px;
+      position: absolute;
+      content: "";
+      top: 8px;
+      left: 5px;
+      background-image: url("../img/svg/icon-arrow-left.svg");
+      background-repeat: no-repeat;
+      background-size: 90% 100%;
+      background-position: right;
+      transition: all 0.2s linear;
+    }
+
+    @include tablet-width {
+      padding-left: 50px;
+
+      &::before {
+        width: 40px;
+        left: 0;
+        background-size: 100% 100%;
+      }
+    }
+
+    &:hover {
+      &::before {
+        background-size: 100% 100%;
+        transition: all 0.2s linear;
+      }
     }
   }
 }

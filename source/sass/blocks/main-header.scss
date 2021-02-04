@@ -50,12 +50,15 @@
   }
 
   li {
-    padding-top: 10px;
-    //padding-right: 15px;
+    padding-top: 12px;
     height: 100%;
     display: grid;
     align-items: center;
     cursor: pointer;
+
+    @include desktop-width-min {
+      padding-top: 6%;
+    }
 
     &:last-child {
       padding-right: 0;
@@ -125,6 +128,10 @@
   .main-header__wrap-menu {
     position: relative;
     padding-right: 25px;
+
+    @include desktop-width-min {
+      padding-right: 0;
+    }
 
     &::before {
       width: 8px;
@@ -541,7 +548,7 @@
       .main-header__inner-tel {
         width: 270px;
         height: 100%;
-        padding-top: 10px;
+        padding-top: 4%;
         position: fixed;
         right: -270px;
         background-image: $blue-gradient;

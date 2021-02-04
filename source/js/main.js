@@ -14,7 +14,6 @@
 //= modules/calculate.js
 //= modules/delivery.js
 //= modules/modals.js
-//= modules/mask-tel.js
 //= modules/af-complete.js
 //= modules/vendors.js
 
