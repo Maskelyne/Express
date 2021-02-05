@@ -1,7 +1,7 @@
 mixin activity()
   section.activity
     .activity__wrapper
-      section.activity__box
+      section.activity__box(data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine")
         .activity__box-text
           p
             strong Наша компания занимается экспресс-доставкой грузов из Минска в Москву и из Москвы в Минск. Возможна доставка от адреса к адресу.
@@ -12,7 +12,9 @@ mixin activity()
         .questions__wrapper.container
           h2 Часто задаваемые вопросы
           .questions__box
-            .questions__box-left
+            .questions__box-left(data-aos="fade-right"
+              data-aos-offset="700"
+              data-aos-easing="ease-in-sine")
               ul
                 li
                   p Как правильно упаковать посылку?
@@ -24,7 +26,9 @@ mixin activity()
                   p Как оплатить услугу доставки?
                 li
                   p Образцы документов
-            .questions__box-right
+            .questions__box-right(data-aos="fade-left"
+              data-aos-offset="700"
+              data-aos-easing="ease-in-sine")
               article.questions__text-active
                 p Мы не занимаемся упаковкой отправлений. Вы должны самостоятельно упаковать свою посылку.  Упаковка должна быть:
                 ul
@@ -65,24 +69,3 @@ mixin activity()
             p Как правильно упаковать посылку?
           .questions-mobile__text
             p Как правильно упаковать посылку?
-          //ul
-          //  li.js-active
-          //    p.questions-mobile__p Как правильно упаковать посылку?
-          //    .questions-mobile__text
-          //      p Как правильно упаковать посылку?
-          //  li.js-active
-          //    p.questions-mobile__p Запросить бухгалтерские документы
-          //    .questions-mobile__text
-          //      p Запросить бухгалтерские документы
-          //  li.js-active
-          //    p.questions-mobile__p Заключить договор
-          //    .questions-mobile__text
-          //      p Заключить договор
-          //  li.js-active
-          //    p.questions-mobile__p Как оплатить услугу доставки?
-          //    .questions-mobile__text
-          //      p Как оплатить услугу доставки?
-          //  li.js-active
-          //    p.questions-mobile__p Образцы документов
-          //    .questions-mobile__text
-          //      p Образцы документов

@@ -6,6 +6,7 @@
     <title>Главная</title>
     <meta name="description" content="Mexp | Экспресс-доставка грузов">
     <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
     <link rel="shortcut icon" href="assets/img/favicons/icon-favicon.svg" type="image/svg">
     <link href="assets/fonts/OpenSans-Regular.woff2" as="font" rel="preload" crossorigin="anonymous">
     <link href="assets/fonts/OpenSans-Bold.woff2" as="font" rel="preload" crossorigin="anonymous">
@@ -237,8 +238,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-order__buttons"><a class="button--prev-js" href="#">
-                      <!--+img('svg', 'icon-arrow-prev', 'svg', '49', '15', 'Вернуться назад')-->Назад</a>
+                  <div class="form-order__buttons"><a class="button--prev-js" href="#">Назад</a>
                     <button class="button button--effect-1" type="submit"><span>Заказать</span></button>
                   </div>
                 </div>
@@ -251,19 +251,19 @@
         <div class="services__wrapper container">
           <h2>Услуги</h2>
           <ul>
-            <li><a href="#">
+            <li data-aos="fade-down" data-aos-easing="linear"><a href="#">
                 <article><img src="assets/img/svg/icon-route.svg" width="230" height="200" alt="Экспресс доставка Москва - Минск - Москва"/>
                   <p>Экспресс доставка Москва - Минск - Москва</p>
                 </article></a></li>
-            <li><a href="#">
+            <li data-aos="fade-down" data-aos-easing="linear"><a href="#">
                 <article><img src="assets/img/svg/icon-maps.svg" width="230" height="200" alt="Доставка по всей России"/>
                   <p>Доставка по всей России</p>
                 </article></a></li>
-            <li><a href="#">
+            <li data-aos="fade-down" data-aos-easing="linear"><a href="#">
                 <article><img src="assets/img/svg/icon-plane.svg" width="230" height="200" alt="Доставка из аэропортов Москвы"/>
                   <p>Доставка из аэропортов Москвы</p>
                 </article></a></li>
-            <li><a href="#">
+            <li data-aos="fade-down" data-aos-easing="linear"><a href="#">
                 <article><img src="assets/img/svg/icon-ikea.svg" width="230" height="200" alt="Доставка из IKEA"/>
                   <p>Доставка из IKEA</p>
                 </article></a></li>
@@ -272,7 +272,7 @@
       </section>
       <section class="activity">
         <div class="activity__wrapper">
-          <section class="activity__box">
+          <section class="activity__box" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine">
             <div class="activity__box-text">
               <p><strong>Наша компания занимается экспресс-доставкой грузов из Минска в Москву и из Москвы в Минск. Возможна доставка от адреса к адресу.</strong></p>
               <p>Мы перевозим ваши посылки на новых быстрых и надежных микроавтобусах, поэтому доставка  приходит всегда точно в указанный срок.  В течение 12 часов посылка гарантированно прибудет в указанное место.  Услуга закрепляется заключением официального договора</p>
@@ -283,7 +283,7 @@
             <div class="questions__wrapper container">
               <h2>Часто задаваемые вопросы</h2>
               <div class="questions__box">
-                <div class="questions__box-left">
+                <div class="questions__box-left" data-aos="fade-right" data-aos-offset="700" data-aos-easing="ease-in-sine">
                   <ul>
                     <li>
                       <p>Как правильно упаковать посылку?</p>
@@ -302,7 +302,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="questions__box-right">
+                <div class="questions__box-right" data-aos="fade-left" data-aos-offset="700" data-aos-easing="ease-in-sine">
                   <article class="questions__text-active">
                     <p>Мы не занимаемся упаковкой отправлений. Вы должны самостоятельно упаковать свою посылку.  Упаковка должна быть:</p>
                     <ul>
@@ -359,27 +359,6 @@
               <div class="questions-mobile__text">
                 <p>Как правильно упаковать посылку?</p>
               </div>
-              <!--ul-->
-              <!--  li.js-active-->
-              <!--    p.questions-mobile__p Как правильно упаковать посылку?-->
-              <!--    .questions-mobile__text-->
-              <!--      p Как правильно упаковать посылку?-->
-              <!--  li.js-active-->
-              <!--    p.questions-mobile__p Запросить бухгалтерские документы-->
-              <!--    .questions-mobile__text-->
-              <!--      p Запросить бухгалтерские документы-->
-              <!--  li.js-active-->
-              <!--    p.questions-mobile__p Заключить договор-->
-              <!--    .questions-mobile__text-->
-              <!--      p Заключить договор-->
-              <!--  li.js-active-->
-              <!--    p.questions-mobile__p Как оплатить услугу доставки?-->
-              <!--    .questions-mobile__text-->
-              <!--      p Как оплатить услугу доставки?-->
-              <!--  li.js-active-->
-              <!--    p.questions-mobile__p Образцы документов-->
-              <!--    .questions-mobile__text-->
-              <!--      p Образцы документов-->
             </div>
           </section>
         </div>
@@ -513,6 +492,8 @@
     </section>
     <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/aos.js"></script>
     <script src="assets/js/default.js"></script>
+    <script>AOS.init();</script>
   </body>
 </html>

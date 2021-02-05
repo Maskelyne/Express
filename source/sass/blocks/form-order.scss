@@ -76,12 +76,6 @@
   max-width: 1100px;
   margin: 0 auto;
 
-  h3 {
-    @include mobile-width {
-      font-size: 16px;
-    }
-  }
-
   @include desktop-width-min {
     max-width: 615px;
   }

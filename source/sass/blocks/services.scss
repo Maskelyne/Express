@@ -39,6 +39,24 @@
       grid-template-columns: 1fr;
       grid-gap: 20px 0;
     }
+
+    li {
+      &:nth-child(1) {
+        transition-delay: 0.3s;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 0.5s;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 0.7s;
+      }
+
+      &:nth-child(4) {
+        transition-delay: 0.9s;
+      }
+    }
   }
 
   article {

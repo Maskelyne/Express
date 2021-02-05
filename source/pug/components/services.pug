@@ -1,48 +1,26 @@
 mixin services()
 
-  -
-    var services = [
-      {
-        path: 'svg',
-        image: 'icon-route',
-        format: 'svg',
-        width: '230',
-        height: '200',
-        text: 'Экспресс доставка Москва - Минск - Москва'
-      },
-      {
-        path: 'svg',
-        image: 'icon-maps',
-        format: 'svg',
-        width: '230',
-        height: '200',
-        text: 'Доставка по всей России'
-      },
-      {
-        path: 'svg',
-        image: 'icon-plane',
-        format: 'svg',
-        width: '230',
-        height: '200',
-        text: 'Доставка из аэропортов Москвы'
-      },
-      {
-        path: 'svg',
-        image: 'icon-ikea',
-        format: 'svg',
-        width: '230',
-        height: '200',
-        text: 'Доставка из IKEA'
-      },
-    ];
-
   section.services
     .services__wrapper.container
       h2 Услуги
       ul
-        each item in services
-          li
-            a(href="#")
-              article
-                +img(item.path, item.image, item.format, item.width, item.height, item.text)
-                p= item.text
+        li(data-aos="fade-down" data-aos-easing="linear")
+          a(href="#")
+            article
+              +img('svg', 'icon-route', 'svg', '230', '200', 'Экспресс доставка Москва - Минск - Москва')
+              p Экспресс доставка Москва - Минск - Москва
+        li(data-aos="fade-down" data-aos-easing="linear")
+          a(href="#")
+            article
+              +img('svg', 'icon-maps', 'svg', '230', '200', 'Доставка по всей России')
+              p Доставка по всей России
+        li(data-aos="fade-down" data-aos-easing="linear")
+          a(href="#")
+            article
+              +img('svg', 'icon-plane', 'svg', '230', '200', 'Доставка из аэропортов Москвы')
+              p Доставка из аэропортов Москвы
+        li(data-aos="fade-down" data-aos-easing="linear")
+          a(href="#")
+            article
+              +img('svg', 'icon-ikea', 'svg', '230', '200', 'Доставка из IKEA')
+              p Доставка из IKEA
