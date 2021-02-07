@@ -1,6 +1,7 @@
 mixin activity()
   section.activity
     .activity__wrapper
+      +img('jpg', 'img-bckg', 'jpg', '1920', '1050', 'Mexp')
       section.activity__box(data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine")
         .activity__box-text
           p
@@ -12,9 +13,7 @@ mixin activity()
         .questions__wrapper.container
           h2 Часто задаваемые вопросы
           .questions__box
-            .questions__box-left(data-aos="fade-right"
-              data-aos-offset="700"
-              data-aos-easing="ease-in-sine")
+            .questions__box-left
               ul
                 li
                   p Как правильно упаковать посылку?
@@ -26,9 +25,7 @@ mixin activity()
                   p Как оплатить услугу доставки?
                 li
                   p Образцы документов
-            .questions__box-right(data-aos="fade-left"
-              data-aos-offset="700"
-              data-aos-easing="ease-in-sine")
+            .questions__box-right
               article.questions__text-active
                 p Мы не занимаемся упаковкой отправлений. Вы должны самостоятельно упаковать свою посылку.  Упаковка должна быть:
                 ul

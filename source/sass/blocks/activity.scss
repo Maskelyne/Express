@@ -1,10 +1,11 @@
 .activity__wrapper {
   max-width: 1920px;
   margin: 0 auto;
-  background-image: url("../img/jpg/img-bckg.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  overflow-x: hidden;
+  position: relative;
+  //background-image: url("../img/jpg/img-bckg.jpg");
+  //background-repeat: no-repeat;
+  //background-position: top center;
+  //overflow-x: hidden;
 
   @include desktop-width {
     background-position: 63% -85px;
@@ -19,14 +20,35 @@
     background-position: top center;
   }
 
+  img:nth-child(1) {
+    height: 68%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0;
+  }
+
+  &--image {
+    img {
+      animation: opacity;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+      animation-duration: 1s;
+      animation-delay: 1s;
+      animation-timing-function: linear;
+    }
+  }
+
 }
 
 .activity__box {
-  margin-top: 165px;
+  padding-top: 165px;
   width: 1145px;
-  height: 615px;
+  height: 780px;
   background-image: url("../img/svg/image-bckg-tabs.svg");
   background-repeat: no-repeat;
+  background-position: bottom;
 
   @include desktop-width-middle {
     transform: translateX(-200px);

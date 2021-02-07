@@ -16,5 +16,6 @@
 //= modules/delivery.js
 //= modules/modals.js
 //= modules/af-complete.js
+//= modules/animation.js
 //= modules/vendors.js
 
