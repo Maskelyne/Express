@@ -22,7 +22,8 @@ var path = {
     js: 'build/assets/js/',
     css: 'build/assets/css/',
     img: 'build/assets/img/',
-    fonts: 'build/assets/fonts/'
+    fonts: 'build/assets/fonts/',
+    videoBuild: 'build/assets/video'
   },
   source: {
     html: 'source/*.html',
@@ -32,6 +33,7 @@ var path = {
     aosJs: 'source/js/vendor/aos.js',
     css: 'source/sass/style.scss',
     aosCss: 'source/css/aos.css',
+    video: 'source/video/*.{mp4,ogg,webm}',
     img: 'source/img/**/*.{png,jpg,svg}',
     sprite: 'source/img/svg-sprite/*.svg',
     fonts: 'source/fonts/**/*.{woff,woff2}'
@@ -63,6 +65,12 @@ gulp.task('clean:build', function () {
 gulp.task('html:build', function () {
   return gulp.src(path.source.html)
     .pipe(gulp.dest(path.build.html))
+    .pipe(server.stream());
+});
+
+gulp.task('html:build', function () {
+  return gulp.src(path.source.video)
+    .pipe(gulp.dest(path.build.videoBuild))
     .pipe(server.stream());
 });
 

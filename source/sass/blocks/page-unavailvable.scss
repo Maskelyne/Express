@@ -111,11 +111,34 @@
   }
 
   a {
-    display: grid;
-    grid-template-columns: 40px 120px;
-    align-items: center;
-    grid-gap: 0 10px;
+    padding-left: 65px;
     color: $yellow;
+    position: relative;
+
+    &::before {
+      width: 50px;
+      height: 15px;
+      position: absolute;
+      content: "";
+      top: 6px;
+      left: 5px;
+      background-image: url("../img/svg/icon-arrow-left.svg");
+      background-repeat: no-repeat;
+      background-size: 90% 100%;
+      background-position: right;
+      transition: all 0.2s linear;
+      cursor: pointer;
+
+      @include tablet-width {
+        top: 3px;
+      }
+    }
+
+    &:hover {
+      &::before {
+        background-size: 100% 100%;
+      }
+    }
   }
 
   .char-1 {

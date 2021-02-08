@@ -2,10 +2,7 @@
   max-width: 1920px;
   margin: 0 auto;
   position: relative;
-  //background-image: url("../img/jpg/img-bckg.jpg");
-  //background-repeat: no-repeat;
-  //background-position: top center;
-  //overflow-x: hidden;
+  overflow: hidden;
 
   @include desktop-width {
     background-position: 63% -85px;
@@ -20,26 +17,17 @@
     background-position: top center;
   }
 
-  img:nth-child(1) {
-    height: 68%;
+  video {
+    width: 100%;
+    height: auto;
     position: absolute;
     top: 0;
     left: 0;
-    object-fit: cover;
-    opacity: 0;
-  }
 
-  &--image {
-    img {
-      animation: opacity;
-      animation-direction: normal;
-      animation-fill-mode: forwards;
-      animation-duration: 1s;
-      animation-delay: 1s;
-      animation-timing-function: linear;
+    @include desktop-width-min {
+      display: none;
     }
   }
-
 }
 
 .activity__box {
@@ -51,7 +39,7 @@
   background-position: bottom;
 
   @include desktop-width-middle {
-    transform: translateX(-200px);
+    width: 1024px;
   }
 
   @include desktop-width-min {
@@ -72,6 +60,10 @@
   max-width: 600px;
   margin: 0 auto 0 420px;
   padding-top: 210px;
+
+  @include desktop-width-middle {
+    margin-left: 350px;
+  }
 
   @include desktop-width-min {
     margin-left: 300px;

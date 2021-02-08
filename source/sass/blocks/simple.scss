@@ -837,15 +837,6 @@ textarea {
     }
   }
 
-  &__prev {
-    margin-right: 35px;
-  }
-
-  &__next {
-    margin-left: 35px;
-    transform: rotate(180deg);
-  }
-
   &--word {
     ul {
       gap: 148px;
@@ -867,6 +858,7 @@ textarea {
       color: #FFB520;
       display: flex;
       align-items: center;
+
       @media(max-width: $tablet-width) {
         font-size: 14px;
       }
@@ -878,17 +870,80 @@ textarea {
     }
 
     &-next {
-      img {
-        margin-left: 15px;
+      position: relative;
+      padding-right: 65px;
 
+      @include tablet-width {
+        padding-right: 0;
+
+        img {
+          margin-left: 10px;
+        }
+      }
+
+      &::before {
+        width: 50px;
+        height: 15px;
+        position: absolute;
+        content: "";
+        top: 6px;
+        right: 5px;
+        background-image: url("../img/svg/icon-arrow-left.svg");
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
+        background-position: right;
+        transition: all 0.2s linear;
+        transform: rotate(180deg);
+        cursor: pointer;
+
+        @include tablet-width {
+          display: none;
+        }
+      }
+
+      &:hover {
+        &::before {
+          background-size: 100% 100%;
+        }
       }
     }
 
     &-prev {
+      position: relative;
+      padding-left: 65px;
 
-      img {
-        transform: rotate(180deg);
-        margin-right: 15px;
+      @include tablet-width {
+        padding-left: 0;
+
+        img {
+          transform: rotate(180deg);
+          margin-right: 10px;
+        }
+      }
+
+      &::before {
+        width: 50px;
+        height: 15px;
+        position: absolute;
+        content: "";
+        top: 6px;
+        left: 5px;
+        background-image: url("../img/svg/icon-arrow-left.svg");
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
+        background-position: right;
+        transition: all 0.2s linear;
+        cursor: pointer;
+
+        @include tablet-width {
+          display: none;
+        }
+      }
+
+      &:hover {
+        &::before {
+          background-size: 100% 100%;
+        }
       }
     }
   }
