@@ -23,6 +23,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
 
     @include desktop-width-min {
       display: none;
@@ -40,6 +41,7 @@
 
   @include desktop-width-middle {
     width: 1024px;
+    background-position: 105% 100%;
   }
 
   @include desktop-width-min {
@@ -62,7 +64,7 @@
   padding-top: 210px;
 
   @include desktop-width-middle {
-    margin-left: 350px;
+    margin-left: 280px;
   }
 
   @include desktop-width-min {
