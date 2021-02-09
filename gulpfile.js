@@ -33,7 +33,7 @@ var path = {
     aosJs: 'source/js/vendor/aos.js',
     css: 'source/sass/style.scss',
     aosCss: 'source/css/aos.css',
-    video: 'source/video/*.{mp4,ogg,webm}',
+    video: 'source/video/*.{mp4,ogv,webm}',
     img: 'source/img/**/*.{png,jpg,svg}',
     sprite: 'source/img/svg-sprite/*.svg',
     fonts: 'source/fonts/**/*.{woff,woff2}'
