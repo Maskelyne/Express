@@ -65,6 +65,13 @@
   }
 
 
+  AOS.init({
+    disable: function () {
+      var maxWidth = 1024;
+      return window.innerWidth < maxWidth;
+    }
+  });
+
   var btn = document.querySelectorAll(".btn-show-more");
   var z;
   if (btn) {

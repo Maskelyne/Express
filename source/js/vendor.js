@@ -11,5 +11,4 @@
 //= vendor/swiper-bundle.min.js
 //= vendor/jquery.validate.min.js
 //= vendor/datepicker.min.js
-//= vendor/aos.js
 

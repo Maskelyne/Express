@@ -32,7 +32,6 @@ var path = {
     vendorJs: 'source/js/vendor.js',
     aosJs: 'source/js/vendor/aos.js',
     css: 'source/sass/style.scss',
-    aosCss: 'source/css/aos.css',
     video: 'source/video/*.{mp4,ogv,webm}',
     img: 'source/img/**/*.{png,jpg,svg}',
     sprite: 'source/img/svg-sprite/*.svg',
@@ -110,17 +109,6 @@ gulp.task('vendorJs:build', function () {
     .pipe(server.stream());
 });
 
-
-gulp.task('aosJs:build', function () {
-  return gulp.src(path.source.aosJs)
-    .pipe(gulp.dest(path.build.js))
-});
-
-gulp.task('aos:build', function () {
-  return gulp.src(path.source.aosCss)
-    .pipe(gulp.dest(path.build.css))
-});
-
 gulp.task('css:build', function () {
   return gulp.src(path.source.css)
     .pipe(plumber())
@@ -176,9 +164,7 @@ gulp.task('build', gulp.series(
     'pug:build',
     'js:build',
     'jsAdd:build',
-    'aosJs:build',
     'vendorJs:build',
-    'aos:build',
     'css:build',
     'fonts:build',
     'image:build',
