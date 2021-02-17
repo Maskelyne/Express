@@ -612,16 +612,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-  //  @media (max-width: $desktop-width-middle) {
-  //    width: 162%;
-  //    left: -410px;
-  //  }
-  //
-  //  @media (max-width: $desktop-width) {
-  //    width: 190%;
-  //    left: -490px;
-  //  }
-
     @media (max-width: $desktop-width-min) {
       display: none;
     }

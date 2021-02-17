@@ -143,6 +143,7 @@
 }
 
 .service-slider__image {
+  width: 100%;
   position: relative;
 
   @include desktop-width-middle {
