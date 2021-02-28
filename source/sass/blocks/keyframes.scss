@@ -35,3 +35,44 @@
     opacity: 1;
   }
 }
+
+@keyframes an {
+  from{
+    opacity: 0;
+    transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+  }
+  to{
+    opacity: 1;
+    transform: perspective(500px) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes noise-anim-2 {
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+
+@keyframes image-show {
+  0% {
+    transform: translate(29%, 15%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(29%, 5%);
+    opacity: 1;
+  }
+}

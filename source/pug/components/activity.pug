@@ -1,7 +1,9 @@
 mixin activity()
   section.activity
     .activity__wrapper
-      section.activity__box
+      video(width="100%" height="900" autoplay loop)
+        source( src="assets/video/maps.mp4" type="video/mp4")
+      section.activity__box(data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine")
         .activity__box-text
           p
             strong Наша компания занимается экспресс-доставкой грузов из Минска в Москву и из Москвы в Минск. Возможна доставка от адреса к адресу.
@@ -51,3 +53,17 @@ mixin activity()
                 p Если вам нужен акт выполненных работ, запросите его у своего менеджера  Мы вышлем нужный акт по почте на ваш адрес.
               article
                 p Подписание договора не является обязательным для заказа грузоперевозок. Действие договоров оканчивается 31 декабря, после чего можно заключить договор на следующий год. Для заключения договора свяжитесь с нашим менеджером.
+      section.questions-mobile
+        .questions-mobile__wrapper.container
+          .questions-mobile__box
+            p Как правильно упаковать посылку?
+          .questions-mobile__text
+            p Как правильно упаковать посылку?
+          .questions-mobile__box
+            p Как правильно упаковать посылку?
+          .questions-mobile__text
+            p Как правильно упаковать посылку?
+          .questions-mobile__box
+            p Как правильно упаковать посылку?
+          .questions-mobile__text
+            p Как правильно упаковать посылку?

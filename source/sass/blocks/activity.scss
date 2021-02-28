@@ -1,10 +1,8 @@
 .activity__wrapper {
   max-width: 1920px;
   margin: 0 auto;
-  background-image: url("../img/jpg/img-bckg.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
-  overflow-x: hidden;
+  position: relative;
+  overflow: hidden;
 
   @include desktop-width {
     background-position: 63% -85px;
@@ -12,32 +10,48 @@
 
   @include desktop-width-min {
     background-image: url("../img/jpg/img-bckg-mobile.jpg");
-    background-position: right;
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
-  @media  (max-width: 767px){
-    background-position: top center;
-  }
+  video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 
+    @include desktop-width-min {
+      display: none;
+    }
+  }
 }
 
 .activity__box {
-  margin-top: 165px;
+  padding-top: 165px;
   width: 1145px;
-  height: 615px;
+  height: 780px;
   background-image: url("../img/svg/image-bckg-tabs.svg");
   background-repeat: no-repeat;
+  background-position: bottom;
 
   @include desktop-width-middle {
-    transform: translateX(-200px);
+    width: 1024px;
+    background-position: 105% 100%;
   }
 
   @include desktop-width-min {
-    margin-top: 60px;
+    margin-top: 120px;
+    padding-top: 195px;
+    height: 600px;
     background-image: url("../img/svg/image-bckg-tabs-mobile.svg");
+    background-position: -200px;
   }
 
   @include tablet-width {
+    padding-top: 50px;
     width: auto;
     height: auto;
     margin-top: 25px;
@@ -51,14 +65,17 @@
   margin: 0 auto 0 420px;
   padding-top: 210px;
 
+  @include desktop-width-middle {
+    margin-left: 280px;
+  }
+
   @include desktop-width-min {
-    margin-left: 300px;
-    padding-top: 195px;
+    margin-left: 70px;
+    padding: 0 15px 15px 15px;
   }
 
   @include tablet-width {
     margin-left: 0;
-    padding: 0 15px 15px 15px;
   }
 
   p {

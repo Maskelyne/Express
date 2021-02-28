@@ -106,8 +106,8 @@
 
     &:hover::before,
     &:hover::after {
-      width:calc(100% + 26px);
-      height:calc(100% + 26px);
+      width:calc(100% + 24px);
+      height:calc(100% + 24px);
       border-color: $yellow;
     }
 

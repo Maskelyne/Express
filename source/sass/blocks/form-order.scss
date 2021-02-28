@@ -53,7 +53,7 @@
 
 .form-order__wrap-box {
   padding: 40px;
-  background-image: linear-gradient(330deg, rgba(86, 100, 130, 0.81) -7%, rgba(28, 40, 69, 0.7) 80%, #172340 100%);
+  background-image: linear-gradient(330deg, rgba(86, 100, 130, 1) -7%, rgba(28, 40, 69, 1) 80%, #172340 100%);
 
   @include tablet-width {
     padding: 30px 15px;
@@ -66,10 +66,6 @@
     @include tablet-width {
       font-size: 20px;
       line-height: 22px;
-    }
-
-    @include mobile-width {
-      font-size: 16px;
     }
   }
 }
@@ -96,6 +92,12 @@
   margin: 0 auto;
 
   h3 {
+    @include mobile-width {
+      font-size: 16px;
+    }
+  }
+
+  h3 {
     padding-bottom: 5px;
 
     span {
@@ -103,17 +105,13 @@
     }
   }
 
-  p:nth-child(2) {
-    margin: 0;
-    font-size: 16px;
-    line-height: 25px;
-    text-align: center;
+  .text-price {
     color: $yellow;
-
-    @include tablet-width {
-      font-size: 14px;
-      line-height: 18px;
-    }
+    font-family: $openSansRegular;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    display: block;
   }
 }
 
@@ -147,6 +145,10 @@
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: space-between;
+
+  @include mobile-width {
+    grid-template-columns: 1fr;
+  }
 
   label {
     position: relative;
@@ -402,7 +404,7 @@
         }
 
         @include mobile-width {
-          transform: translateY(-45px);
+          transform: translateY(-50px);
         }
       }
     }
@@ -597,10 +599,23 @@
 
 .form-order--feedback {
   border-top: 1px solid #565F75;
-  background-image: url("../img/jpg/bckg-feedback.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
+
+  video {
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (max-width: $desktop-width-min) {
+      display: none;
+    }
+  }
 
   @include desktop-width-min {
     background-image: none;
@@ -886,6 +901,7 @@ input#ec-user_contacts-resource-3.error {
 .form-order__buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 
   @include desktop-width-min {
     max-width: 355px;
@@ -899,15 +915,39 @@ input#ec-user_contacts-resource-3.error {
   }
 
   .button--prev-js {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
+    padding-left: 65px;
     color: $yellow;
+    position: relative;
 
-    img {
-      max-width: 40px;
-      margin-right: 10px;
-      transform: rotate(180deg);
+    &::before {
+      width: 50px;
+      height: 15px;
+      position: absolute;
+      content: "";
+      top: 8px;
+      left: 5px;
+      background-image: url("../img/svg/icon-arrow-left.svg");
+      background-repeat: no-repeat;
+      background-size: 90% 100%;
+      background-position: right;
+      transition: all 0.2s linear;
+    }
+
+    @include tablet-width {
+      padding-left: 50px;
+
+      &::before {
+        width: 40px;
+        left: 0;
+        background-size: 100% 100%;
+      }
+    }
+
+    &:hover {
+      &::before {
+        background-size: 100% 100%;
+        transition: all 0.2s linear;
+      }
     }
   }
 }

@@ -1,18 +1,20 @@
-.questions {
-  @media (max-width: $desktop-width-min) {
-    display: none;
-  }
-}
-
 .questions__wrapper {
   margin-top: 145px;
   margin-bottom: 60px;
+
+  @include tablet-width {
+    margin: 40px 0;
+  }
 }
 
 .questions__box {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0 70px;
+
+  @include desktop-width-min {
+    display: none;
+  }
 }
 
 .questions__box-left {
@@ -116,3 +118,112 @@
   }
 }
 
+.questions-mobile {
+  display: none;
+
+  @include desktop-width-min {
+    display: block;
+    margin-bottom: 60px;
+  }
+
+  .questions-mobile__box {
+    margin-bottom: 20px;
+
+    p {
+      margin: 0;
+      padding: 25px 30px 25px 30px;
+      cursor: pointer;
+      font-family: $openSansBold;
+      font-size: 18px;
+      line-height: 24px;
+      z-index: 1;
+      position: relative;
+      background-image: linear-gradient(99.92deg, rgba(255, 255, 255, 0.2) 4.46%, rgba(255, 255, 255, 0.02) 76.5%), linear-gradient(283.81deg, #172340 -4.47%, #27324F 96.77%);
+
+      @include tablet-width {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 15px;
+      }
+
+      &::before {
+        width: 2px;
+        height: 25px;
+        position: absolute;
+        content: "";
+        top: 37%;
+        right: 6%;
+        background-image: linear-gradient(0deg, #ffffff 100%, #ffffff 100%);
+        transition: all 0.2s linear;
+
+        @include tablet-width {
+          height: 20px;
+          top: 35%;
+        }
+      }
+
+      &::after {
+        width: 2px;
+        height: 25px;
+        position: absolute;
+        content: "";
+        top: 37%;
+        right: 6%;
+        transform: rotate(-90deg);
+        background-image: linear-gradient(0deg, #ffffff 100%, #ffffff 100%);
+        transition: all 0.2s linear;
+
+        @include tablet-width {
+          height: 20px;
+          top: 35%;
+        }
+      }
+    }
+  }
+
+  .questions-mobile__text {
+    display: none;
+
+    ul {
+      @include reset-list;
+    }
+
+    p {
+      @include tablet-width {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  .questions-box-active {
+    p {
+      color: $yellow;
+      background-image: linear-gradient(279.07deg, #505870 -2.62%, #172340 87.4%);
+
+      &::before {
+        background-image: linear-gradient(114.87deg, #FF9B00 19.51%, #FFC738 75.38%);
+        transform: rotate(45deg);
+        transition: all 0.2s linear;
+      }
+
+      &::after {
+        background-image: linear-gradient(114.87deg, #FF9B00 19.51%, #FFC738 75.38%);
+        transform: rotate(-45deg);
+        transition: all 0.2s linear;
+      }
+    }
+
+    + .questions-mobile__text {
+      display: block;
+
+      p {
+        strong {
+          color: $yellow;
+          font-weight: $normal;
+        }
+      }
+    }
+  }
+
+}

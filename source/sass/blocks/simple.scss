@@ -9,6 +9,10 @@
 .contacts__main {
   background: #212D4A;
 
+  @include tablet-width {
+    background: transparent;
+  }
+
   .container {
     @media(min-width: $tablet-width) and (max-width: $desktop-width) {
       padding: 0 30px;
@@ -17,6 +21,18 @@
 
   .button--effect-2 {
     max-width: 200px;
+
+    &:hover {
+      &::before {
+        width: calc(100% + 26px);
+        height: calc(100% + 26px);
+      }
+
+      &::after {
+        width: calc(100% + 26px);
+        height: calc(100% + 26px);
+      }
+    }
   }
 }
 
@@ -190,9 +206,6 @@
 .contacts__wrap-form {
   background: #172340;
   margin-top: 63px;
-  @media(max-width: 767px) {
-    background: #212D4A;
-  }
 
   @include desktop-width-min {
     .form-order__wrapper {
@@ -252,12 +265,11 @@
 
     .form-order__inner-box {
       @media(max-width: 767px) {
-        border: solid 3px transparent;
-        border-image: linear-gradient(330deg, rgba(86, 100, 130, 0.81) -7%, rgba(28, 40, 69, 0.7) 102%, #212D4A 97%);
+        border: solid 2px transparent;
+        border-image: linear-gradient(330deg, rgba(86,100,130,0.81) -7%, rgba(28,40,69,0.7) 95%, #172340 97%);
         border-image-slice: 1;
         padding: 13px;
       }
-
     }
 
     @media(min-width: $tablet-width) and (max-width: $desktop-width) {
@@ -299,7 +311,7 @@
     padding: 30px 40px 40px 40px;
     background-image: linear-gradient(289.07deg, rgba(86, 100, 130, 0.81) -7.49%, #172340 95.19%);
     @media(max-width: 767px) {
-      padding: 30px 27px 40px 13px;
+      padding: 30px 15px 40px 15px;
     }
   }
 
@@ -339,6 +351,8 @@
 
     @media(max-width: 767px) {
       white-space: nowrap;
+      font-size: 20px;
+      line-height: 26px;
     }
   }
 }
@@ -462,7 +476,7 @@ textarea {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  height: 82.4%;
+  height: 85.4%;
   margin: 60px auto;
 
   @include desktop-width-min {
@@ -776,7 +790,6 @@ textarea {
   transition: .6s;
 
   &-border {
-
     position: absolute;
     top: 4px;
     bottom: 0;
@@ -824,15 +837,6 @@ textarea {
     }
   }
 
-  &__prev {
-    margin-right: 35px;
-  }
-
-  &__next {
-    margin-left: 35px;
-    transform: rotate(180deg);
-  }
-
   &--word {
     ul {
       gap: 148px;
@@ -854,6 +858,7 @@ textarea {
       color: #FFB520;
       display: flex;
       align-items: center;
+
       @media(max-width: $tablet-width) {
         font-size: 14px;
       }
@@ -865,17 +870,80 @@ textarea {
     }
 
     &-next {
-      img {
-        margin-left: 15px;
+      position: relative;
+      padding-right: 65px;
 
+      @include tablet-width {
+        padding-right: 0;
+
+        img {
+          margin-left: 10px;
+        }
+      }
+
+      &::before {
+        width: 50px;
+        height: 15px;
+        position: absolute;
+        content: "";
+        top: 6px;
+        right: 5px;
+        background-image: url("../img/svg/icon-arrow-left.svg");
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
+        background-position: right;
+        transition: all 0.2s linear;
+        transform: rotate(180deg);
+        cursor: pointer;
+
+        @include tablet-width {
+          display: none;
+        }
+      }
+
+      &:hover {
+        &::before {
+          background-size: 100% 100%;
+        }
       }
     }
 
     &-prev {
+      position: relative;
+      padding-left: 65px;
 
-      img {
-        transform: rotate(180deg);
-        margin-right: 15px;
+      @include tablet-width {
+        padding-left: 0;
+
+        img {
+          transform: rotate(180deg);
+          margin-right: 10px;
+        }
+      }
+
+      &::before {
+        width: 50px;
+        height: 15px;
+        position: absolute;
+        content: "";
+        top: 6px;
+        left: 5px;
+        background-image: url("../img/svg/icon-arrow-left.svg");
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
+        background-position: right;
+        transition: all 0.2s linear;
+        cursor: pointer;
+
+        @include tablet-width {
+          display: none;
+        }
+      }
+
+      &:hover {
+        &::before {
+          background-size: 100% 100%;
+        }
       }
     }
   }
@@ -991,7 +1059,7 @@ textarea {
 .about {
   &__wrap {
     h2 {
-      margin-top: 20px;
+      margin-top: 60px;
       @media(max-width: 766px) {
         margin-bottom: 20px;
       }
@@ -1022,8 +1090,7 @@ textarea {
       background-image: none;
       background-position: center;
       background-size: cover;
-      min-height: 265px;
-      padding-bottom: 10px;
+      min-height: 190px;
     }
   }
 
@@ -1098,7 +1165,7 @@ textarea {
       @media(max-width: 766px) {
         max-width: 500px;
         margin: 0 auto;
-        padding-top: 30px;
+        padding-top: 0;
         padding-left: 0;
       }
     }
@@ -1110,7 +1177,7 @@ textarea {
     list-style: none;
     padding: 0;
     padding-left: 20px;
-    margin-bottom: 89px;
+    margin-bottom: 60px;
     gap: 20px;
 
 
@@ -1122,9 +1189,12 @@ textarea {
       grid-template-columns: repeat(2, auto);
       padding-left: 0;
       margin-bottom: 20px;
+      grid-gap: 15px 2%;
+      justify-content: center;
     }
     @media(max-width: 520px) {
       grid-template-columns: repeat(1, auto);
+      justify-content: left;
     }
 
     li {
@@ -1206,7 +1276,7 @@ textarea {
   }
 
   &__content-wrap {
-    max-width: 663px;
+    max-width: 710px;
 
     @media(max-width: 1024px) and (min-width: 767px) {
       max-width: unset;
@@ -1227,11 +1297,10 @@ textarea {
       font-size: 18px;
       line-height: 25px;
       text-decoration-line: underline;
-      color: #FFFFFF;
-      opacity: 0.7;
+      color: rgba(255, 255, 255, 0.7);
       padding: 0;
       margin-bottom: 15px;
-      transition: .2s;
+      transition: all 0.2s linear;
 
       @include tablet-width {
         font-size: 14px;
@@ -1239,9 +1308,17 @@ textarea {
       }
 
       &:hover {
-        opacity: 1;
-        transition: .2s;
+        color: rgba(255, 255, 255, 1);
+        transition: all 0.2s linear;
 
+      }
+    }
+
+    .active {
+      color: $yellow;
+
+      &:hover {
+        color: $yellow;
       }
     }
 
@@ -1257,7 +1334,7 @@ textarea {
     }
 
     strong {
-      font-weight: 600;
+      font-family: $openSansBold;
       font-size: 18px;
       line-height: 25px;
       color: #FFC130;
@@ -1371,9 +1448,13 @@ textarea {
   }
 
   .form-order__box--delivery {
+    @include desktop-width-min {
+      max-width: 615px;
+      margin: 0 auto;
+    }
+
     @include tablet-width {
       max-width: 420px;
-      margin: 0 auto;
     }
 
     .button {
@@ -1478,6 +1559,25 @@ textarea {
     }
   }
 
+  &__wrap {
+    .delivery__text + .button {
+      display: none;
+
+      @include desktop-width-min {
+        display: block;
+        margin: 40px auto;
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          width: calc(100% + 26px);
+          height: calc(100% + 26px);
+        }
+      }
+    }
+  }
+
   &__text {
     margin-bottom: 40px;
 
@@ -1494,17 +1594,28 @@ textarea {
       margin-bottom: 30px;
 
       @include tablet-width {
-        font-size: 20px;
-        line-height: 26px;
+        font-size: 18px;
+        line-height: 22px;
       }
+    }
+
+    span {
+      color: $yellow;
+      font-family: $openSansRegular;
+      font-size: 14px;
+      line-height: 19px;
     }
 
     p {
       margin: 0;
       font-family: $openSansBold;
+      line-height: 22px;
 
       span {
+        font-family: $openSansBold;
         color: $yellow;
+        font-size: 18px;
+        line-height: 28px;
       }
 
       &:last-child {
@@ -1829,6 +1940,11 @@ textarea {
   justify-content: space-between;
   margin-bottom: 30px;
 
+  @include mobile-width {
+    grid-template-columns: 1fr;
+    margin-bottom: 35px;
+  }
+
   [type="radio"]:checked + label,
   [type="radio"]:not(:checked) + label {
     position: relative;
@@ -1945,6 +2061,11 @@ input:focus {
   color: rgba(255, 193, 48, 0.5);
   @media(max-width: 767px) {
     font-size: 12px;
+    transform: translateY(-40px);
+  }
+
+  @include mobile-width {
+    transform: translateY(-45px);
   }
 }
 
@@ -2017,20 +2138,6 @@ input:focus {
       }
     }
   }
-
-  &--hide {
-    @include desktop-width-min {
-      display: none;
-    }
-
-    @include tablet-width {
-      display: none;
-    }
-  }
-
-  &--show {
-    display: none;
-  }
 }
 
 .delivery__ordering-wrap {
@@ -2040,19 +2147,6 @@ input:focus {
 
   @include tablet-width {
     grid-template-columns: repeat(1, auto);
-  }
-}
-
-.js-btn {
-  display: none;
-  margin: 47px auto;
-
-  @include desktop-width-min {
-    display: block;
-  }
-
-  @include tablet-width {
-    display: block;
   }
 }
 
@@ -2088,7 +2182,6 @@ input:focus {
 
     img {
       height: auto;
-      max-width: 224px;
     }
   }
 }
@@ -2224,4 +2317,13 @@ select:-webkit-autofill, {
   -webkit-text-fill-color: #FFFFFF;
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+#delivery {
+  display: none;
+
+  @include desktop-width-min {
+    display: inline-block;
+    min-height: 70px;
+  }
 }

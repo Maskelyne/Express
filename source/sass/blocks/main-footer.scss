@@ -71,10 +71,11 @@
   grid-template-columns: 45% auto auto;
 
   @include desktop-width-min {
+    padding-top: 71px;
     grid-template-columns: 1fr;
   }
 
-  @include tablet-width {
+  @media (max-width: 490px) {
     padding-top: 20px;
   }
 
@@ -108,6 +109,10 @@
   display: grid;
   justify-content: flex-end;
   grid-gap: 15px 0;
+
+  @include desktop-width-min {
+    grid-gap: 11px 0;
+  }
 
   @media  (max-width: 490px){
     justify-content: flex-start;
