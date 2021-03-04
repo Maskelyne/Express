@@ -317,16 +317,14 @@
     width: 150px;
     height: 30px;
     position: absolute;
-    top: -13%;
+    top: -18%;
     right: 16%;
 
     @include desktop-width-middle {
-      top: -13%;
       right: 5%;
     }
 
     @include desktop-width {
-      top: -12%;
       right: 2%;
     }
 
