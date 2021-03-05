@@ -93,13 +93,22 @@
 
   p {
     margin: 0;
-    padding: 15px 0;
+    padding: 15px 0 5px 0;
 
     strong {
       display: block;
       font-weight: $normal;
       color: $yellow;
     }
+  }
+
+  a {
+    font-size: 14px;
+    line-height: 19px;
+    text-decoration: underline;
+    color: rgba(255, 193, 48, 0.7);
+    display: grid;
+    grid-template-columns: 65px 24px;
   }
 
   .questions__text-active {
