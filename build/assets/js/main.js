@@ -10,29 +10,6 @@
 
 (function () {
 
-  let btn = document.querySelectorAll('a[href^="tel:"]');
-
-  let resizeWindow = function (evt) {
-    if (window.innerWidth <= 1024) {
-      evt.stopPropagation();
-    } else {
-      evt.preventDefault();
-    }
-  };
-
-  btn.forEach(function (item) {
-    item.addEventListener('click', resizeWindow);
-  });
-
-  btn.forEach(function (item) {
-    item.addEventListener('resize', resizeWindow);
-  });
-
-})();
-'use strict';
-
-(function () {
-
   var headerMenu = document.querySelector('.main-header__nav');
 
   if (headerMenu && window.innerWidth <= 1023) {
@@ -570,13 +547,13 @@
 //Функция создания карты сайта и затем вставки ее в блок с идентификатором &#34;map-yandex&#34;
   function init() {
     var myMapTemp = new ymaps.Map("map-yandex", {
-      center: [53.900448, 27.600602], // координаты центра на карте
+      center: [53.952730, 27.617679], // координаты центра на карте
       zoom: 16, // коэффициент приближения карты
       controls: ['zoomControl', 'fullscreenControl'] // выбираем только те функции, которые необходимы при использовании
     });
     myMapTemp.behaviors.disable('scrollZoom');
-    var myPlacemarkTemp = new ymaps.Placemark([53.900448, 27.600602], {
-      balloonContent: "переулок Козлова, 24А",
+    var myPlacemarkTemp = new ymaps.Placemark([53.952730, 27.617679], {
+      balloonContent: "Логойский тракт, 27",
     }, {
       // Опции.
       // Необходимо указать данный тип макета.
@@ -1535,6 +1512,89 @@
 
   });
 
+
+  // document.ondragstart = test;
+  // //запрет на перетаскивание
+  // document.onselectstart = test;
+  // //запрет на выделение элементов страницы
+  // document.oncontextmenu = test;
+  // //запрет на выведение контекстного меню
+  // function test() {
+  //   return false;
+  // }
+
+})();
+"use strict";
+
+(function () {
+
+  // var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
+  // var maskOpts = {
+  //   inputmask: {
+  //     definitions: {
+  //       '#': {
+  //         validator: "[0-9]",
+  //         cardinality: 1
+  //       }
+  //     },
+  //     showMaskOnHover: false,
+  //     autoUnmask: true,
+  //     clearMaskOnLostFocus: true
+  //   },
+  //   match: /[0-9]/,
+  //   replace: '#',
+  //   list: maskList,
+  //   listKey: "mask",
+  //   onMaskChange: function (maskObj, determined) {
+  //   }
+  // };
+
+  // $('#user-phone').change(function () {
+  //   $('#user-phone').inputmask("remove");
+  //   $('#user-phone').inputmasks(maskOpts);
+  // });
+  //
+  // $('#user-phone').change();
+  //
+  // $('#ec-user_contacts-resource-3').change(function () {
+  //   $('#ec-user_contacts-resource-3-phone').inputmask("remove");
+  //   $('#ec-user_contacts-resource-3').inputmasks(maskOpts);
+  // });
+  //
+  // $('#ec-user_contacts-resource-3').change();
+
+
+})();
+'use strict';
+
+(function () {
+
+  var timeTable = document.querySelector('.timetable');
+  var timeTableText = document.querySelectorAll('.timetable__text p');
+  var timeTableBox = document.querySelectorAll('.timetable__inner table');
+
+  if (timeTable) {
+    var removeActive = function (array, activeClass) {
+      array.forEach(function (item) {
+        item.classList.remove(activeClass);
+      });
+      return;
+    };
+
+    timeTableText.forEach(function (item, i) {
+      timeTableText[0].classList.add('active-tabs');
+      timeTableBox[0].classList.add('active-table');
+      item.addEventListener('click', function (evt) {
+        evt.preventDefault();
+
+        removeActive(timeTableText, 'active-tabs');
+        removeActive(timeTableBox, 'active-table');
+        timeTableText[i].classList.add('active-tabs');
+        timeTableBox[i].classList.add('active-table');
+      });
+    });
+  }
+
 })();
 "use strict";
 
@@ -1663,46 +1723,5 @@
       }
     };
   }
-
-})();
-"use strict";
-
-(function () {
-
-  var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
-  var maskOpts = {
-    inputmask: {
-      definitions: {
-        '#': {
-          validator: "[0-9]",
-          cardinality: 1
-        }
-      },
-      showMaskOnHover: false,
-      autoUnmask: true,
-      clearMaskOnLostFocus: true
-    },
-    match: /[0-9]/,
-    replace: '#',
-    list: maskList,
-    listKey: "mask",
-    onMaskChange: function (maskObj, determined) {
-    }
-  };
-
-  $('#user-phone').change(function () {
-    $('#user-phone').inputmask("remove");
-    $('#user-phone').inputmasks(maskOpts);
-  });
-
-  $('#user-phone').change();
-
-  $('#ec-user_contacts-resource-3').change(function () {
-    $('#ec-user_contacts-resource-3-phone').inputmask("remove");
-    $('#ec-user_contacts-resource-3').inputmasks(maskOpts);
-  });
-
-  $('#ec-user_contacts-resource-3').change();
-
 
 })();

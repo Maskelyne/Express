@@ -11,13 +11,13 @@
 //Функция создания карты сайта и затем вставки ее в блок с идентификатором &#34;map-yandex&#34;
   function init() {
     var myMapTemp = new ymaps.Map("map-yandex", {
-      center: [53.900448, 27.600602], // координаты центра на карте
+      center: [53.952730, 27.617679], // координаты центра на карте
       zoom: 16, // коэффициент приближения карты
       controls: ['zoomControl', 'fullscreenControl'] // выбираем только те функции, которые необходимы при использовании
     });
     myMapTemp.behaviors.disable('scrollZoom');
-    var myPlacemarkTemp = new ymaps.Placemark([53.900448, 27.600602], {
-      balloonContent: "переулок Козлова, 24А",
+    var myPlacemarkTemp = new ymaps.Placemark([53.952730, 27.617679], {
+      balloonContent: "Логойский тракт, 27",
     }, {
       // Опции.
       // Необходимо указать данный тип макета.

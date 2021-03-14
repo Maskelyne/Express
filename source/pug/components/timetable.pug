@@ -1,0 +1,72 @@
+mixin timetable()
+
+  section.timetable
+    .timetable__wrapper.container
+      h3 График движения автотранспорта
+      .timetable__inner
+        .timetable__box
+          .timetable__text
+            p Минск - Москва
+            p Москва - Минск
+          table
+            tr
+              td День недели:
+              td Пн:
+              td Вт:
+              td Ср:
+              td Чт:
+              td Пт:
+              td Сб:
+              td Вс:
+            tr
+              td Отправление из Минска
+              td 18:00
+              td 18:00
+              td 18:00
+              td 18:00
+              td -
+              td -
+              td 16:00
+            tr
+              td Прибытие в Москву
+              td 6:00
+              td 6:00
+              td 6:00
+              td 6:00
+              td 6:00
+              td -
+              td -
+          table
+            tr
+              td День недели:
+              td Пн:
+              td Вт:
+              td Ср:
+              td Чт:
+              td Пт:
+              td Сб:
+              td Вс:
+            tr
+              td Отправление из Москвы
+              td 21:00
+              td 21:00
+              td 21:00
+              td 21:00
+              td 21:00
+              td -
+              td -
+            tr
+              td Прибытие в Минск
+              td -
+              td 9:00
+              td 9:00
+              td 9:00
+              td 9:00
+              td 9:00
+              td -
+      p * В Пн - Пт с
+        span  6:00
+        |  до
+        span  21:00
+        |  мы находимся в  Москве и готовы принять ваш груз для транспортировки в Минск.
+

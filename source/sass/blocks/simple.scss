@@ -469,7 +469,7 @@ textarea {
 
 
 .ymap-container {
-  background: url('../img/jpg/prew.jpg') #fff no-repeat;
+  background: url('../img/jpg/maps.jpg') #fff no-repeat;
   background-size: cover;
   background-position: center center;
   width: 100%;
@@ -1111,7 +1111,7 @@ textarea {
       gap: 10px;
       color: #FFB520;
       margin: 0;
-      max-width: 470px;
+      max-width: 480px;
 
       span {
         display: inline-block;
@@ -1349,7 +1349,7 @@ textarea {
   &__content {
     background-position: bottom;
     background-repeat: no-repeat;
-    min-height: 623px;
+    min-height: 655px;
     display: flex;
     align-items: center;
 
@@ -1368,24 +1368,26 @@ textarea {
   }
 }
 
+.about__documents {
+  p {
+    margin-bottom: 10px;
+  }
+}
+
 .download {
+  margin-bottom: 20px;
   font-size: 18px;
   line-height: 25px;
   text-decoration-line: underline;
-  color: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
   gap: 10px;
   transition: .2s;
+  color: $yellow;
 
   @include tablet-width {
     font-size: 14px;
     line-height: 16px;
-  }
-
-  &:hover {
-    color: rgba(255, 255, 255, 1);
-    transition: .2s;
   }
 
   img {
@@ -1422,6 +1424,7 @@ textarea {
 }
 
 .hide-m-t {
+  padding-top: 10px;
   display: block;
   @media(max-width: 1024px) and (min-width: 767px) {
     display: none;
