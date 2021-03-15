@@ -1060,8 +1060,20 @@ textarea {
   &__wrap {
     h2 {
       margin-top: 60px;
-      @media(max-width: 766px) {
-        margin-bottom: 20px;
+
+      &:nth-child(1) {
+        display: none;
+      }
+
+      @media (max-width: 1120px) {
+        margin-top: 30px;
+
+        &:nth-child(1) {
+          display: block;
+        }
+        &:nth-child(2) {
+          display: none;
+        }
       }
     }
   }
@@ -1072,6 +1084,10 @@ textarea {
     background-image: url('../img/jpg/abouthero.jpg');
     background-position: center;
     background-repeat: no-repeat;
+
+    @media (max-width: 1120px) {
+      min-height: auto;
+    }
 
     @media(max-width: 1390px) {
       background-position: -260px;
@@ -1095,6 +1111,14 @@ textarea {
   }
 
   &__caption {
+    h2 {
+      display: none;
+
+      @media (max-width: 1120px) {
+        display: block;
+      }
+    }
+
     p {
       font-size: 18px;
       line-height: 25px;
@@ -1113,6 +1137,10 @@ textarea {
       margin: 0;
       max-width: 480px;
 
+      @media (max-width: 1120px) {
+        max-width: 100%;
+      }
+
       span {
         display: inline-block;
       }
@@ -1123,8 +1151,10 @@ textarea {
       max-width: 470px;
       margin-left: 38px;
       margin-bottom: 0;
-      @media(max-width: 766px) {
-        margin-left: 29px;
+
+      @media (max-width: 1120px) {
+        max-width: 100%;
+        margin-left: 0;
       }
     }
 
@@ -1133,8 +1163,8 @@ textarea {
       color: #FFB520;
       margin: 15px 0 0 85px;
 
-      @media(max-width: 766px) {
-        margin-left: 60px;
+      @media (max-width: 1120px) {
+        margin-left: 0;
       }
     }
 
@@ -1148,24 +1178,17 @@ textarea {
         width: 93px;
         height: 35px;
       }
-
-
     }
 
     &-wrap {
       padding-top: 74px;
-      @media(max-width: 1200px) {
+
+      @media (max-width: 1120px) {
+        padding-top: 0;
         padding-left: 20px;
       }
-      @media(max-width: 1120px) and (min-width: 767px) {
-        max-width: 500px;
-        margin: 0 auto;
 
-      }
-      @media(max-width: 766px) {
-        max-width: 500px;
-        margin: 0 auto;
-        padding-top: 0;
+      @include tablet-width {
         padding-left: 0;
       }
     }
@@ -1347,6 +1370,7 @@ textarea {
   }
 
   &__content {
+    background-size: 110%;
     background-position: bottom;
     background-repeat: no-repeat;
     min-height: 655px;
@@ -1358,7 +1382,8 @@ textarea {
     }
 
     @media(max-width: 1024px) and (min-width: 767px) {
-      background-position: right;
+      background-position: 89% 0px;
+      background-size: cover;
     }
 
     @media(max-width: 766px) {
@@ -1474,7 +1499,7 @@ textarea {
   }
 
   &__delivery-caption {
-    margin-top: 198px;
+    margin-top: 196px;
     margin-bottom: 60px;
 
     @include desktop-width-min {
@@ -1550,6 +1575,10 @@ textarea {
 
     strong {
       color: #FFC130;
+    }
+
+    &--margin {
+      margin-top: 0;
     }
   }
 
@@ -2150,6 +2179,7 @@ input:focus {
 
   @include tablet-width {
     grid-template-columns: repeat(1, auto);
+    grid-gap: 0;
   }
 }
 
