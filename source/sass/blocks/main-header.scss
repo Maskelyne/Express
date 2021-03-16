@@ -57,7 +57,9 @@
     cursor: pointer;
 
     @include desktop-width-min {
-      padding-top: 6%;
+      &:first-child {
+        padding-top: 3%;
+      }
     }
 
     &:last-child {
@@ -529,6 +531,10 @@
   .main-header__tel {
     a {
       text-align: center;
+
+      &:hover {
+        color: $yellow;
+      }
     }
 
     @include desktop-width-min {

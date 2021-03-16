@@ -2,6 +2,10 @@
   margin-top: 190px;
   margin-bottom: 60px;
 
+  @include desktop-width-min {
+    margin-top: 60px;
+  }
+
   @include tablet-width {
     margin-top: 0;
   }
@@ -14,7 +18,7 @@
     margin: 40px 0 40px 0;
     text-align: center;
 
-    @include mobile-width {
+    @include tablet-width {
       font-size: 22px;
       line-height: 28px;
     }

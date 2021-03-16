@@ -139,10 +139,8 @@
     grid-gap: 0 10px;
     grid-template-columns: 30px auto;
 
-    &:nth-child(3) {
-      &:hover {
-        color: $yellow;
-      }
+    &:hover {
+      color: $yellow;
     }
   }
 }

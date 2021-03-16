@@ -103,8 +103,8 @@ h1, h2 {
   border-image: linear-gradient(90deg, #565F75 74.54%, rgba(86, 95, 117, 0) 101.51%) 2;
 
   @include tablet-width {
-    font-size: 26px;
-    line-height: 36px;
+    font-size: 22px;
+    line-height: 32px;
     margin-bottom: 20px;
   }
 }
