@@ -173,7 +173,7 @@
 
 .contacts__item--marker {
   a {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.02em;
 
@@ -184,7 +184,7 @@
   }
 
   p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 20px;
     letter-spacing: 0.02em;
 
@@ -1260,6 +1260,11 @@ textarea {
       font-size: 20px;
       line-height: 27px;
       color: #FFFFFF;
+
+      @include desktop-width {
+        font-size: 18px;
+      }
+
       @media(max-width: 766px) {
         max-width: unset;
         width: auto;
@@ -1278,6 +1283,10 @@ textarea {
       text-transform: uppercase;
       color: #FFC130;
       display: block;
+
+      @include desktop-width {
+        font-size: 18px;
+      }
 
       @media(max-width: 766px) {
         font-size: 14px;
@@ -1322,18 +1331,19 @@ textarea {
       text-decoration-line: underline;
       color: rgba(255, 255, 255, 0.7);
       padding: 0;
+      margin-top: 25px;
       margin-bottom: 15px;
       transition: all 0.2s linear;
 
       @include tablet-width {
         font-size: 14px;
         line-height: 16px;
+        margin-top: 0;
       }
 
       &:hover {
         color: rgba(255, 255, 255, 1);
         transition: all 0.2s linear;
-
       }
     }
 
@@ -1370,10 +1380,10 @@ textarea {
   }
 
   &__content {
-    background-size: 110%;
+    background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
-    min-height: 655px;
+    min-height: 700px;
     display: flex;
     align-items: center;
 
@@ -1382,6 +1392,7 @@ textarea {
     }
 
     @media(max-width: 1024px) and (min-width: 767px) {
+      min-height: 600px;
       background-position: 89% 0px;
       background-size: cover;
     }
@@ -1454,7 +1465,6 @@ textarea {
 }
 
 .hide-m-t {
-  padding-top: 10px;
   display: block;
   @media(max-width: 1024px) and (min-width: 767px) {
     display: none;
@@ -1660,8 +1670,8 @@ textarea {
         color: rgba(255, 255, 255, 0.7);
         margin-right: 53%;
 
-        @include desktop-width {
-          margin-right: 4%;
+        @include desktop-width-middle {
+          margin-right: 57%;
         }
 
         @include desktop-width-min {

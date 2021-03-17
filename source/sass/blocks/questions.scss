@@ -34,6 +34,11 @@
     z-index: 1;
     position: relative;
     background-image: linear-gradient(99.92deg, rgba(255, 255, 255, 0.2) 4.46%, rgba(255, 255, 255, 0.02) 76.5%), linear-gradient(283.81deg, #172340 -4.47%, #27324F 96.77%);
+
+    &:hover {
+      color: $yellow;
+      background-image: linear-gradient(279.07deg, #505870 -2.62%, #172340 87.4%);
+    }
   }
 }
 

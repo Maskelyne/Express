@@ -57,8 +57,16 @@
     $("#time-d").inputmask("hh:mm", {showMaskOnHover: false, showMaskOnFocus: true});
 
     var $input = $('#point-3'),
-      dp = $input.datepicker({
+      tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate());
+      var dp = $input.datepicker({
         showEvent: 'focus',
+        minDate: tomorrow,
+        autoClose: true,
+        onSelect: function () {
+          console.log(arguments);
+          dateDisabled(arguments[1]);
+        }
       }).data('datepicker');
 
     $input.on('click', function(){
