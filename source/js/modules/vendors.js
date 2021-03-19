@@ -89,6 +89,30 @@
       });
     }
 
+    $(document).ready(function() {
+      var scrollTop = $(".scrollTop");
+
+      $(window).scroll(function() {
+        var topPos = $(this).scrollTop();
+
+        if (topPos > 300) {
+          $(scrollTop).css("opacity", "1");
+
+        } else {
+          $(scrollTop).css("opacity", "0");
+        }
+
+      });
+
+      $(scrollTop).click(function() {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 1000);
+        return false;
+
+      });
+    });
+
     $(document).on('pdopage_load', function (e, config, response) {
       var btn = document.querySelectorAll(".btn-show-more");
       var z;

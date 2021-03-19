@@ -27,7 +27,8 @@
       modalThanks.classList.add('modal--active');
       document.body.style.overflow = 'hidden';
       response.message = '';
-
+      $('input[type="file"]').val('');
+      $('.file-res').css('display', 'none');
     }
 
     else {

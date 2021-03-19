@@ -971,6 +971,12 @@ textarea {
     font-weight: normal;
     font-size: 18px;
     line-height: 25px;
+
+    @include desktop-width-middle {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
     @media(max-width: $tablet-width) {
       font-size: 14px;
       line-height: 19px;
@@ -1046,6 +1052,12 @@ textarea {
       font-weight: normal;
       font-size: 18px;
       line-height: 25px;
+
+      @include desktop-width-middle {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
       @media(max-width: $tablet-width) {
         font-size: 14px;
         line-height: 19px;
@@ -1335,6 +1347,11 @@ textarea {
       margin-bottom: 15px;
       transition: all 0.2s linear;
 
+      @include desktop-width-middle {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
       @include tablet-width {
         font-size: 14px;
         line-height: 16px;
@@ -1359,6 +1376,11 @@ textarea {
       font-size: 18px;
       line-height: 25px;
       margin: 0 0 20px 0;
+
+      @include desktop-width-middle {
+        font-size: 16px;
+        line-height: 22px;
+      }
 
       @include tablet-width {
         font-size: 14px;
@@ -1407,6 +1429,11 @@ textarea {
 .about__documents {
   p {
     margin-bottom: 10px;
+
+    @include desktop-width-middle {
+      font-size: 16px;
+      line-height: 22px;
+    }
   }
 }
 
@@ -1420,6 +1447,11 @@ textarea {
   gap: 10px;
   transition: .2s;
   color: $yellow;
+
+  @include desktop-width-middle {
+    font-size: 16px;
+    line-height: 22px;
+  }
 
   @include tablet-width {
     font-size: 14px;
@@ -1577,6 +1609,11 @@ textarea {
       line-height: 25px;
       margin-left: 10px;
       color: rgba(255, 255, 255, 0.9);
+
+      @include desktop-width-middle {
+        font-size: 16px;
+        line-height: 22px;
+      }
 
       @include tablet-width {
         font-size: 14px;
@@ -1809,6 +1846,11 @@ textarea {
           color: #FFC130;
           text-transform: uppercase;
 
+          @include desktop-width-middle {
+            font-size: 16px;
+            line-height: 22px;
+          }
+
           @include tablet-width {
             font-size: 14px;
             line-height: 19px;
@@ -1822,6 +1864,11 @@ textarea {
           line-height: 25px;
           color: #FFFFFF;
           margin: 0;
+
+          @include desktop-width-middle {
+            font-size: 16px;
+            line-height: 22px;
+          }
 
           @include tablet-width {
             font-size: 14px;

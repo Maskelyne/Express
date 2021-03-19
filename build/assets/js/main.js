@@ -1511,7 +1511,8 @@
       modalThanks.classList.add('modal--active');
       document.body.style.overflow = 'hidden';
       response.message = '';
-
+      $('input[type="file"]').val('');
+      $('.file-res').css('display', 'none');
     }
 
     else {
@@ -1536,40 +1537,40 @@
 
 (function () {
 
-  var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
-  var maskOpts = {
-    inputmask: {
-      definitions: {
-        '#': {
-          validator: "[0-9]",
-          cardinality: 1
-        }
-      },
-      showMaskOnHover: false,
-      autoUnmask: true,
-      clearMaskOnLostFocus: true
-    },
-    match: /[0-9]/,
-    replace: '#',
-    list: maskList,
-    listKey: "mask",
-    onMaskChange: function (maskObj, determined) {
-    }
-  };
-
-  $('#user-phone').change(function () {
-    $('#user-phone').inputmask("remove");
-    $('#user-phone').inputmasks(maskOpts);
-  });
-
-  $('#user-phone').change();
-
-  $('#ec-user_contacts-resource-3').change(function () {
-    $('#ec-user_contacts-resource-3-phone').inputmask("remove");
-    $('#ec-user_contacts-resource-3').inputmasks(maskOpts);
-  });
-
-  $('#ec-user_contacts-resource-3').change();
+  // var maskList = $.masksSort($.masksLoad("assets/json/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
+  // var maskOpts = {
+  //   inputmask: {
+  //     definitions: {
+  //       '#': {
+  //         validator: "[0-9]",
+  //         cardinality: 1
+  //       }
+  //     },
+  //     showMaskOnHover: false,
+  //     autoUnmask: true,
+  //     clearMaskOnLostFocus: true
+  //   },
+  //   match: /[0-9]/,
+  //   replace: '#',
+  //   list: maskList,
+  //   listKey: "mask",
+  //   onMaskChange: function (maskObj, determined) {
+  //   }
+  // };
+  //
+  // $('#user-phone').change(function () {
+  //   $('#user-phone').inputmask("remove");
+  //   $('#user-phone').inputmasks(maskOpts);
+  // });
+  //
+  // $('#user-phone').change();
+  //
+  // $('#ec-user_contacts-resource-3').change(function () {
+  //   $('#ec-user_contacts-resource-3-phone').inputmask("remove");
+  //   $('#ec-user_contacts-resource-3').inputmasks(maskOpts);
+  // });
+  //
+  // $('#ec-user_contacts-resource-3').change();
 
 
 })();
@@ -1718,6 +1719,30 @@
         }
       });
     }
+
+    $(document).ready(function() {
+      var scrollTop = $(".scrollTop");
+
+      $(window).scroll(function() {
+        var topPos = $(this).scrollTop();
+
+        if (topPos > 300) {
+          $(scrollTop).css("opacity", "1");
+
+        } else {
+          $(scrollTop).css("opacity", "0");
+        }
+
+      });
+
+      $(scrollTop).click(function() {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 1000);
+        return false;
+
+      });
+    });
 
     $(document).on('pdopage_load', function (e, config, response) {
       var btn = document.querySelectorAll(".btn-show-more");
